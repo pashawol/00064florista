@@ -1,0 +1,43 @@
+mixin sPersonalData()
+	// start sPersonalData
+	+b.sPersonalData#sPersonalData&attributes(attributes)
+		.container
+			+e.row.row
+				+e.individual-col.col-lg-6.col-xl-8
+					+e.col-headline Данные физ.лица
+					+e.individual-box
+						+e.left-col
+							+form-wrap()
+								+input('ФИО', 'text','ФИО', 'name_inp')(value='Валидарский Александр Николаевич')
+								+input('Ваш e-mail', 'email','Ваш e-mail')(value='sample@sample.com')
+								+input('Номер телефона', 'tel','Номер телефона')(value='+7 ( 985 ) 568 - 20 - 12')
+								+e.BUTTON.save-cahnges-btn(type='submit') Сохранить изменения
+						+e.right-col
+							+form-wrap()
+								+input('Старый пароль', 'password','Старый пароль', 'password')(value='12345678')
+								+input('', 'password','Новый пароль', 'new_password')
+								+input('', 'password','Повторите пароль', 'new_password2')
+								+e.BUTTON.change-pass-btn(type='submit') Сменить пароль
+				+e.entity-col.col.col-lg-6.col-xl-4
+					+e.col-headline Данные юр.лица
+					block
+
+mixin addEnitity()
+	+e.A.add-entity-bnt(href="#")
+		+e.plus-cont +
+		+e.add-txt Добавить юр. лицо
+	+e.after-txt-cont
+		p Вы&nbsp;можете добавить данные своей компании в&nbsp;личном кабинете и&nbsp;осуществлять оплату как от&nbsp;физического так и&nbsp;от&nbsp;юридического лица (посредством выставления счетов на&nbsp;организацию)
+
+mixin hasEnitity()
+	+e.entity-item-block
+		+e.entity-item-header
+			+e.entity-item-name ООО «Офис-канц»
+			+e.entity-item-code 55698889987
+		+e.UL.entity-item-list
+			li 355998 г. Москва, ул Героев Сталинграда, д 65 офис 10
+			li БИК: 455889 ОАО «Сбербанк» отделение 22
+			li р/с: 40802810309500000689
+		+e.entity-item-footer
+			a.green-link(href="#") Запросить закрывающие документы
+			a.red-link(href="#") Удалить

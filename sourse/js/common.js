@@ -189,7 +189,7 @@ function eventHandler() {
 	JSCCommon.customRange();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/2.jpg);"></div>')
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/PersonalA-has-entity.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -469,6 +469,10 @@ function eventHandler() {
 	$(".showhide").click(function () {
 		$(this).toggleClass("active").next().slideToggle();
 	});
+
+	//luckyoneJs
+
+	//end luckyoneJs
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
