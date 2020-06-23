@@ -1,0 +1,53 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sAdvanteges/_sAdvanteges.pug 
+include ../blocks/sCatalog/_sCatalog.pug 
+include ../blocks/sThenaticSelections/_sThenaticSelections.pug 
+include ../blocks/sBanners/_sBanners.pug 
+include ../blocks/sBest/_sBest.pug 
+include ../blocks/sStocks/_sStocks.pug 
+include ../blocks/sAbout/_sAbout.pug 
+include ../blocks/sSocial/_sSocial.pug 
+include ../blocks/s-prod-head/_s-prod-head.pug 
+include ../blocks/s-prod-body/_s-prod-body.pug 
+include ../blocks/s-prod-body/_s-prod-body.pug 
+include ../blocks/s-filter/_s-filter.pug 
+include ../blocks/sSeo/_sSeo.pug
+
+	//personal Area
+include ../blocks/sPersonalData/_sPersonalData.pug
+
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Монобукеты'
+	title= title
+block pagecontent 
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+	+breadcrumb('Главная ','  Букеты ','  Монобукеты ',title )
+	+b.personalA-page-head
+		.container
+			+e.header-row.row
+				+e.headline-col.col-lg-6.col-xl-7.col-xxl-8
+					h1 Личный кабинет
+				+e.discount-col.col.col-lg-6.col-xl-5.col-xxl-4
+					+e.your-discount-cont
+						+e.white-txt Ваша скидка - 5%
+						+e.black-txt купите еще на 1 500 р. и получите 10% скидки
+					+e.A.learn-more-link(href="#") Узнать больше о накопительной системе...
+			+e.pa-nav-links
+				+e.A.nav-link.active(href="#") Личные данные
+				+e.A.nav-link(href="#") История заказов
+				+e.A.nav-link(href="#") Календарь
+				+e.A.nav-link(href="#") Адреса
+		+sPersonalData()
+	//-+sSocial
+	+footer()
+	// end sPersonalData
