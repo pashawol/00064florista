@@ -1,0 +1,48 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sAdvanteges/_sAdvanteges.pug 
+include ../blocks/sCatalog/_sCatalog.pug 
+include ../blocks/sThenaticSelections/_sThenaticSelections.pug 
+include ../blocks/sBanners/_sBanners.pug 
+include ../blocks/sBest/_sBest.pug 
+include ../blocks/sStocks/_sStocks.pug 
+include ../blocks/sAbout/_sAbout.pug 
+include ../blocks/sSocial/_sSocial.pug 
+include ../blocks/s-prod-head/_s-prod-head.pug 
+include ../blocks/s-prod-body/_s-prod-body.pug 
+include ../blocks/s-prod-body/_s-prod-body.pug 
+include ../blocks/s-filter/_s-filter.pug 
+include ../blocks/sSeo/_sSeo.pug 
+include ../blocks/s-basket/_s-basket.pug 
+
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Корзина'
+	title= title
+block pagecontent 
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+	+breadcrumb('Главная ','  Букеты ','  Монобукеты ','Букет с каллами "Сказочная тайга"' )
+	+b.page-head.pb-lg-0&attributes(attributes)
+		.container
+			.row.row--small.align-items-end
+				.col
+					h1=title
+				//- .col-auto.d-lg-none
+				//- 	button.s-filter__btn.mb-3.ttu(type='button')
+				//- 		+icon('bi_sort-up')
+				//- .col-auto.d-lg-none
+				//- 	button.s-filter__btn.s-filter__btn--js.mb-3.ttu(type='button')
+				//- 		+icon('ant-design_filter-outlined')
+	+s-basket
+	//- +sSeo
+	//- +sThenaticSelections
+	//- +sSocial
+	+footer()
