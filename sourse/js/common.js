@@ -189,7 +189,7 @@ function eventHandler() {
 	JSCCommon.customRange();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/PersonalA.png);"></div>')
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/PersonalA-has-entity.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
