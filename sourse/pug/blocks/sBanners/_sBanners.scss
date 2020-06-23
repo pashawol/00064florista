@@ -1,0 +1,98 @@
+
+	// start .sBanners
+	.sBanners {
+		 
+		.container{
+			position: relative;
+			&::after{
+				content: url(../img/svg/lines.svg);
+				position: absolute;
+					@include media-breakpoint-up(lg) {
+
+						left: calc(100% - 70px);
+						top: rem(10);
+					}
+					top: rem(190);
+					// left: 100%;
+					left: calc(100% - 100px);
+			}
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sBanners
+
+
+.banner{
+	@include media-breakpoint-down(lg) {
+		img{
+			transform: rotateY(180deg);
+		}
+	}
+		@include media-breakpoint-up(lg) {
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: rem(42) rem(53);
+			padding-right: rem(105);
+		}
+		padding: rem(42) rem(33);
+		@include media-breakpoint-up(lg){
+			clip-path: polygon(0% 0%, calc(100% - #{rem(74)}) 0%, 100% 50%, calc(100% - #{rem(74)}) 100%, 0% 100%);
+		}
+clip-path: polygon(0% 0%, calc(100% - #{rem(140)}) 0%, 100% 50%, calc(100% - #{rem(140)}) 100%, 0% 100%);
+	margin-bottom: rem(15);
+	// max-width: rem(1600);
+	&__caption{
+		@include media-breakpoint-up(lg){
+			padding-right: 0;
+		}
+		max-width: rem(470);
+		// max-width: rem(370);
+			padding-right: rem(100);
+	}
+	&__title{
+		@extend .h3;
+		font-family: $font-family-code;
+		margin-bottom: rem(15);
+		line-height: (41 / 30);
+	}
+	&__text{
+		font-size: rem(14px); 
+			@include media-breakpoint-up(lg){
+				padding-bottom: 0;
+				// padding-right: 0;
+				max-width: none;
+			}
+			max-width: rem(200);
+
+			padding-bottom: rem(100);
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-accent;
+		width: rem(168);
+	}
+}

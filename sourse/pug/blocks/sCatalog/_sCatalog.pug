@@ -1,0 +1,75 @@
+
+mixin sCatalog()
+	// start sCatalog
+	+b.SECTION.sCatalog.section#sCatalog&attributes(attributes)
+		.container
+			+b.section-title
+				.row
+					.col-auto
+						h2 Хиты продаж
+					.col-auto
+						.h3
+							a(href="#") Новинки
+			+e.slider--js.swiper-container
+				.swiper-wrapper
+					+e.slide.swiper-slide
+						+prod-item("1",'Букет розовых роз "Розовые грёзы"','4 300 р.')
+					+e.slide.swiper-slide
+						+prod-item("2",'МОНОБУКЕТ С РОМАШКОЙ №1','8 256 р.')
+					+e.slide.swiper-slide
+						+prod-item("3",'КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"','12 300 р.')
+					+e.slide.swiper-slide
+						+prod-item("4",'БУКЕТ "БЕЗЗАБОТНОЕ ЛЕТО"','144 300 р.')
+				+arrow
+	// end sCatalog
+	
+mixin sCatalog-03()
+	// start sCatalog
+	+b.SECTION.sCatalog.section#sCatalog&attributes(attributes)
+		.tabs.container
+			+b.section-title
+				h2 Подарки
+			.breadcrumb-slider-js.swiper-container
+				.tabs__caption.swiper-wrapper
+					.tabs__btn.active Категория подарка
+						
+					.tabs__btn.swiper-slide Еще категория
+					.tabs__btn.swiper-slide Новая категория
+					.tabs__btn.swiper-slide Категория
+			.tabs__wrap
+				mixin tab()
+					.tabs__content&attributes(attributes)
+						+e.slider.tabs__slider--js.swiper-container
+							.swiper-wrapper
+								+e.slide.swiper-slide
+									+prod-item("1",'Букет розовых роз "Розовые грёзы"','4 300 р.')
+								+e.slide.swiper-slide
+									+prod-item("2",'МОНОБУКЕТ С РОМАШКОЙ №1','8 256 р.')
+								+e.slide.swiper-slide
+									+prod-item("3",'КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"','12 300 р.')
+								+e.slide.swiper-slide
+									+prod-item("4",'БУКЕТ "БЕЗЗАБОТНОЕ ЛЕТО"','144 300 р.')
+							+arrow
+				+tab()(class="active")
+				+tab()
+				+tab()
+				+tab()
+	// end sCatalog
+
+
+mixin sCatalog-05()
+	// start sCatalog
+	+b.sCatalog.section.pt-0#sCatalog&attributes(attributes)
+		block
+		+e.row.row
+			- for (var x = 0; x < 5; x++)
+				+e.col.col-lg-4.col-sm-6
+					+prod-item("1",'Букет розовых роз "Розовые грёзы"','4 300 р.')
+				+e.col.col-lg-4.col-sm-6
+					+prod-item("2",'МОНОБУКЕТ С РОМАШКОЙ №1','8 256 р.')
+				+e.col.col-lg-4.col-sm-6
+					+prod-item("3",'КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"','12 300 р.') 
+		+e.pugin.row
+			+pugin
+	// end sCatalog
+	

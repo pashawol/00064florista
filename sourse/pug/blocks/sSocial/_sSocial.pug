@@ -1,0 +1,33 @@
+mixin sSocial()
+	// start sSocial
+	+b.SECTION.sSocial.section#sSocial&attributes(attributes)
+		.container
+			+b.section-title
+				.row
+					.col-sm-auto
+						h2 Будьте с нами в Instagram
+					.col-sm-auto
+						+e.link(href="#" target="_blank")
+							+icon("instagram")
+							| 4florista
+
+				
+			.row
+				mixin item(i)
+					+e.col.col-xl-3.col-md-6.mb-5
+						+e.item(href="#").pb-2
+							+e.DIV.img-wrap.mb-3
+								img.res-i(src=`img/@2x/instagram-${i}.jpg`, alt="")
+							+e.DIV.caption
+								.row
+									.col
+										img(src="img/@2x/icons.png", alt="")
+									.col-auto
+										img(src="img/@2x/text.png", alt="")
+				+item("1")
+				+item("2")
+				+item("3")
+				+item("4")
+			+e.btn(href="#") Перейти в профиль
+				img.ml-3(src="img/svg/arrow-lg-right.svg", alt="")
+	// end sSocial

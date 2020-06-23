@@ -1,0 +1,21 @@
+mixin headerBlock()
+	// start headerBlock
+	+b.headerBlock#headerBlock&attributes(attributes)
+		+e.slider--js.swiper-container
+			.swiper-wrapper
+				- for (var x = 0; x < 3; x++)
+					+e.slide.swiper-slide
+						+e.img-wrap.bg-wrap
+							img.img-bg.object-fit-js(src="#"   data-src="img/@2x/head-sl.jpg" class="swiper-lazy")
+						.container
+							+e.wrap
+								+e.title  Заголовок банера всегда черным цветом
+								+e.text При этом банер всегда должен быть выполнен в светлом стиле с свободной правой стороной
+								+e.btn(href="#") Узнать больше
+			.container
+				+e.control-wrap-wrap
+					+e.control-wrap
+						+arrow
+			+e.container.container
+				.swiper-pagination
+	// end headerBlock

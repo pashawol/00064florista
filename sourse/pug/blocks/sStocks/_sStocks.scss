@@ -1,0 +1,143 @@
+
+	// start .sStocks
+	.sStocks {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		.h5{
+
+		}
+		&__title{
+			span{
+
+				@extend .h3;
+				font-family: $font-family-code;
+				padding: rem(10) rem(10);
+				background-color: $body-color;
+				display: inline-block;
+				margin-bottom: rem(30);
+			}
+		}
+		&__btn{
+			@extend .btn;
+			@extend .btn-accent;
+			width: rem(168);
+			margin-top: auto;
+		}
+		&__img-wrap{
+			position: absolute;
+					@include media-breakpoint-up(lg) {
+
+						width: 50vw;
+					}
+				 
+					@include media-breakpoint-up(sm) {
+
+						// width: 50vw;
+					}
+					width: calc(100% + 15px);
+				left: 0;
+				top: 0;
+				height: 100%;
+				z-index: -1;
+				img{
+					object-position: top;
+				}
+				&::before {
+					content: '';
+					height: 100%;
+					top: 0;
+					width: 100vw;
+					position: absolute;
+						@include media-breakpoint-up(lg) {
+
+							left: calc(100% - #{rem(30)});
+						}
+						left: calc(100% + #{rem(0)});
+					transform-origin: top left;
+					background-color: #ffffff;
+					z-index: 4;
+					transform: skewX(var(--angle));
+				}
+				
+				&::after{
+					content: '';
+						@include media-breakpoint-up(lg) {
+
+							left: calc(100% - #{rem(120)});
+						}
+						left: calc(100% - #{rem(40)});
+					position: absolute;
+					// transform: skewX(var(--angle));
+					transform: rotate(calc(-1 * var(--angle)));
+					height: 90%;
+					top: 0;
+					width: 4px;
+					background-color: $primary;
+					z-index: 5;
+
+			}
+		}
+		&__block{
+			flex-grow: 1;
+			position: relative;
+			color: #ffffff;
+			display: flex;
+			flex-direction:column ;
+			padding: rem(49) rem(40);
+			position: relative;
+		
+			ul{
+				list-style: none;
+				@extend .h5;
+				font-weight: 300;
+					@include media-breakpoint-down(sm){
+						padding-bottom: rem(50);
+					}
+			}
+			li{
+				margin-bottom: rem(5);
+				@include media-breakpoint-down(sm) {
+					padding-right: rem(100);
+				}
+			}
+
+			picture{
+						&::after {
+							content: '';
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: 100%;
+							height: 100%;
+							background: linear-gradient(129.72deg, #000000 2.74%, rgba(0, 0, 0, 0) 77.06%);
+						}
+				
+			}
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sStocks

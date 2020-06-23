@@ -1,0 +1,74 @@
+mixin topLine()
+	// start topLine
+	+b.topLine#topLine&attributes(attributes)
+		+e.head
+			.container
+				.row
+					.col.g-0
+						.d-lg-none
+							+b.toggle-menu-mobile--js.d-lg-none
+								span
+						.d-none.d-lg-block
+							ul
+								li: a(href="#") О нас
+								li: a(href="#") Доставка и оплата
+								li: a(href="#") Корпоративным клиентам
+								li: a(href="#") Контакты
+								li: a(href="#") Вопрос-ответ
+								li: a(href="#") Отзывы
+								li: a.text-green2(href="#") 
+									+icon("flower")
+									| Цветочная подписка
+					.col-auto
+						+e.link(href="#"): +e.link-inner
+							+e.DIV.icon-wrap
+								+icon("feather_user-check")
+							+e.DIV.link-text.d-none.d-sm-block Войти
+					.col-auto
+						+e.link--like(href="#"): +e.link-inner
+							+e.DIV.icon-wrap--like
+								+icon("heart-outlined") 
+								+e.count--like
+					.col-auto
+						+e.link--basket(href="#"): +e.link-inner
+							+e.DIV.icon-wrap
+								+icon("basket") 
+							+e.count--active 5
+		+e.body
+			.container
+				+e.row.row
+					.col-lg-3.col
+						+e.logo(href="/")
+							img.res-i(src="img/svg/logo.svg", alt="")
+					+e.item.col-3.d-none.d-lg-block
+						+e.title Время работы:
+						+e.text  Пн — Вскр 
+							br
+							| 8.00 — 21.00
+						
+					+e.item.col.d-none.d-lg-block
+						+e.title Адрес:
+						+e.text м. Октябрьская, 4-ый Добрынинский пер.&nbsp;д.8
+							br
+							| м. Бауманская, ул. Ладожская&nbsp;10
+
+					.col-auto.text-right
+						+e.dropdown
+							+e.dropdown-head
+								+e.tel(href="tel:+7(495)642-57-97 ") +7 (495) 642-57-97 
+							+e.dropdown-toggle
+							+e.dropdown-body
+								+e.tel(href="tel:+7(495)642-57-97 ") +7 (495) 642-57-97 
+						.row.row--small
+							.col
+								.row.row--small
+									a.soc-link.col(href="#")
+										+icon("whatsapp")
+									a.soc-link.col(href="#")
+										+icon("telegram")
+									a.soc-link.col(href="#")
+										+icon("viber")
+
+							.col-auto
+								a.text-green3.fw-600(href="#") Заказать звонок
+	// end topLine

@@ -1,0 +1,100 @@
+mixin s-prod-head()
+	// start s-prod-head
+	+b.s-prod-head#s-prod-head&attributes(attributes)
+		.container
+			 
+			.row
+				.col-md-6
+					.row
+						.col-lg-10
+								.swiper-container.gallery-top
+									.swiper-wrapper
+										- for (var x = 0; x < 6; x++)
+											.swiper-slide
+												a.img-wrap.d-block(href="img/@2x/prod-item-1.jpg" data-fancybox="prod-gal")
+													img.res-i.swiper-lazy(src='#' data-src="img/@2x/prod-item-1.jpg" alt="")
+									 
+									//- .swiper-button-next.swiper-button-black
+									//- .swiper-button-prev.swiper-button-black
+						.col-lg-2
+							.swiper-container.gallery-thumbs
+								.swiper-wrapper
+									- for (var x = 0; x < 6; x++)
+										.swiper-slide
+											+e.img-wrap
+												img.res-i.swiper-lazy(src='#' data-src="img/@2x/prod-item-1.jpg" alt="") 
+							
+				.col
+					+e.buy
+						.row
+							.col
+								+e.price-wrap
+									+e.discount 12 256 р.
+									+e.normal-price 8 256 р.
+							.col-auto
+								+e.like
+									+e.icon-wrap
+										+icon('heart-outlined')
+									| В избранное
+						table
+							tr
+								th Состав:  
+								td Каллы бордовые - 6шт, гортензия белая - 1 шт, роза фиолетовая - 5 шт, гиперикум белый - 3 шт, альстромерия - 3 шт,  Роза пионовидная бомбастик - 2 шт, фисташка. 
+							tr
+								th Упаковка: 
+								td дизайнерская пленка кремовая и белая, лента фиолетовая.
+						div.pb-3.fw-600
+							a(href="#") Полное описание...
+						div.pb-1.fw-600 Размер букета:
+						.row
+							.col-sm-auto.col
+								+b.LABEL.custom-radio
+									input(type="radio" name="size")
+									+e.SPAN.text  M (35 см)
+	
+							.col-sm-auto.col
+								+b.LABEL.custom-radio
+									input(type="radio" name="size")
+									+e.SPAN.text L (45 см)
+
+							.col-sm-auto.col
+								+b.LABEL.custom-radio
+									input(type="radio" name="size")
+									+e.SPAN.text XL (55 см)
+						.row.align-items-center
+							.col-sm-auto.mb-3.order-first
+								+e.btn-basket(href="#") 
+									+e.btn-icon 
+										+icon("basket")
+									|  В корзину
+							.w-100
+							.col-sm-auto
+								+e.btn(href="#") 
+									+icon('cursor')
+									| Купить в один клик
+							.col-sm-auto
+								+e.btn(href="#") Хочу такой же но другой
+							.col-sm-auto.mb-3.order-sm-first.text-center
+								img(src="img/@2x/pay-var.png", alt="")
+						// start sAdvanteges
+						+b.sAdvanteges.d-none.d-xl-block
+								.row
+									mixin item(i,t,p)
+										+e.col.col-4
+											.row
+
+												+e.img-wrap.col-auto
+													img.res-i(src=`img/advanteges-${i}.svg`, alt="")
+												+e.caption.col
+													+e.title= t 
+						 
+									+item("2",'Пунктуальная доставка')
+									+item("3",'Анонимность' )
+									+item("4",'Фото букета перед отправкой')
+						// end sAdvanteges
+
+
+
+
+							
+	// end s-prod-head

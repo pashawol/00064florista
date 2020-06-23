@@ -1,0 +1,108 @@
+mixin s-filter()
+	.s-filter-wrap.d-lg-block
+		// start s-filter
+		mixin in-c2(typ="checkbox", text, name= typ )
+			+b.LABEL.custom-input
+				+e.INPUT.input(type= typ , name= name)&attributes(attributes)
+				+e.SPAN.lab
+				if block
+					block 
+				else
+					+e.SPAN.text= text
+		+b.s-filter&attributes(attributes) 
+			+e.head Сортировать по парамметрам
+			mixin range(c1, c2)
+				.range-wrap.price_slider_amount
+					.row
+						.col-6 
+							label
+								+e.text.SPAN От:
+								+b.INPUT.minus(type="text" readonly) 
+								span.smallest р.
+						.col-6
+							label
+								+e.text.SPAN До:
+								+b.INPUT.plus(type="text" readonly)
+								span.smallest р.
+					input.range-slider.slider-js(type='text'  data-min= c1  data-max= c2)
+
+			mixin  group(t)
+				+e.group
+					+e.title.showhide.active= t 
+						span
+							+icon('chevron-right')
+					.showhide-all
+						.showhide-all__inner
+							block
+
+		 
+			+group('Цена')
+				+range("100", "60000")
+			+group('Состав букета')
+				-
+					var list = [
+						'Гортензия',
+						'Розы',
+						'Пионы',
+						'Орхидеи',
+						'Гвоздики',
+						'Ирисы',
+						'Лилия',
+						'Ромашки',
+						'Ирисы',
+						'Лилия', 
+					]
+				each item in list
+					+in-c2("checkbox",item)
+			
+			+group('Цвет')
+				-
+					var list = [">1000",">10000",">25000",">50000"]
+				each item in list
+					+in-c2("checkbox",item)
+			+group('Тип фильтра')
+				-
+					var list = ["Да","Нет"]
+				each item in list
+					+in-c2("checkbox",item)
+			+group('Еще тип фильтра')
+				-
+					var list = ["11 Pro","11 Pro Max","11","XS","XS Max","XR","X","ASAU","8","8 Plus","8 Plus","8 Plus","8 Plus","8 Plus","8 Plus","8 Plus","8 Plus","8 Plus","8 Plus","8 Plus","8 Plus","8 Plus"]
+				each item in list
+					+in-c2("checkbox",item)
+				
+			+group('Новый тип фильтра')
+				-
+					var list = ["ASUS","A-DATA","ALCATEL","ACTIV","ACER","APACER","APPLE","ASAU","AUKEY","BLUEDIO"]
+				each item in list
+					+in-c2("checkbox",item)
+	 
+			+e.sidebar-list.row
+				.col-6
+					+e.discharge.BUTTON Сбросить
+				.col-6
+					+e.apply.BUTTON Применить
+		.d-none.d-lg-block
+			// start sForm
+			+b.sForm
+				+e.block
+					+e.caption
+						+e.title Всегда будь вкурсе последних обновлений и&nbsp;горячих скидок
+						.small Оставьте Вашу электронную почту и мы обещаем что не больше одного раза в месяц или на праздник будем присылать вам персональную скидку
+					+form-wrap
+						<div class="input-group mb-3">
+							<input type="email" class="form-control" placeholder="Ваш e-mail" aria-label="Ваш e-mail" aria-describedby="button-addon2">
+							<button class="btn btn-accent" type="button" id="button-addon2">  ОК
+							</button>
+						</div>
+						.smallest.mb-3 Отправляя форму Вы соглашаетесь с условиями пользовательского соглашения
+						.smallest Отменить подписку вы можете в письме или в #[a(href="#") личном кабинете]
+			// end sForm
+			+b.banner.bg-wrap
+				picture 
+					img.object-fit-js.img-bg(src="img/@2x/banner-mob.jpg" alt='')
+				+e.caption
+					+e.title Цветочная подписка. Вы&nbsp;никогда не&nbsp;забудете, что-то важное
+					+e.text Регулярно доставляемые цветы домой, в&nbsp;офис и&nbsp;вашим близким
+				+e.btn(href="#") Узнать больше
+	// end s-filter

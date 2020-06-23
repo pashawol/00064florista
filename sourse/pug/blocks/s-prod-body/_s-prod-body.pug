@@ -1,0 +1,149 @@
+
+mixin s-prod-body()
+	// start s-prod-body
+	+b.s-prod-body
+		+b.tabs
+			+e.caption-wrap
+				.container.breadcrumb-slider-js.swiper-container
+					+e.caption.swiper-wrapper
+						+e.btn.swiper-slide.active: span Полное описание
+						+e.btn.swiper-slide: span Оплата и доставка
+						+e.btn.swiper-slide: span Отзывы
+			+e.wrap 
+				+e.content.active
+					.container
+						.row
+							+e.description.col
+								p Состав: Каллы бордовые - 6шт, гортензия белая - 1 шт, роза фиолетовая - 5 шт, гиперикум белый - 3 шт, альстромерия - 3 шт,  Роза пионовидная бомбастик - 2 шт, фисташка. С 2005 года мы постоянно радуем наших клиентов свежими букетами и цветочными композициями. Благодаря огромному опыту работы, наши флористы с первых слов понимают любого клиента. Выслушиваем пожелания, подсказываем, что с нашей точки зрения, будет более интересным вариантом решения Вашей задумки Упаковка: дизайнерская пленка кремовая и белая, лента фиолетовая.
+
+
+				+e.content
+					.container
+						mixin tr(t1, t2)
+							tr
+								td= t1
+								td= t2
+						+e.table-wrap
+							+e.table-title Основные характеристики
+							+e.TABLE.table  
+								+tr("Серия","iPhone 11")
+								+tr("Модель","MWLT2RU/A")
+								+tr("Операционная система","iOS")
+								+tr("Технология дисплея","IPS")
+								+tr("Тип дисплея","Liquid Retina HD")
+								+tr("Диагональ/разрешение ",'6.1"/1792x828 пикс.')
+								+tr("Диагональ экрана",'6.1"(15.3 см)')
+								+tr("Безрамочный",'Да')
+						+e.table-wrap
+							+e.table-title Дисплей
+							+e.TABLE.table
+								+tr("Серия","iPhone 11")
+								+tr("Модель","MWLT2RU/A")
+								+tr("Операционная система","iOS")
+								+tr("Технология дисплея","IPS")
+				+e.content
+					.container
+						.row
+							.col-lg-8
+								mixin comment(name, surname, t)
+									+b.comment
+										.row
+											.col-sm-3
+												+e.name= name
+													span= surname
+												+b.star
+													+icon('star')(class='active')
+													+icon('star')(class='active')
+													+icon('star')(class='active')
+													+icon('star')
+													+icon('star')
+												+e.date 13.10.2019
+											.col
+												p= t
+								+comment('Витя','Огородников','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более')
+								+comment('Ольга','Смородникова','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение дизайна и композиции читаемый текст мешает')
+								+comment('Алгы','Масагамедова','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение дизайна и композиции читаемый текст мешает сосредоточДавно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное запо')
+								+comment('Ольга','Смородникова','Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение дизайна и композиции читаемый текст мешает')
+
+							.col-lg-4
+								+e.comment-rating
+									+e.five-star
+										+b.star
+											+icon('star')(class='active')
+											+icon('star')(class='active')
+											+icon('star')(class='active')
+											+icon('star')(class='active')
+											+icon('star')(class='active')
+										+e.comment-quantity
+											a(href='#') 10
+										+e.comment-progress.progress
+											.progress-bar(role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
+									+e.four-star
+										+b.star
+											+icon('star')(class='active')
+											+icon('star')(class='active')
+											+icon('star')(class='active')
+											+icon('star')(class='active')
+											+icon('star')
+										+e.comment-quantity
+											a(href='#') 15
+										+e.comment-progress.progress
+											.progress-bar(role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
+									+e.three-star
+										+b.star
+											+icon('star')(class='active')
+											+icon('star')(class='active')
+											+icon('star')(class='active')
+											+icon('star')
+											+icon('star')
+										+e.comment-quantity
+											a(href='#') 45
+										+e.comment-progress.progress
+											.progress-bar(role="progressbar" style="width: 95%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
+									+e.two-star
+										+b.star
+											+icon('star')(class='active')
+											+icon('star')(class='active')
+											+icon('star')
+											+icon('star')
+											+icon('star')
+										+e.comment-quantity
+											a(href='#') 1
+										+e.comment-progress.progress
+											.progress-bar(role="progressbar" style="width: 5%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
+									+e.one-star
+										+b.star
+											+icon('star')(class='active')
+											+icon('star')
+											+icon('star')
+											+icon('star')
+											+icon('star')
+										+e.comment-quantity 0
+										+e.comment-progress.progress
+											.progress-bar(role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100")
+								+b.review.form-wrap
+									+e.title Написать отзыв
+									+e.form-wrap
+										+input("Имя *", "text")(required)
+										+input("Город *")(required)
+										+input("E-mail *", "email")(required)
+										+e.rating Оценка
+										+b.star
+											+e.wrap
+												+icon('star')(class='active')
+											+e.wrap
+												+icon('star')(class='active')
+											+e.wrap
+												+icon('star')(class='active')
+											+e.wrap
+												+icon('star')
+											+e.wrap
+												+icon('star')
+
+										+e.you-review Ваш отзыв
+										+input('Текст отзыва', 'textarea' )
+										+e.BUTTON.btn Оставить отзыв
+
+
+
+	// end s-prod-body

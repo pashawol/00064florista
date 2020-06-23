@@ -1,0 +1,29 @@
+mixin sThenaticSelections()
+	// start sThematicSelections
+	+b.SECTION.sThematicSelections.section#sThematicSelections&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Букет “в точку”
+				.h5 Мы&nbsp;сделали для Вас тематические подборки, чтобы Вам было проще определиться с&nbsp;выбором букета
+			+e.slider--js.swiper-container
+				.swiper-wrapper
+					mixin item(i,l, t)
+						+e.slide.swiper-slide
+							+e.item.bg-wrap(href="#")
+								img.img-bg.object-fit-js.swiper-lazy(src="#" data-src=`img/@2x/sThenaticSelections-${i}.jpg`, alt="")
+								+e.DIV.label= l
+
+								if block
+									block
+								else
+									+e.DIV.title: span= t
+					+item("1","15 букетов")
+						+e.DIV.title
+							span 8 марта
+							span у маленьких девчат
+
+					+item("2","3 букета",'Майская фиерия')
+					+item("3","3 букета",'Чудеса в корзинке')
+				
+				.swiper-scrollbar.d-none.d-sm-block
+	// end sThematicSelections

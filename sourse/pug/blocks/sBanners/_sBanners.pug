@@ -1,0 +1,13 @@
+mixin sBanners()
+	// start sBanners
+	+b.sBanners.section#sBanners&attributes(attributes)
+		.container
+			+b.banner.bg-wrap
+				picture
+					source(media="(min-width: 768px)", srcset="img/@2x/banner.jpg")
+					img.object-fit-js.img-bg(src="img/@2x/banner-mob.jpg" alt='')
+				+e.caption
+					+e.title Цветочная подписка. Вы&nbsp;никогда не&nbsp;забудете, что-то важное
+					+e.text Регулярно доставляемые цветы домой, в&nbsp;офис и&nbsp;вашим близким
+				+e.btn(href="#") Узнать больше
+	// end sBanners

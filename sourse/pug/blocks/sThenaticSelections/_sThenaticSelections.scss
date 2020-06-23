@@ -1,0 +1,101 @@
+
+	// start .sThenaticSelections
+	.sThematicSelections {
+		padding-bottom: 0;
+		padding-top: calc(var(--sPT) - #{rem(25)});
+		.h5{
+			max-width: rem(660);
+		}
+		&__slider{
+			overflow: inherit;
+			padding-bottom: rem(68);
+		}
+		&__slide{
+				@include media-breakpoint-up(sm) {
+
+					max-width: rem(589);
+				}
+				max-width: 280px;
+		}
+		 
+		&__item{
+			display: block;
+			@include block(589,480);
+		}
+		&__label{
+			color: #ffffff;
+			font-size: $small;
+			letter-spacing: 0.03em;
+			padding: rem(10) rem(10);
+			position: absolute;
+			right: rem(20);
+			top: rem(24);
+			font-weight: 600;
+			background-color: $green3; 
+			letter-spacing: 0.03em;
+				@include media-breakpoint-down(sm){
+					left: rem(20);
+					right: auto;
+				}
+		}
+		&__title{
+			@extend .h3;
+			font-family: $font-family-code;
+			position: absolute;
+			left: rem(-10);
+			@include media-breakpoint-down(sm){
+				font-size: 16px;
+				max-width: rem(300);
+				bottom: rem(5);
+			}
+			bottom: rem(32);
+		 
+			max-width: rem(400);
+			span{
+				display: inline-block;
+				color: #ffffff;
+				background-color: $body-color;
+				padding: rem(10);
+				margin-bottom: rem(3);
+				letter-spacing: 0.06em;
+
+			}
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sThenaticSelections
+
+.swiper-scrollbar{
+	border-radius: 4px;
+	background-color: #f2f2f2;
+	height: rem(8) !important;
+	margin-top: rem(60);
+}
+.swiper-scrollbar-drag{
+	border-radius: 4px;
+	background-color: $primary;
+	height: rem(8);
+	cursor: pointer;
+}

@@ -1,0 +1,20 @@
+mixin sAdvanteges()
+	// start sAdvanteges
+	+b.sAdvanteges.section#sAdvanteges&attributes(attributes)
+		.container
+			
+			.row
+				mixin item(i,t,p)
+					+e.col.col-xl-3.col-sm-6
+						.row
+
+							+e.img-wrap.col-auto
+								img.res-i(src=`img/advanteges-${i}.svg`, alt="")
+							+e.caption.col
+								+e.title= t
+								p!= p
+				+item("1",'Уникальность',`Все букеты разработаны в&nbsp;мастерской 4Флориста`)
+				+item("2",'Пунктуальная доставка',`Пунктуальная и&nbsp;тактичная доставка`)
+				+item("3",'Конфиденциальность',`При этом банер всегда должен быть выполнен`)
+				+item("4",'Фото букета перед отправкой',`Мы&nbsp;не&nbsp;отправляем вам ваш заказ пока вы&nbsp;не&nbsp;увидеите его на&nbsp;фото`)
+	// end sAdvanteges

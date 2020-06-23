@@ -1,0 +1,73 @@
+mixin mob-mnu()
+	-
+		//- let path = require('path');
+		//- let fs = require('fs');
+		//- var requestURL = 'top-nav.json';
+		//- var request = new XMLHttpRequest();
+		//- request.open('GET', requestURL);
+		//- request.responseType = 'json';
+		//- let dataJson = JSON.parse(json);
+	//- h1= dataJson['lala'] 
+	
+	+b.menu-mobile--js.d-lg-none
+		+b.toggle-menu-mobile--js
+			span
+		+e.inner
+		
+			+mnu()
+			ul
+				li: a(href="#") О нас
+				li: a(href="#") Доставка и оплата
+				li: a(href="#") Корпоративным клиентам
+				li: a(href="#") Контакты
+				li: a(href="#") Вопрос-ответ
+				li: a(href="#") Отзывы
+				li: a.text-green2(href="#") 
+					+icon("flower")
+					| Цветочная подписка
+			+b.topLine.container
+				+e.body
+					+e.item.col-12
+						+e.title Время работы:
+						+e.text  Пн — Вскр 
+							br
+							| 8.00 — 21.00
+						
+					+e.item.col-12
+						+e.title Адрес:
+						+e.text м. Октябрьская, 4-ый Добрынинский пер.&nbsp;д.8
+							br
+							| м. Бауманская, ул. Ладожская&nbsp;10
+
+					.col-12
+						+e.tel.mb-3(href="tel:+7(495)642-57-97 ") +7 (495) 642-57-97 
+						 
+						+e.tel.mb-3(href="tel:+7(495)642-57-97 ") +7 (495) 642-57-97 
+						.row
+							.col.pb-3
+								.row
+									a.soc-link.col-auto(href="#")
+										+icon("whatsapp")
+									a.soc-link.col-auto(href="#")
+										+icon("telegram")
+									a.soc-link.col-auto(href="#")
+										+icon("viber")
+
+							.col-12
+								a.text-green3.fw-600(href="#") Заказать звонок
+			.text-right
+	//  мобильное меню
+mixin top-nav() 
+	// start top-nav
+	+b.top-nav.block-with-lazy
+		.container
+			.row
+				.col.d-none.d-lg-block
+					+mnu()
+				.col-lg-auto.col
+					+b.search-block
+						button(type='button')
+							+icon('search')
+						input(type="text" placeholder="Поиск по каталогу")
+					
+	// end top-nav

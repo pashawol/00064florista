@@ -1,0 +1,29 @@
+mixin sAbout()
+	// start sAbout
+	+b.SECTION.sAbout.section#sAbout&attributes(attributes)
+		.container
+			.row
+				.col-lg-6
+					+b.section-title
+						h2 #[span.text-primary 4florista]&nbsp;&mdash; это семья единомышленников  и&nbsp;профессионалов
+						.h5 С&nbsp;2005 года мы&nbsp;постоянно радуем наших клиентов свежими букетами и&nbsp;цветочными композициями. Благодаря огромному опыту работы, наши флористы с&nbsp;первых слов понимают любого клиента. Выслушиваем пожелания, подсказываем, что с&nbsp;нашей точки зрения, будет более интересным вариантом решения Вашей задумки
+
+						.h5 Многие из&nbsp;Вас знают нас, как талантливых декораторов. Одно из&nbsp;основных направлений нашей деятельности&nbsp;&mdash; оформление свадеб цветами.
+					+e.btn(href="#") Узнать больше
+				+e.col.col-lg-6
+					+e.wrap
+						+e.title Скачайте наше приложение и&nbsp;получайте цветы в&nbsp;подарок!
+						+e.links
+							
+								
+									+e.link(href="#")
+										img.res-i(src="img/@2x/appstore.png", alt="")
+								
+							
+								 
+									+e.link(href="#")
+										img.res-i(src="img/@2x/gplay.png", alt="")
+
+						+pic("api.png")
+			.row
+	// end sAbout

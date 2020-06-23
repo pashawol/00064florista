@@ -1,0 +1,33 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sAdvanteges/_sAdvanteges.pug 
+include ../blocks/sCatalog/_sCatalog.pug 
+include ../blocks/sThenaticSelections/_sThenaticSelections.pug 
+include ../blocks/sBanners/_sBanners.pug 
+include ../blocks/sBest/_sBest.pug 
+include ../blocks/sStocks/_sStocks.pug 
+include ../blocks/sAbout/_sAbout.pug 
+include ../blocks/sSocial/_sSocial.pug 
+include ../blocks/sGal/_sGal.pug 
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'Доставка и оплата'
+	title= title
+block pagecontent 
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+	+breadcrumb('Главная ','  Букеты ','  Монобукеты ','  Букет с каллами "Сказочная тайга"'  )
+	+page-head(title)
+	+b.head-banner.bg-wrap
+		.container
+		+pic("shipping.jpg")
+	+sContent
+	+sGal
+	+footer()

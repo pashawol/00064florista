@@ -1,0 +1,39 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sAdvanteges/_sAdvanteges.pug 
+include ../blocks/sCatalog/_sCatalog.pug 
+include ../blocks/sThenaticSelections/_sThenaticSelections.pug 
+include ../blocks/sBanners/_sBanners.pug 
+include ../blocks/sBest/_sBest.pug 
+include ../blocks/sStocks/_sStocks.pug 
+include ../blocks/sAbout/_sAbout.pug 
+include ../blocks/sSocial/_sSocial.pug 
+
+block variables
+	- let  mainPage= null
+block title
+	- let  title= 'title'
+	title= title
+block pagecontent 
+	+mob-mnu()
+	+header()
+		+topLine()
+		+top-nav()
+	+headerBlock()
+	+sAdvanteges
+	+sCatalog
+	+sThenaticSelections
+	+sBanners
+	.container
+		.row
+			.col-lg-6
+				+sBest
+			.col-lg-6
+				+sStocks
+	+sForm()
+	+sAbout
+	+sSocial
+	+footer()

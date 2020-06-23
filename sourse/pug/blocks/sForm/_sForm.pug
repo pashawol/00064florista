@@ -1,0 +1,19 @@
+mixin sForm()
+	// start sForm
+	+b.SECTION.sForm.section#sForm&attributes(attributes)
+		.container
+			+e.block
+				+e.caption
+					+e.title Мы очень любим своих клиентов
+					+e.text и&nbsp;постоянно радуем их&nbsp;выгодными предложениями  Оставьте Вашу электронную почту и&nbsp;мы&nbsp;обещаем что не&nbsp;больше одного раза в&nbsp;месяц или на&nbsp;праздник будем присылать вам персональную скидку
+				+form-wrap
+					<div class="input-group mb-3">
+						<input type="email" class="form-control" placeholder="Ваш e-mail" aria-label="Ваш e-mail" aria-describedby="button-addon2">
+						<button class="btn btn-accent" type="button" id="button-addon2">
+							span.d-none.d-sm-block Отправить
+							span.d-sm-none ОК
+						</button>
+					</div>
+					.smallest.mb-xl-5.mb-3 Отправляя форму Вы соглашаетесь с условиями пользовательского соглашения
+					.smallest Отменить подписку вы можете в письме или в #[a(href="#") личном кабинете]
+	// end sForm

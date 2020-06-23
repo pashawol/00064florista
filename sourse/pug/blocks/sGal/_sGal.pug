@@ -1,0 +1,13 @@
+mixin sGal()
+	// start sGal
+	+b.sGal.section#sGal&attributes(attributes)
+		+e.slider--js.swiper-container
+			.swiper-wrapper
+				- for (var x = 1; x < 6; x++)
+					+e.slide.swiper-slide
+						+e.img-wrap(href=`img/@2x/gal-${x}.jpg` data-fancybox="gal")
+							img.object-fit-js.swiper-lazy.img-bg(src="#" data-src=`img/@2x/gal-${x}.jpg` , alt="")
+
+						
+
+	// end sGal

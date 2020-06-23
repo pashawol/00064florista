@@ -1,0 +1,25 @@
+$default-font: "AcerFoco";
+$mono: "Prata";
+// $file-form: ($file-formats: woff2 woff ttf);
+$addr: '../fonts/';
+$file-format: woff2;
+
+@include font-face ($default-font, $addr + "Foco-Regular/Foco-Regular", $file-formats: $file-format);
+@include font-face ($default-font, $addr + "FocoLight-Regular/FocoLight-Regular", 300, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "Foco-Bold/Foco-Bold", bold, $file-formats: $file-format);
+@include font-face ($default-font, $addr + "AcerFoco-Semibold/AcerFoco-Semibold", 600, $file-formats: $file-format);
+@include font-face ($mono, $addr + "Prata-Regular/Prata-Regular", 400, $file-formats: $file-format);
+
+// font-weight helper:
+.fw-600{
+	font-weight: 600;
+}
+// 100 Thin
+// 200 Extra Light
+// 300 Light
+// 400 Normal
+// 500 Medium
+// 600 Semi Bold
+// 700 Bold
+// 800 Extra Bold
+// 900 Ultra Bold

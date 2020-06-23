@@ -1,0 +1,70 @@
+mixin footer()
+	+b.FOOTER.footer.block-with-lazy
+		+e.body
+			.container
+				.row
+					.col-xxl-3.col-sm
+						+e.catalog
+							.d-sm-none
+							.d-none.d-sm-block
+								+mnu
+					.col-xxl-2.col-sm-auto.order-sm-first
+						+e.nav
+							ul
+								li: a(href="#") Контакты
+								li: a(href="#") Вопрос-ответ
+								li: a(href="#") О нас
+								li: a(href="#") Доставка и оплата
+								li: a(href="#") Корпоративным клиентам
+								li: a(href="#") Отзывы
+					.col-xxl-3.col-auto
+						+e.item
+							+icon("time")
+							+e.title Время работы:
+							+e.text  Пн — Вскр  
+								br
+								| 8.00 — 21.00
+							
+						+e.item
+							+icon("mark")
+							+e.title Адрес:
+							+e.text м. Октябрьская, 4-ый Добрынинский пер.&nbsp;д.8
+								br
+								| м. Бауманская, ул. Ладожская&nbsp;10
+					.d-xl-none.col-12
+					.col.d-none.d-md-block
+						+e.title Скачайте наше  приложение:
+						+e.links 
+							+e.link(href="#")
+								img.res-i(src="img/@2x/appstore.png", alt="") 
+							 
+							+e.link(href="#")
+								img.res-i(src="img/@2x/gplay.png", alt="")
+					.col-md-auto
+						.text-md-right.text-center
+							+e.tel(href="tel:+7(495)642-57-97 ") +7 (495) 642-57-97  
+							br
+							+e.tel(href="tel:+7(495)642-57-97 ") +7 (495) 642-57-97 
+						.row
+							.col
+								.row
+									a.soc-link.col-auto(href="#")
+										+icon("whatsapp")
+									a.soc-link.col-auto(href="#")
+										+icon("telegram")
+									a.soc-link.col-auto(href="#")
+										+icon("viber")
+
+							.col-auto
+								a.text-green3.fw-600(href="#") Заказать звонок
+		+e.foot.container
+			.row
+				.col-xl-2.col.small.order-first.pb-3.d-none.d-md-block © 2020
+				.col-xl-2.col-sm-auto.col.text-sm-center.pb-3
+					a(href="mailto:info@4florista.ru") info@4florista.ru
+				.col-auto.pb-3
+					+soc()
+				.col-xl-3.order-xl-first.pb-3
+					a(href="#") Политика в отношении обработки персональных данных
+				.col.order-xl-first.pb-3
+					a(href="#") Согласие на обработку персональных данных

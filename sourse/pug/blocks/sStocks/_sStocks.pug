@@ -1,0 +1,18 @@
+mixin sStocks()
+	// start sStocks
+	+b.SECTION.sStocks.section#sStocks&attributes(attributes) 
+		+b.section-title
+			h2 Каждому бизнесу по&nbsp;розе
+			.h5 У&nbsp;нас есть выгодное предложение для корпоративных клиентов
+		+e.block
+			+e.img-wrap.bg-wrap
+				+pic('stock','bg')(class="picture-bg")
+			+e.title  
+				span Скидки до 10%
+			ul
+				li Безналичный расчет
+				li Корпоративные скидки сотрудникам
+				li Закрывающие документы
+				li Флористическое брендирование
+			+e.btn(href="#") Узнать больше
+	// end sStocks

@@ -1,0 +1,109 @@
+
+	// start .prod-item
+	.prod-item {
+		 position: relative;
+		 position: relative;
+		 z-index: 2;
+		 margin-left: auto;
+		 margin-right: auto;
+		 max-width: 376px;
+	
+		 &::before{
+			 content: '';
+				z-index: -1;
+				@include a-cent;
+				background: #FFFFFF;
+				box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.25);
+				border-radius: 8px;
+				position: absolute;
+				@include mt;
+				width: 1px;
+				height: 1px;
+			}
+			&:hover{
+				z-index: 4;
+				&::before{
+					//  content: '';
+					opacity: 1;
+					width: calc(100% + var(--prodBorder) * 2);
+					height: calc(100% + var(--prodBorder) * 2);
+			 }
+		 }
+		 &__img-wrap{
+			 display: block;
+			 text-align: center;
+			 margin-bottom: rem(15);
+		 }
+		 &__title{
+			 text-transform: uppercase;
+			 padding-bottom: rem(10);
+			 a{
+				 color: #595959 !important;
+			 }
+		 }
+		 .row{
+			 align-items: center;
+			--bs-gutter-x: 16px;
+		 }
+		 &__price{
+			 font-family: $font-family-code;
+			 @extend .h4;
+			 letter-spacing: 0.06em;
+			 margin-bottom: 0;
+		 }
+		 
+		 &__btn{
+			 background: none;
+			 border: 1px solid currentColor;
+			 width: rem(40);
+			 height: rem(40);
+			 border-radius: 50%;
+			 display: flex;
+			 align-items: center;
+			 justify-content: center;
+			 @include mt;
+			 .icon{
+				 flex: 0 0 auto;
+				 font-size: rem(22);
+				}
+				&:hover{
+					background-color: $primary;
+					border-color: $primary;
+					color: #ffffff;
+				}
+				&--basket{
+					color: $primary;
+				}
+			}
+			&__strike{
+				font-size: 1rem;
+				text-decoration-line: line-through;
+				font-family: $font-family-code;
+				
+			}
+			
+			@include media-breakpoint-up(xl) {}
+			@include media-breakpoint-up(lg) {}
+			@include media-breakpoint-up(md) {}
+			@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.prod-item
