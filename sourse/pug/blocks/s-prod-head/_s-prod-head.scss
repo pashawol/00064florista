@@ -24,10 +24,7 @@
 		max-height: rem(104);
 		max-width: rem(104);
 		position: relative;
-			@include media-breakpoint-up(md){
-
-				margin-bottom: 33px;
-			}
+		
 	 img{
 		 @extend .object-fit-js;
 	 }
@@ -35,6 +32,10 @@
 
 	.gallery-thumbs {
 		.swiper-slide{
+				@include media-breakpoint-up(md) {
+
+					margin-bottom: 33px;
+				}
 			@include media-breakpoint-up(xl) {
 
 				max-width: rem(104);
@@ -53,6 +54,10 @@
 		max-height: rem(652); 
 	}
 	}
+		 @include media-breakpoint-up(xxl){
+			 max-height: 652px; 
+
+		 }
 		 @include media-breakpoint-up(xl){
 				margin-top: 0;
 			 max-height: 450px; 

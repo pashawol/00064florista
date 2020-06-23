@@ -255,30 +255,30 @@ function eventHandler() {
 			type: 'bullets',
 			clickable: true
 		}
-	}));
-	$('.sCatalog__slider--js').each(function () {
-		var swiper5 = new Swiper(this, _objectSpread(_objectSpread({}, defaultSl), {}, {
-			spaceBetween: 30,
-			navigation: {
-				nextEl: $(this).find('.sCatalog .swiper-button-next'),
-				prevEl: $(this).find('.sCatalog .swiper-button-prev')
+	})); // $('.sCatalog__slider--js').each(function () { 
+
+	var swiper5 = new Swiper('.sCatalog__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		spaceBetween: 30,
+		navigation: {
+			nextEl: '.sCatalog .swiper-button-next',
+			prevEl: '.sCatalog .swiper-button-prev'
+		},
+		breakpoints: {
+			// when window width is >= 320px
+			// when window width is >= 480px
+			576: {
+				slidesPerView: 2
 			},
-			breakpoints: {
-				// when window width is >= 320px
-				// when window width is >= 480px
-				576: {
-					slidesPerView: 2
-				},
-				// when window width is >= 640px
-				992: {
-					slidesPerView: 3
-				},
-				1200: {
-					slidesPerView: 4
-				}
+			// when window width is >= 640px
+			992: {
+				slidesPerView: 3
+			},
+			1200: {
+				slidesPerView: 4
 			}
-		}));
-	});
+		}
+	})); // })
+
 	var swiper6 = new Swiper('.sThematicSelections__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, (_objectSpread2 = {
 		spaceBetween: 30,
 		slidesPerView: 'auto',
