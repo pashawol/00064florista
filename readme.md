@@ -6,3 +6,6 @@
 1. <https://pashawol.github.io/00064florista/public/05-checkout.html>
 1. <https://pashawol.github.io/00064florista/public/06-personal-area.html>
 1. <https://pashawol.github.io/00064florista/public/06-personal-area-has-entity.html>
+1. <https://pashawol.github.io/00064florista/public/07-pa-order-story.html>
+1. <https://pashawol.github.io/00064florista/public/08-pa-calendar.html>
+1. <https://pashawol.github.io/00064florista/public/>
