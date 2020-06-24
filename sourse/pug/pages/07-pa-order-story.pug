@@ -1,6 +1,5 @@
 extends layout/main.pug
 
-
 include ../blocks/sContent/_sContent.pug
 include ../blocks/sContact/_sContact.pug 
 include ../blocks/sAdvanteges/_sAdvanteges.pug 
@@ -19,6 +18,7 @@ include ../blocks/sSeo/_sSeo.pug
 
 	//personal Area
 include ../blocks/sPersonalData/_sPersonalData.pug
+include ../blocks/sPAOrderLog/_sPAOrderLog.pug
 
 
 block variables
@@ -46,15 +46,14 @@ block pagecontent
 				.swiper-container.pa-nav-slider-js
 					.swiper-wrapper
 						.swiper-slide
-							+e.A.nav-link.active(href="#") Личные данные
+							+e.A.nav-link(href="#") Личные данные
 						.swiper-slide
-							+e.A.nav-link(href="#") История заказов
+							+e.A.nav-link.active(href="#") История заказов
 						.swiper-slide
 							+e.A.nav-link(href="#") Календарь
 						.swiper-slide
 							+e.A.nav-link(href="#") Адреса
-		+sPersonalData()
-			+hasEnitity()
+		+sPAOrderLog()
 	//-+sSocial
 	+footer()
 	// end sPersonalData

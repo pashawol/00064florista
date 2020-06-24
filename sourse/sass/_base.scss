@@ -583,3 +583,64 @@ a,
 	}
  
 }
+
+//plus btn frame
+.plus-btn-frame{
+	height: rem(45);
+	display: inline-flex;
+
+	.plus-cont{
+		position: relative;
+		//display: flex;
+		width: rem(51);
+		line-height: rem(45);
+		text-align: center;
+
+		//txt
+		font-family: $mono;
+		font-size: rem(30px);
+		color: $white;
+		margin-right: 5px;
+
+		//bg
+		&:before{
+			z-index: -1;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform: skew(calc(1 * var(--angle)));
+			width: 100%;
+			height: 100%;
+
+			background: linear-gradient(92.3deg, #8BB710 17.69%, rgba(139, 183, 16, 0) 762.01%);
+		}
+	}
+	.add-txt{
+		position: relative;
+		//width: rem(257);
+		line-height: rem(45);
+		text-align: left;
+		padding: 0 25px 0 25px;
+
+		//txt
+		font-weight: 600;
+		font-size: rem(20px);
+		color: #4D4D4D;
+
+
+		&:before{
+			z-index: -1;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform: skew(calc(1 * var(--angle)));
+			width: 100%;
+			height: 100%;
+
+			border: 1px solid #8BB710;
+		}
+
+	}
+}

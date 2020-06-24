@@ -189,7 +189,7 @@ function eventHandler() {
 	JSCCommon.customRange(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/PersonalA-has-entity.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/pa-address.png);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -393,7 +393,31 @@ function eventHandler() {
 	$(".showhide").click(function () {
 		$(this).toggleClass("active").next().slideToggle();
 	}); //luckyoneJs
-	//end luckyoneJs
+
+	var paNavSlider;
+	window.setTimeout(function () {
+		paNavSlider = new Swiper('.pa-nav-slider-js', {
+			//spaceBetween: 72,
+			breakpoints: {
+				320: {
+					spaceBetween: 21
+				},
+				768: {
+					spaceBetween: 72
+				}
+			},
+			slidesPerView: 'auto',
+			freeMode: true,
+			freeModeMomentum: true,
+			watchOverflow: true
+		});
+	}, 300);
+	$('.content-header-js').click(function () {
+		$(this).toggleClass('active');
+		$(this.parentElement).find('.content-items-js').slideToggle(function () {
+			$(this).toggleClass('active');
+		});
+	}); //end luckyoneJs
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 

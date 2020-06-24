@@ -44,7 +44,7 @@
 			width: rem(376);
 			max-width: calc(60% - 12px);
 		}
-		@include media-breakpoint-up(md){
+		@include media-breakpoint-up(xl){
 			max-width: calc(50% - 15px);
 		}
 
@@ -56,7 +56,7 @@
 			width: rem(376);
 			max-width: calc(40% - 12px);
 		}
-		@include media-breakpoint-up(md){
+		@include media-breakpoint-up(xl){
 			max-width: calc(50% - 15px);
 		}
 
@@ -73,68 +73,14 @@
 
 	//add entity
 	&__add-entity-bnt{
-		display: inline-flex;
-		height: rem(45);
-		margin-bottom: rem(25);
+		@extend .plus-btn-frame;
 
+		margin-bottom: rem(25);
 		@include media-breakpoint-up(xxl){
 			margin-left: 12px;
 		}
 	}
-	&__plus-cont{
-		position: relative;
-		//display: flex;
-		width: rem(51);
-		line-height: rem(45);
-		text-align: center;
 
-		//txt
-		font-family: $mono;
-		font-size: rem(30px);
-		color: $white;
-		margin-right: 5px;
-
-		//bg
-		&:before{
-			z-index: -1;
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0;
-			transform: skew(calc(1 * var(--angle)));
-			width: 100%;
-			height: 100%;
-
-			background: linear-gradient(92.3deg, #8BB710 17.69%, rgba(139, 183, 16, 0) 762.01%);
-		}
-	}
-	&__add-txt{
-		position: relative;
-		//width: rem(257);
-		line-height: rem(45);
-		text-align: left;
-		padding: 0 25px 0 25px;
-
-		//txt
-		font-weight: 600;
-		font-size: rem(20px);
-		color: #4D4D4D;
-
-
-		&:before{
-			z-index: -1;
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0;
-			transform: skew(calc(1 * var(--angle)));
-			width: 100%;
-			height: 100%;
-
-			border: 1px solid #8BB710;
-		}
-
-	}
 	&__after-txt-cont{
 		max-width: 370px;
 		p{
@@ -223,7 +169,7 @@
 			line-height: rem(24px);
 			color: #015F38;
 		}
-		.red-link{
+		.link-pink{
 
 			@include media-breakpoint-up(sm){
 				margin-left: auto;
@@ -231,8 +177,7 @@
 			display: block;
 
 			font-size: rem(16px);
-			line-height: rem(24px);
-			color: #DF3F96;
+			line-height: (24/16);
 		}
 	}
 	&__{}
@@ -269,8 +214,10 @@
 
 //page header PersonalA
 .personalA-page-head{
-	padding-top: 40px;
-
+	padding-top: 15px;
+	@include media-breakpoint-up(md){
+		padding-top: rem(40px);
+	}
 
 	//headline and discount strip
 	&__header-row{
@@ -279,7 +226,10 @@
 				padding-left: 25px;
 			}
 		}
-		padding-bottom: 42px;
+
+		@include media-breakpoint-up(md){
+			padding-bottom: 42px;
+		}
 	}
 
 	&__headline-col{
@@ -288,6 +238,12 @@
 			padding-bottom: 0px;
 		}
 		h1{
+
+			margin-left: 10px;
+			@include media-breakpoint-up(sm){
+				margin-left: 0px;
+			}
+
 			@extend .h2;
 			font-family: $font-family-code;
 			position: relative;
@@ -312,20 +268,20 @@
 
 	}
 	&__your-discount-cont{
-		//margin-left: auto;
-		width: 512px;
-
-		max-width: 100%;
-		@include media-breakpoint-up(sm){
-			display: flex;
-			height: rem(40px);
-		}
-
+		display: flex;
 		align-items: center;
-		padding: rem(10px) rem(3px) rem(10px) rem(22px);
-
+		height: 40px;
 		position: relative;
 
+		width: 100vw;
+		left: calc(-1 * (100vw - 100%) / 2);
+		@include media-breakpoint-up(sm){
+			left: unset;
+			width: 512px;
+			max-width: 100%;
+		}
+
+		padding: 10px 3px 10px 22px;
 		margin-bottom: rem(13);
 
 		&:before{
@@ -336,33 +292,55 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background: linear-gradient(92.31deg, #8BB710 2.3%, rgba(139, 183, 16, 0) 99.03%);
+			background: linear-gradient(92.31deg, #8BB710 2.3%, #d8e7af 99.03%);
 
-			transform: skew(calc(1 * var(--angle)));
+			@include media-breakpoint-up(sm){
+				background: linear-gradient(92.31deg, #8BB710 2.3%, rgba(139, 183, 16, 0) 99.03%);
+				transform: skew(calc(1 * var(--angle)));
+			}
+			//d8e7af
+
 		}
 	}
 	&__white-txt{
 		white-space: nowrap;
-
 		font-weight: 600;
-		font-size: rem(20px);
-		line-height: 1.5;
 		color: $white;
 
-		margin-right: rem(57px);
+		font-size: 16px;
+		margin-right: 20px;
+		@include media-breakpoint-up(sm){
+			font-size: rem(20px);
+			margin-right: rem(57px);
+		}
+		line-height: 1.5;
+
+
 	}
 	&__black-txt{
 		font-family: $default-font;
 
-		white-space: nowrap;
-
-		font-size: rem(12px);
-		line-height: rem(30px);
+		margin-left: auto;
+		margin-right: 10px;
+		max-width: 130px;
+		font-size: 12px;
+		line-height: 14px;
+		@include media-breakpoint-up(sm){
+			white-space: nowrap;
+			margin-left: 0;
+			margin-right: 0;
+			max-width: 100%;
+			font-size: rem(12px);
+			line-height: rem(30px);
+		}
 		letter-spacing: 0.03em;
 		color: #4D4D4D;
 	}
 	&__learn-more-link{
-		display: block;
+		display: none;
+		@include media-breakpoint-up(md){
+			display: block;
+		}
 		padding-left: rem(22px);
 
 		font-weight: 600;
@@ -373,44 +351,42 @@
 	}
 	//pa-nav-links
 
+	&__pa-nav-slider{
+		position: relative;
 
-	&__pa-nav-links{
-		margin-bottom: 57px;
-
-		flex-wrap: wrap;
+		margin-bottom: 25px;
 		@include media-breakpoint-up(md){
-			flex-wrap: nowrap;
+			margin-bottom: 57px;
 		}
-		display: flex;
-		align-items: center;
-		@include media-breakpoint-up(xxl){
-			padding-left: 8px;
+		.swiper-container{
+			@include media-breakpoint-down(sm){
+				overflow: visible !important;
+			}
+		}
+		.swiper-slide{
+			width: auto;
 		}
 	}
 	&__nav-link{
 		align-items: center;
-
 		font-weight: 600;
-		font-size: rem(19px);
-		//font-size: 20px;
-		line-height: rem(30px);
 		color: #4D4D4D;
 		@include mt();
 
+		font-size: 16px;
+		line-height: 25px;
 
-		width: 100%;
-		@include media-breakpoint-up(sm){
-			width: 50%;
-		}
-		margin-bottom: rem(20);
+
 		display: flex;
 		justify-content: center;
 		@include media-breakpoint-up(md){
-			margin-right: rem(72);
-			margin-bottom: 0;
+			font-size: rem(19px);
+			line-height: rem(30px);
+
 			width: auto;
 			display: inline-flex;
 			justify-content: flex-start;
+			//align-items: center;
 		}
 
 		&:hover{
@@ -418,7 +394,7 @@
 		}
 		&.active{
 			color: $primary;
-
+			padding-left: 10px;
 			&:before, &:after{
 				content: '';
 				display: inline-block;
@@ -437,7 +413,6 @@
 			}
 		}
 	}
-
 
 	&__{}
 	&__{}
@@ -461,14 +436,10 @@
 	&__title{
 		display: block;
 		margin-bottom: rem(10);
-		font-family: $default-font;
 
-		//font-size: rem(12px);
-		//line-height: rem(14px);
-		font-size: 12px;
-		line-height: 14px;
-		//letter-spacing: 0.03em;
-		color: $black;
+		font-size: rem(12px);
+		line-height: (14/12);
+		letter-spacing: 0.03em;
 	}
 	&__input{
 		height: rem(48);

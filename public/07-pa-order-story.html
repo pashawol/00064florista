@@ -257,9 +257,9 @@
 					<div class="personalA-page-head__pa-nav-slider">
 						<div class="swiper-container pa-nav-slider-js">
 							<div class="swiper-wrapper">
-								<div class="swiper-slide"><a class="personalA-page-head__nav-link active" href="#">Личные данные</a>
+								<div class="swiper-slide"><a class="personalA-page-head__nav-link" href="#">Личные данные</a>
 								</div>
-								<div class="swiper-slide"><a class="personalA-page-head__nav-link" href="#">История заказов</a>
+								<div class="swiper-slide"><a class="personalA-page-head__nav-link active" href="#">История заказов</a>
 								</div>
 								<div class="swiper-slide"><a class="personalA-page-head__nav-link" href="#">Календарь</a>
 								</div>
@@ -269,92 +269,208 @@
 						</div>
 					</div>
 				</div>
-				<!-- start sPersonalData-->
-				<div class="sPersonalData" id="sPersonalData">
+				<!-- start sPAOrderLog-->
+				<div class="sPAOrderLog" id="sPAOrderLog">
 					<div class="container">
-						<div class="sPersonalData__row row">
-							<div class="sPersonalData__individual-col col-lg-7 col-xxl-8">
-								<div class="sPersonalData__col-headline">Данные физ.лица
-								</div>
-								<div class="sPersonalData__individual-box">
-									<div class="sPersonalData__left-col">
-										<div class="form-wrap">
-											<form>
-												<input type="hidden" name="example-input-field"/>
-												<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
-												<input class="utm_source" type="hidden" name="utm_source"/>
-												<input class="utm_term" type="hidden" name="utm_term"/>
-												<input class="utm_medium" type="hidden" name="utm_medium"/>
-												<input class="utm_campaign" type="hidden" name="utm_campaign"/>
-												<div class="form-wrap__input-wrap form-group">
-													<label><span class="form-wrap__title">ФИО</span><input class="form-wrap__input form-control" type="text" placeholder="ФИО" name="name_inp" value="Валидарский Александр Николаевич"/>
-													</label>
+						<div class="row">
+							<div class="sPAOrderLog__table-col col-xl-8">
+								<div class="sPAOrderLog__table-cont">
+									<div class="sPAOrderLog__table-item">
+										<div class="sPAOrderLog__table-item-header">
+											<div class="sPAOrderLog__table-item-cell order-cell">
+												<div class="sPAOrderLog__th-headline">Номер заказа
 												</div>
-												<!-- +e.input-wrap-->
-												<div class="form-wrap__input-wrap form-group">
-													<label><span class="form-wrap__title">Ваш e-mail</span><input class="form-wrap__input form-control" type="email" placeholder="Ваш e-mail" name="email" value="sample@sample.com"/>
-													</label>
+												<div class="sPAOrderLog__th-content">65889
 												</div>
-												<!-- +e.input-wrap-->
-												<div class="form-wrap__input-wrap form-group">
-													<label><span class="form-wrap__title">Номер телефона</span><input class="form-wrap__input form-control" type="tel" placeholder="Номер телефона" name="tel" value="+7 ( 985 ) 568 - 20 - 12"/>
-													</label>
+											</div>
+											<div class="sPAOrderLog__table-item-cell date-cell">
+												<div class="sPAOrderLog__th-headline">Дата оформления
 												</div>
-												<!-- +e.input-wrap-->
-												<button class="form-wrap__save-cahnges-btn" type="submit">Сохранить изменения
-												</button>
-											</form>
+												<div class="sPAOrderLog__th-content">15.06.2020
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell delivery-cell">
+												<div class="sPAOrderLog__th-headline">Дата доставки
+												</div>
+												<div class="sPAOrderLog__th-content">16.06.2020
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell reciver-cell">
+												<div class="sPAOrderLog__th-headline">Получатель
+												</div>
+												<div class="sPAOrderLog__th-content">Галининская А.В
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell payer-cell">
+												<div class="sPAOrderLog__th-headline">Плательщик
+												</div>
+												<div class="sPAOrderLog__th-content">Физ.лицо
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell refresh-btn-cell"><a class="sPAOrderLog__refresh-btn-cont" href="#">
+												<svg class="icon icon-pa-recicle ">
+													<use xlink:href="img/svg/sprite.svg#pa-recicle"></use>
+												</svg></a>
+											</div>
+										</div>
+										<div class="sPAOrderLog__table-item-content">
+											<div class="sPAOrderLog__content-header content-header-js active">
+												<div class="sPAOrderLog__order-consist-txt"><span>Состав заказа</span>
+													<svg class="icon icon-chevron-right ">
+														<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+													</svg>
+												</div>
+												<div class="sPAOrderLog__order-sum-line d-none d-md-block"><span>Сумма заказа</span><span>12 300 р.</span>
+												</div>
+											</div>
+											<div class="order-content-bl content-items-js active">
+												<div class="order-content-bl__item">
+													<div class="order-content-bl__img-block"><img src="img/@2x/pa-order-item.jpg" alt=""/>
+													</div>
+													<div class="order-content-bl__item-name">КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"
+													</div>
+													<div class="order-content-bl__item-size">L (45 см)
+													</div>
+													<div class="order-content-bl__item-amount">1 шт.
+													</div>
+													<div class="order-content-bl__item-price">12 300 р.
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
-									<div class="sPersonalData__right-col">
-										<div class="form-wrap">
-											<form>
-												<input type="hidden" name="example-input-field"/>
-												<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
-												<input class="utm_source" type="hidden" name="utm_source"/>
-												<input class="utm_term" type="hidden" name="utm_term"/>
-												<input class="utm_medium" type="hidden" name="utm_medium"/>
-												<input class="utm_campaign" type="hidden" name="utm_campaign"/>
-												<div class="form-wrap__input-wrap form-group">
-													<label><span class="form-wrap__title">Старый пароль</span><input class="form-wrap__input form-control" type="password" placeholder="Старый пароль" name="password" value="12345678"/>
-													</label>
+									<div class="sPAOrderLog__table-item">
+										<div class="sPAOrderLog__table-item-header">
+											<div class="sPAOrderLog__table-item-cell order-cell">
+												<div class="sPAOrderLog__th-headline">Номер заказа
 												</div>
-												<!-- +e.input-wrap-->
-												<div class="form-wrap__input-wrap form-group">
-													<label><span class="form-wrap__title">Новый пароль</span><input class="form-wrap__input form-control" type="password" placeholder="" name="new_password"/>
-													</label>
+												<div class="sPAOrderLog__th-content">65889
 												</div>
-												<!-- +e.input-wrap-->
-												<div class="form-wrap__input-wrap form-group">
-													<label><span class="form-wrap__title">Повторите пароль</span><input class="form-wrap__input form-control" type="password" placeholder="" name="new_password2"/>
-													</label>
+											</div>
+											<div class="sPAOrderLog__table-item-cell date-cell">
+												<div class="sPAOrderLog__th-headline">Дата оформления
 												</div>
-												<!-- +e.input-wrap-->
-												<button class="form-wrap__change-pass-btn" type="submit">Сменить пароль
-												</button>
-											</form>
+												<div class="sPAOrderLog__th-content">15.06.2020
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell delivery-cell">
+												<div class="sPAOrderLog__th-headline">Дата доставки
+												</div>
+												<div class="sPAOrderLog__th-content">16.06.2020
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell reciver-cell">
+												<div class="sPAOrderLog__th-headline">Получатель
+												</div>
+												<div class="sPAOrderLog__th-content">Галининская А.В
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell payer-cell">
+												<div class="sPAOrderLog__th-headline">Плательщик
+												</div>
+												<div class="sPAOrderLog__th-content">Физ.лицо
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell refresh-btn-cell"><a class="sPAOrderLog__refresh-btn-cont" href="#">
+												<svg class="icon icon-pa-recicle ">
+													<use xlink:href="img/svg/sprite.svg#pa-recicle"></use>
+												</svg></a>
+											</div>
+										</div>
+										<div class="sPAOrderLog__table-item-content">
+											<div class="sPAOrderLog__content-header content-header-js">
+												<div class="sPAOrderLog__order-consist-txt"><span>Состав заказа</span>
+													<svg class="icon icon-chevron-right ">
+														<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+													</svg>
+												</div>
+												<div class="sPAOrderLog__order-sum-line d-none d-md-block"><span>Сумма заказа</span><span>12 300 р.</span>
+												</div>
+											</div>
+											<div class="order-content-bl content-items-js">
+												<div class="order-content-bl__item">
+													<div class="order-content-bl__img-block"><img src="img/@2x/pa-order-item.jpg" alt=""/>
+													</div>
+													<div class="order-content-bl__item-name">КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"
+													</div>
+													<div class="order-content-bl__item-size">L (45 см)
+													</div>
+													<div class="order-content-bl__item-amount">1 шт.
+													</div>
+													<div class="order-content-bl__item-price">12 300 р.
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="sPAOrderLog__table-item">
+										<div class="sPAOrderLog__table-item-header">
+											<div class="sPAOrderLog__table-item-cell order-cell">
+												<div class="sPAOrderLog__th-headline">Номер заказа
+												</div>
+												<div class="sPAOrderLog__th-content">65889
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell date-cell">
+												<div class="sPAOrderLog__th-headline">Дата оформления
+												</div>
+												<div class="sPAOrderLog__th-content">15.06.2020
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell delivery-cell">
+												<div class="sPAOrderLog__th-headline">Дата доставки
+												</div>
+												<div class="sPAOrderLog__th-content">16.06.2020
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell reciver-cell">
+												<div class="sPAOrderLog__th-headline">Получатель
+												</div>
+												<div class="sPAOrderLog__th-content">Галининская А.В
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell payer-cell">
+												<div class="sPAOrderLog__th-headline">Плательщик
+												</div>
+												<div class="sPAOrderLog__th-content">Физ.лицо
+												</div>
+											</div>
+											<div class="sPAOrderLog__table-item-cell refresh-btn-cell"><a class="sPAOrderLog__refresh-btn-cont" href="#">
+												<svg class="icon icon-pa-recicle ">
+													<use xlink:href="img/svg/sprite.svg#pa-recicle"></use>
+												</svg></a>
+											</div>
+										</div>
+										<div class="sPAOrderLog__table-item-content">
+											<div class="sPAOrderLog__content-header content-header-js">
+												<div class="sPAOrderLog__order-consist-txt"><span>Состав заказа</span>
+													<svg class="icon icon-chevron-right ">
+														<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+													</svg>
+												</div>
+												<div class="sPAOrderLog__order-sum-line d-none d-md-block"><span>Сумма заказа</span><span>12 300 р.</span>
+												</div>
+											</div>
+											<div class="order-content-bl content-items-js">
+												<div class="order-content-bl__item">
+													<div class="order-content-bl__img-block"><img src="img/@2x/pa-order-item.jpg" alt=""/>
+													</div>
+													<div class="order-content-bl__item-name">КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"
+													</div>
+													<div class="order-content-bl__item-size">L (45 см)
+													</div>
+													<div class="order-content-bl__item-amount">1 шт.
+													</div>
+													<div class="order-content-bl__item-price">12 300 р.
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="sPersonalData__entity-col col col-lg-5 col-xxl-4">
-								<div class="sPersonalData__col-headline">Данные юр.лица
-								</div>
-								<div class="sPersonalData__entity-item-block">
-									<div class="sPersonalData__entity-item-header">
-										<div class="sPersonalData__entity-item-name">ООО «Офис-канц»
-										</div>
-										<div class="sPersonalData__entity-item-code">55698889987
-										</div>
-									</div>
-									<ul class="sPersonalData__entity-item-list">
-										<li>355998 г. Москва, ул Героев Сталинграда, д 65 офис 10</li>
-										<li>БИК: 455889 ОАО «Сбербанк» отделение 22</li>
-										<li>р/с: 40802810309500000689</li>
-									</ul>
-									<div class="sPersonalData__entity-item-footer"><a class="green-link" href="#">Запросить закрывающие документы</a><a class="link-pink" href="#">Удалить</a>
-									</div>
-								</div>
+							<div class="sPAOrderLog__txt-col col col-xl-4">
+								<p>Мы&nbsp;всегда храним ваши заказы, чтобы в&nbsp;любой момент вы&nbsp;смогли освежить память или повторить заказ, не&nbsp;тратя лишнее время</p>
 							</div>
 						</div>
 					</div>

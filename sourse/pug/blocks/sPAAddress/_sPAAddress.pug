@@ -1,0 +1,29 @@
+mixin sPAAddress()
+	// start sPAAddress
+	+b.sPAAddress#sPAAddress&attributes(attributes)
+		.container
+			+e.A.add-address-btn(href="#")
+				.plus-cont +
+				.add-txt Добавить адрес
+			.row
+				+e.table-col.col-xl-8
+					+e.address-box-cont
+						+addressItem()
+						+addressItem()
+						+addressItem()
+				+e.txt-col.col.col-xl-4
+					p В&nbsp;календарь&nbsp;Вы можете добавить даты, о&nbsp;которых мы&nbsp;напомним за&nbsp;3&nbsp;дня и&nbsp;поможем подобрать подходящий букет, чтобы не&nbsp;забыть о&nbsp;важном событии, текст прям рыба нужно перефразировать. Вам всего лишь нужно выбрать дату на&nbsp;календаре и&nbsp;нажать &laquo;плюсик&raquo; для добавления события.&nbsp;не&nbsp;забудьте указать предпочтения, чтобы мы&nbsp;сразу смогли вам подобрать подходящий букет и&nbsp;съекономить ваше время при заказе
+	// end sPAAddress
+
+mixin addressItem()
+	+e.address-item
+		+e.add-item-content
+			+e.contnent-txt-row
+				span Получатель
+				span Адреянова Валентина Игоревна
+			+e.contnent-txt-row
+				span Адрес
+				span г. Москва, ул. Героев Сталинграда, д. 6, кор. 3, кв. 55, подъезд 1, домофон 55
+		+e.add-item-footer
+			+e.A.change-link(href="#") Изменить адрес
+			+e.A.delete-link(href="#") Удалить
