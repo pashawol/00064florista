@@ -1,0 +1,206 @@
+// start .s-basket
+.s-basket {
+	padding-top: calc(var(--sPT) - #{rem(42)});
+	padding-bottom: calc(var(--sPB) - #{rem(36)});
+	&__order {
+		@extend .btn;
+		@extend .btn-accent;
+		// @include media-breakpoint-up(lg) {
+			margin-left: auto;
+		// }
+		display: block;
+		margin-bottom: rem(24);
+	}
+
+	.table-wrap {
+		border: 1px solid $primary;
+		margin-bottom: rem(24);
+		padding: rem(10);
+		@include media-breakpoint-up(xl) {
+			padding: rem(24) rem(10) rem(20) rem(24);
+		}
+		overflow-x: auto;
+	}
+
+	table {
+		min-width: 600px;
+		width: 100%;
+		td {
+			// vertical-align: middle;
+			// padding: rem(24);
+			&:nth-child(1) {
+				width: 28%;
+				@include media-breakpoint-up(xl) {
+					width: 34.3%;
+				}
+			}
+			&:nth-child(2) {
+				@include media-breakpoint-up(xl) {
+					width: 11%;
+				}
+			}
+			&:nth-child(3) {
+				@include media-breakpoint-up(xl) {
+					width: 22%;
+				}
+			}
+			&:nth-child(4) {
+				@include media-breakpoint-up(xl) {
+					width: 14.1%;
+				}
+			}
+		}
+	}
+
+	&__price {
+		margin-top: rem(-3px);
+		span {
+			font-size: $xsmall;
+			padding-bottom: rem(11);
+			display: block;
+		}
+	}
+
+	&__product {
+		display: flex;
+		align-items: center;
+
+		p {
+			margin-bottom: 2px;
+			color: #595959;
+			max-width: rem(200);
+			letter-spacing: rem(-0.2);
+		}
+	}
+
+	&__imgWrap {
+		margin-right: rem(24);
+		width: rem(64);
+		height: rem(64);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+
+	}
+
+	&__size {
+		white-space: nowrap;
+		padding: rem(11) rem(13);
+		margin-top: rem(-3);
+		letter-spacing: rem(-0.1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: solid 1px #5cbf1a;
+
+		&:hover {
+			color: $green2;
+		}
+	}
+
+	&__quantity {
+		display: flex;
+		justify-content: center;
+		padding-left: 3%;
+		padding-right: 3%;
+		@include media-breakpoint-up(xxl) {
+			padding-left: 18%;
+			padding-right: 18%;
+		}
+
+		input {
+			border: none;
+			text-align: center;
+			max-width: rem(40);
+			font-size: rem(20);
+			@include media-breakpoint-up(xl) {
+				max-width: rem(63);
+				font-size: rem(24);
+			}
+			font-family: $mono;
+			margin-left: 5px;
+			margin-right: 5px;
+			margin-bottom: 0;
+		}
+
+		button {
+			width: rem(20);
+			padding: 0;
+			outline: none;
+
+			&::before, &::after {
+				width: rem(16);
+				left: 10%;
+				top: 45%;
+			}
+		}
+	}
+	&__plus {
+		&::after {
+			transform: rotate(90deg);
+		}
+	}
+
+	button {
+		border: none;
+		background-color: transparent;
+		position: relative;
+		&::before, &::after {
+			content: '';
+			background-color: #000;
+			position: absolute;
+			height: 1px;
+			@include mt;
+		}
+
+		&:hover {
+			&::before, &::after {
+				background-color: $primary;
+			}
+		}
+	}
+
+	&__cancel {
+		width: rem(30);
+		height: rem(25);
+		&::before, &::after {
+			left: 10%;
+			top: 50%;
+			width: 22.63px;
+			transform: rotate(45deg);
+		}
+		&::after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	.h5 {
+		font-family: $mono;
+		white-space: nowrap;
+	}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.s-basket

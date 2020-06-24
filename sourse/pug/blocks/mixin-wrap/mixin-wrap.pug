@@ -233,21 +233,26 @@ mixin ie11()
 	<!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 
 
-mixin prod-item(i, t,p, st)
+mixin prod-item(i, t,p, st, sm,pr)
 	+b.prod-item
 		+e.img-wrap(href="#")
 			img.res-i(src=`img/@2x/prod-${i}.jpg`, alt="")
 		+e.caption
 			+e.title
-				a(href="#")= t
+				if t
+					a(href="#")= t
+				else
+					+e.checkout-text(href="#")= sm
+						span= pr
 			.row
 				if st
 					.col-auto
 						+e.strike= st
-				+e.price.col= p
-				.col-auto
-					+e.btn(type="button") 
-						+icon("heart-outlined")
-				.col-auto
-					+e.btn--basket(type="button") 
-						+icon("basket")
+				if p
+					+e.price.col= p
+					.col-auto
+						+e.btn(type="button") 
+							+icon("heart-outlined")
+					.col-auto
+						+e.btn--basket(type="button") 
+							+icon("basket")
