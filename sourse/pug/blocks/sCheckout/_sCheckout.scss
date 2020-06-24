@@ -5,7 +5,12 @@
 	padding-bottom: var(--sPB);
 
 	&__col {
-		max-width: rem(540);
+		@include media-breakpoint-up(lg) {
+			max-width: 32.75rem;
+		}
+		@include media-breakpoint-up(xxl) {
+			max-width: rem(540);
+		}
 		margin-left: auto;
 		position: relative;
 		@include media-breakpoint-down(lg) {
@@ -78,7 +83,7 @@
 
 	&__oldPrice {
 		text-decoration-line: line-through;
-		color: #000;
+		color: $body-color;
 		font-size: $small;
 		font-family: $mono;
 	}
@@ -127,6 +132,14 @@
 			left: -30%;
 			opacity: 0.1;
 
+		}
+	}
+
+	&__name {
+		color: #595959;
+
+		span {
+			color: $body-color;
 		}
 	}
 
@@ -185,6 +198,10 @@
 			bottom: 0;
 			left: -30%;
 			background-color: #595959;
+		}
+
+		.form-control {
+			border-color: rgba($color: #595959, $alpha: 0.1);
 		}
 	}
 
@@ -261,13 +278,17 @@
 	}
 
 	.custom-radio {
-		display: inline-block;
+		@include media-breakpoint-up(sm) {
+			display: inline-block;
+		}
 		width: auto;
 		&__text {
 			// height: calc(100% - 16px);
 			// margin-bottom: rem(16);
-			width: auto;
-			display: inline-block;
+			@include media-breakpoint-up(sm) {
+				width: auto;
+				display: inline-block;
+			}
 			margin-right: rem(15px);
 		}
 
@@ -285,10 +306,14 @@
 		margin-left: 0;
 		margin-top: 0;
 		margin-right: rem(25);
-		margin-bottom: 2.5rem;
+		margin-bottom: 1.5rem;
+		@include media-breakpoint-up(xl) {
+			margin-bottom: 2.5rem;
+		}
 		&__lab {
-			border: 1px solid #000000;
+			border: 1px solid $body-color;
 			background-color: #fff;
+			top: 0;
 
 			&::after {
 				// padding: 2px;
@@ -325,24 +350,28 @@
 
 	&__lab {
 		cursor: pointer;
-		border: 1px solid #000000;
+		border: 1px solid $body-color;
 		border-radius: 50%;
 		display: block;
-		width: rem(24px);
-		height: rem(24px);
+		width: 24px;
+		height: 24px;
 		margin-right: rem(15);
 		position: relative;
 
 		&::before {
 			content: '';
 			@include mt;
-			width: rem(16px);
-			height: rem(16px);
+			width: 16px;
+			height: 16px;
 			background-color: $primary;
 			@include a-cent;
 			border-radius: 50%;
 			opacity: 0;
 		}
+	}
+
+	.d-flex {
+		align-items: center;
 	}
 
 	&__topLine {

@@ -14,7 +14,7 @@ mixin sCheckout()
 					+e.SPAN.lab
 					+e.SPAN.text= text
 			.row
-				.col-lg-6
+				.col-lg-6.col-xl-7.col-xxl-6.pb-4
 					+e.sliderBlock
 						.h3 Дополните букет подарком
 						+sCatalog-checkout()
@@ -133,9 +133,9 @@ mixin sCheckout()
 									+e.orderItem
 										.row
 											.col-sm-8.d-flex
-												+e.imgWrap
+												+e.imgWrap(href="#")
 													img.lazy.res-i(src="#" data-src="img/@2x/basket.jpg", alt="")
-												+e.name КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА" #[span l 45 см, 2 ШТ]
+												+e.name(href="#") КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА" #[span l 45 см, 2 ШТ]
 											.col
 												+e.itemPrice
 													.h5 24 600 р.
