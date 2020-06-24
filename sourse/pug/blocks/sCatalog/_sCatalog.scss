@@ -132,12 +132,31 @@
 	@include media-breakpoint-down(xs) {} 
 
 	&--checkout {
-		overflow: hidden;
-		padding-left: 30px;
-		padding-right: 30px;
-		margin-left: -15px;
-		margin-right: -15px;
-		// .sCatalog__slider {
-		// }
+		@include media-breakpoint-up(sm) {
+			padding-left: 20px;
+			padding-right: 20px;
+			margin-left: -25px;
+			margin-right: -25px;
+		}
+		margin-bottom: rem(20);
+		position: relative;
+		.sCatalog__slider {
+			overflow: hidden;
+		}
+		.prod-item__checkout-text {
+			font-size: $small;
+		}
+		.swiper-button-hand-next {
+			right: calc(var(--sw-w) - #{rem(61)});
+		}
+		.swiper-button-hand-prev {
+			left: calc(var(--sw-w) - #{rem(61)});
+		}
+		.prod-item__img-wrap {
+			margin-bottom: rem(10);
+		}
+		.prod-item:before {
+			content: none;
+		}
 	}
 } // end.sCatalog

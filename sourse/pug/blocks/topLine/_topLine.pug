@@ -20,17 +20,17 @@ mixin topLine()
 									+icon("flower")
 									| Цветочная подписка
 					.col-auto
-						+e.link.link-modal(href="#modal-user"): +e.link-inner
+						+e.link.link-modal(href="#modal-user"): +e.DIV.link-inner
 							+e.DIV.icon-wrap
 								+icon("feather_user-check")
 							+e.DIV.link-text.d-none.d-sm-block Войти
 					.col-auto
-						+e.link--like(href="#"): +e.link-inner
+						+e.link--like(href="#"): +e.DIV.link-inner
 							+e.DIV.icon-wrap--like
 								+icon("heart-outlined") 
 								+e.count--like
 					.col-auto
-						+e.link--basket(href="#"): +e.link-inner
+						+e.link--basket(href="#"): +e.DIV.link-inner
 							+e.DIV.icon-wrap
 								+icon("basket") 
 							+e.count--active 5

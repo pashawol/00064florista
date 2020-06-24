@@ -7,10 +7,24 @@
 	&__col {
 		max-width: rem(540);
 		margin-left: auto;
+		position: relative;
+		@include media-breakpoint-down(lg) {
+			margin-right: auto;
+		}
+	}
+
+	&__orderWrap {
+
 	}
 
 	&__sliderBlock {
 		padding-top: rem(33);
+
+		.h3 {
+			letter-spacing: rem(1.8) !important;
+			font-family: $mono;
+			margin-bottom: rem(27);
+		}
 	}
 
 	&__order {
@@ -36,6 +50,7 @@
 		display: flex;
 		justify-content: space-between;
 		padding: rem(18) rem(24) rem(0) rem(22);
+		margin-bottom: rem(14);
 	}
 
 	&__totalPrice {
@@ -61,10 +76,6 @@
 		}
 	}
 
-	&__title {
-		margin-bottom: rem(14);
-	}
-
 	&__oldPrice {
 		text-decoration-line: line-through;
 		color: #000;
@@ -85,17 +96,26 @@
 
 	&__itemPrice {
 		text-align: center;
+		@include media-breakpoint-down(sm) {
+			padding-top: rem(10);
+		}
 	}
 
 	&__remove {
-		margin-top: rem(13);
+		@include media-breakpoint-up(sm) {
+			margin-top: rem(13);
+		}
 		font-size: $xsmall;
 	}
 
 	&__orderItem {
 		position: relative;
-		padding-bottom: rem(17);
-		margin-bottom: rem(22);
+		padding-bottom: rem(10);
+		margin-bottom: rem(10);
+		@include media-breakpoint-up(sm) {
+			padding-bottom: rem(17);
+			margin-bottom: rem(22);
+		}
 
 		&::before {
 			content: '';
@@ -190,14 +210,25 @@
 
 	.form-wrap {
 
+		&__form {
+			padding-bottom: rem(8);
+		}
+
 		&__formTitle {
 			@extend .h3;
+			font-family: $mono;
+			margin-bottom: rem(22);
 		}
 
 		&__custom-input-wrap {
-			display: flex;
+			// @include media-breakpoint-up(sm) {
+			// 	display: flex;
+			// }
 		}
+	}
 
+	textarea {
+		height: rem(112px);
 	}
 
 	@include media-breakpoint-up(xl) {}
@@ -246,12 +277,15 @@
 			display: block;
 		}
 
-		&__input[type="checkbox"] + &__lab {
-
-		}
 	}
 
 	.custom-input {
+		display: inline-block;
+		width: auto;
+		margin-left: 0;
+		margin-top: 0;
+		margin-right: rem(25);
+		margin-bottom: 2.5rem;
 		&__lab {
 			border: 1px solid #000000;
 			background-color: #fff;

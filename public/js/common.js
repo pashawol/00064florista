@@ -269,6 +269,28 @@ function eventHandler() {
 				slidesPerView: 4
 			}
 		}
+	}));
+	var swiper8 = new Swiper('.sCatalog__sliderCheckut--js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		spaceBetween: 30,
+		slidesPerView: 2,
+		navigation: {
+			nextEl: '.sCatalog .swiper-button-next',
+			prevEl: '.sCatalog .swiper-button-prev'
+		},
+		breakpoints: {
+			// when window width is >= 320px
+			// when window width is >= 480px
+			576: {
+				slidesPerView: 3
+			},
+			// when window width is >= 640px
+			992: {
+				slidesPerView: 4
+			},
+			1200: {
+				slidesPerView: 5
+			}
+		}
 	})); // })
 
 	var swiper6 = new Swiper('.sThematicSelections__slider--js', _objectSpread(_objectSpread({}, defaultSl), {}, (_objectSpread2 = {
@@ -423,7 +445,10 @@ function eventHandler() {
 	$('.sPACalendar__fancy-link').click(function () {
 		var defaultDay = event.target.classList.contains('default-day');
 		if (!defaultDay) return;
-	}); //end luckyoneJs
+	}); //sticky-js
+	// var Sticky = require('sticky-js');
+
+	var sticky = new Sticky('.sCheckout__orderWrap'); //end luckyoneJs
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
