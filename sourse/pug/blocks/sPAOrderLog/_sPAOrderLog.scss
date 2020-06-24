@@ -128,7 +128,9 @@
 	//table content
 
 	&__table-item-content{
-		border: 1px solid #8BB710;
+		border-left: 1px solid #8BB710;
+		border-right: 1px solid #8BB710;
+		border-bottom: 1px solid #8BB710;
 	}
 	&__content-header{
 		cursor: pointer;
@@ -229,6 +231,8 @@
 		}
 	}
 	&__img-block{
+		display: block;
+
 		width: rem(64px);
 		height: rem(64px);
 
@@ -246,6 +250,8 @@
 		}
 	}
 	&__item-name{
+		display: block;
+
 		width: calc(100% - 4rem - 16px);
 		align-self: flex-start;
 		@include media-breakpoint-up(md){
