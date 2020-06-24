@@ -1,0 +1,50 @@
+mixin sPACalendar()
+	// start sPACalendar
+	+b.SECTION.sPACalendar.section#sPACalendar&attributes(attributes)
+		.container
+			.row
+				+e.calendar-col.col-xl-5
+					+e.calendar
+						+e.calendar-header
+							+e.left-controll-btn
+								+icon('chevron-left')
+							+e.month-name Август
+							+e.right-controll-btn
+								+icon('chevron-right')
+						+e.TABLE.calendar-body
+							tbody
+								tr
+									td.header-cell Пн
+									td.header-cell Вт
+									td.header-cell Ср
+									td.header-cell Чт
+									td.header-cell Пт
+									td.header-cell Сб
+									td.header-cell Вс
+								tr
+									td.day-of-other-month 27
+									td.day-of-other-month 28
+									td.day-of-other-month 29
+									td.day-of-other-month 30
+									td.default-day 1
+									td.default-day 2
+									td.default-day 3
+								tr
+									td.default-day 4
+									td.default-day 5
+									td.default-day 6
+									td.default-day
+									td.default-day
+									td.default-day
+									td.default-day
+								tr
+									td.default-day
+									td.default-day
+									td.default-day
+									td.default-day
+									td.default-day
+									td.default-day
+									td.default-day
+				+e.calendar-txt.col-xl-3
+				+e.txt-col.col.col-xl-4
+	// end sPACalendar
