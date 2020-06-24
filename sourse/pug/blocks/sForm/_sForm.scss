@@ -1,6 +1,11 @@
 
 	// start .sForm
 	.sForm {
+		.form-control{
+			// color: #ffffff;
+			background-color: #ffffff;
+			border-color: #fff;
+		}
 		&__block{
 			color: #ffffff;
 			background-color: #000000;

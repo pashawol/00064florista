@@ -12,7 +12,7 @@ $file-format: woff2;
 
 // font-weight helper:
 .fw-600{
-	font-weight: 600;
+	font-weight: 600 !important;
 }
 // 100 Thin
 // 200 Extra Light

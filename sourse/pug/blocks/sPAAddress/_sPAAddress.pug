@@ -2,7 +2,7 @@ mixin sPAAddress()
 	// start sPAAddress
 	+b.sPAAddress#sPAAddress&attributes(attributes)
 		.container
-			+e.A.add-address-btn(href="#")
+			+e.A.add-address-btn.link-modal(href="#modal-addAddr")
 				.plus-cont +
 				.add-txt Добавить адрес
 			.row
@@ -25,5 +25,5 @@ mixin addressItem()
 				span Адрес
 				span г. Москва, ул. Героев Сталинграда, д. 6, кор. 3, кв. 55, подъезд 1, домофон 55
 		+e.add-item-footer
-			+e.A.change-link(href="#") Изменить адрес
+			+e.A.change-link.link-modal(href="#modal-addAddr") Изменить адрес
 			+e.A.delete-link(href="#") Удалить
