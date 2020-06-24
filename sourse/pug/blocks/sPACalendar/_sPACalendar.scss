@@ -61,6 +61,9 @@
 
 	&__fancy-link{
 		color: $black;
+		&:hover{
+			color: $black;
+		}
 		display: block;
 		width: 100%;
 	}
@@ -96,7 +99,6 @@
 
 			height: rem(40);
 			font-size: rem(16px);
-			text-align: center;
 			@include media-breakpoint-up(sm){
 				height: auto;
 				font-size: rem(18px);
@@ -111,12 +113,44 @@
 
 			font-weight: bold;
 
+			&:before{
+				font-family: sans-serif;
+				@include mt();
+				@include media-breakpoint-up(sm){
+					content: '+';
+				}
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				color: $white;
+				font-weight: 600;
+
+				position: absolute;
+
+
+				font-size: rem(24px);
+				line-height: (32/24);
+				width: rem(32px);
+				height: rem(32px);
+
+				right: rem(11);
+				bottom: rem(12);
+
+				border-radius: 50%;
+				border: 1px solid white;
+
+				opacity: 0;
+			}
 		}
 		.day-of-other-month{
 			color: rgba($black, .12);
 		}
 		.default-day{
 
+		}
+		.today-cell{
+			color: $pink;
 		}
 		.pink-doted{
 			&:after{
@@ -143,6 +177,10 @@
 			box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.13);
 			transform: scale(1.1);
 			color: $white;
+
+			&:before{
+				opacity: 1;
+			}
 		}
 	}
 	//calendar-txt

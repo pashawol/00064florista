@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>Монобукеты</title>
+		<title>08-pa</title>
 		<meta name="description" content="о чем страница">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, shrink-to-fit=no">
@@ -2486,7 +2486,7 @@
 								<meta itemprop="position" content="2"/></a></li>
 						<li class="breadcrumb-item swiper-slide" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">  Монобукеты </span>
 								<meta itemprop="position" content="3"/></a></li>
-						<li class="breadcrumb-item swiper-slide active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">Монобукеты</span>
+						<li class="breadcrumb-item swiper-slide active" itemprop="itemListElement" itemscope="itemscope" itemtype="http://schema.org/ListItem"><a href="#" itemprop="item"><span itemprop="name">08-pa</span>
 								<meta itemprop="position" content="4"/></a></li>
 					</ol>
 				</div>
@@ -2529,15 +2529,15 @@
 								<div class="sPACalendar__calendar">
 									<div class="sPACalendar__calendar-header">
 										<div class="sPACalendar__controll-btn left-btn">
-											<svg class="icon icon-chevron-left ">
-												<use xlink:href="img/svg/sprite.svg#chevron-left"></use>
+											<svg class="icon icon-08_calendar-ch-l ">
+												<use xlink:href="img/svg/sprite.svg#08_calendar-ch-l"></use>
 											</svg>
 										</div>
 										<div class="sPACalendar__month-name">Август
 										</div>
 										<div class="sPACalendar__controll-btn right-btn">
-											<svg class="icon icon-chevron-right ">
-												<use xlink:href="img/svg/sprite.svg#chevron-right"></use>
+											<svg class="icon icon-08_calendar-ch-r ">
+												<use xlink:href="img/svg/sprite.svg#08_calendar-ch-r"></use>
 											</svg>
 										</div>
 									</div><a class="sPACalendar__fancy-link link-modal" href="#modal-addEvent">
@@ -2565,7 +2565,7 @@
 												<td class="default-day">4</td>
 												<td class="default-day">5</td>
 												<td class="default-day">6</td>
-												<td class="default-day">7</td>
+												<td class="default-day today-cell">7</td>
 												<td class="default-day pink-doted">8</td>
 												<td class="default-day">9</td>
 												<td class="default-day">10</td>
@@ -2621,7 +2621,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="sPACalendar__txt-col col-md-6 col-lg-12 col-xl-3 col-xxl-4">
+							<div class="sPACalendar__txt-col col-md-6 col-lg-12 col-xl-3 col-xxl-4 d-none d-sm-block">
 								<p>В&nbsp;календарь&nbsp;Вы можете добавить даты, о&nbsp;которых мы&nbsp;напомним за&nbsp;3&nbsp;дня и&nbsp;поможем подобрать подходящий букет, чтобы не&nbsp;забыть о&nbsp;важном событии, текст прям рыба нужно перефразировать. Вам всего лишь нужно выбрать дату на&nbsp;календаре и&nbsp;нажать &laquo;плюсик&raquo; для добавления события.&nbsp;не&nbsp;забудьте указать предпочтения, чтобы мы&nbsp;сразу смогли вам подобрать подходящий букет и&nbsp;съекономить ваше время при заказе</p>
 							</div>
 						</div>
@@ -3932,6 +3932,38 @@
 				</form>
 			</div>
 			<!-- #modal-addData-->
+			<div class="form-wrap modal-win modal-form" id="modal-addEvent">
+				<form>
+					<input type="hidden" name="example-input-field"/>
+					<input class="order" type="hidden" name="order" value="Заявка  с сайта"/>
+					<input class="utm_source" type="hidden" name="utm_source"/>
+					<input class="utm_term" type="hidden" name="utm_term"/>
+					<input class="utm_medium" type="hidden" name="utm_medium"/>
+					<input class="utm_campaign" type="hidden" name="utm_campaign"/>
+					<div class="form-wrap__body">
+						<div class="form-wrap__title-head">Добавить событие
+						</div>
+						<div class="smallest">Дата</div>
+						<div class="h4 fw-600 mb-2">6 июня</div>
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__title">Кому дарим букет</span><input class="form-wrap__input form-control" type="text" placeholder="" name="text" required="required"/> 
+							</label> 
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="form-wrap__input-wrap form-group">
+							<label><span class="form-wrap__title">Опишите предпочтения в букете</span><input class="form-wrap__input form-control" type="text" placeholder="" name="text" required="required"/> 
+							</label> 
+						</div>
+						<!-- +e.input-wrap-->
+						<div class="smallest">Это может быть как описание размера букета, типа цветов и цветового преобладания (например ярко красный)</div>
+						<div class="row align-items-center">
+							<div class="col-7"><input class="form-wrap__btn btn-block" type="submit" value="Добавить юр.лицо"/>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<!-- #modal-addEvent-->
 			<div class="form-wrap modal-win modal-form" id="modal-addAddr">
 				<form>
 					<input type="hidden" name="example-input-field"/>
@@ -4004,7 +4036,7 @@
 			</div>
 			<!-- #modal-addAddr-->
 		</div>
-		<!-- modal--><a class="link-modal" href="#modal-addEvent">modal-addEvent</a>
+		<!-- modal-->
 		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>

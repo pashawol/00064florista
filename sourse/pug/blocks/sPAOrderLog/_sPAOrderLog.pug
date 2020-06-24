@@ -8,7 +8,7 @@ mixin sPAOrderLog()
 						+tableItem('active')
 						+tableItem()
 						+tableItem()
-				+e.txt-col.col.col-xl-4
+				+e.txt-col.col.col-xl-4.d-none.d-xl-block
 					p Мы&nbsp;всегда храним ваши заказы, чтобы в&nbsp;любой момент вы&nbsp;смогли освежить память или повторить заказ, не&nbsp;тратя лишнее время
 mixin tableItem(collapseClass='')
 	+e.table-item
@@ -31,9 +31,9 @@ mixin tableItem(collapseClass='')
 					span 12 300 р.
 			+b.order-content-bl.content-items-js(class=collapseClass)
 				+e.item
-					+e.img-block
+					+e.A.img-block(href='#')
 						img(src="img/@2x/pa-order-item.jpg" alt="")
-					+e.item-name КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"
+					+e.A.item-name(href='#') КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"
 					+e.item-size L (45 см)
 					+e.item-amount 1 шт.
 					+e.item-price 12 300 р.

@@ -7,10 +7,10 @@ mixin sPACalendar()
 					+e.calendar
 						+e.calendar-header
 							+e.controll-btn.left-btn
-								+icon('chevron-left')
+								+icon('08_calendar-ch-l')
 							+e.month-name Август
 							+e.controll-btn.right-btn
-								+icon('chevron-right')
+								+icon('08_calendar-ch-r')
 						+e.A.fancy-link.link-modal(href='#modal-addEvent' )
 							+calendarTable()
 				+e.calendar-txt.col-md-6.col-lg-4.col-xl-3.col-xxl-3
@@ -21,7 +21,7 @@ mixin sPACalendar()
 							b Предпочтения:
 							|
 							| Пионы, большой букет, все ярко красное
-				+e.txt-col.col-md-6.col-lg-12.col-xl-3.col-xxl-4
+				+e.txt-col.col-md-6.col-lg-12.col-xl-3.col-xxl-4.d-none.d-sm-block
 					p В&nbsp;календарь&nbsp;Вы можете добавить даты, о&nbsp;которых мы&nbsp;напомним за&nbsp;3&nbsp;дня и&nbsp;поможем подобрать подходящий букет, чтобы не&nbsp;забыть о&nbsp;важном событии, текст прям рыба нужно перефразировать. Вам всего лишь нужно выбрать дату на&nbsp;календаре и&nbsp;нажать &laquo;плюсик&raquo; для добавления события.&nbsp;не&nbsp;забудьте указать предпочтения, чтобы мы&nbsp;сразу смогли вам подобрать подходящий букет и&nbsp;съекономить ваше время при заказе
 	// end sPACalendar
 
@@ -48,7 +48,7 @@ mixin calendarTable()
 				td.default-day 4
 				td.default-day 5
 				td.default-day 6
-				td.default-day 7
+				td.default-day.today-cell 7
 				td.default-day.pink-doted 8
 				td.default-day 9
 				td.default-day 10
