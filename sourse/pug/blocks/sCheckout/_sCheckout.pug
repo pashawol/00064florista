@@ -2,10 +2,113 @@ mixin sCheckout()
 	// start sCheckout
 	+b.sCheckout#sCheckout&attributes(attributes)
 		.container
+			mixin radio(t,n,sm)
+				+b.LABEL.custom-radio
+					input(type="radio" name= n)
+					+e.SPAN.text= t
+						if sm
+							+e.radioDescr= sm
+			mixin in-c2(typ="checkbox", text, name= typ )
+				+b.LABEL.custom-input
+					+e.INPUT.input(type= typ , name= name)&attributes(attributes)
+					+e.SPAN.lab
+					+e.SPAN.text= text
 			.row
 				.col-xl-6
 					+e.sliderBlock
+						.h3 Дополните букет подарком
 						+sCatalog-checkout()
+					+e.waterData
+						+form-wrap()
+							+e.form
+								+e.formTitle Заказчик
+								.row
+									.col-sm-6
+										+input('','text','Имя')
+									.col-sm-6
+										+input('','text','Фамилия')
+									.col-12
+										+input('','text','Адрес')
+									.col-sm-6
+										+input('','tel','Телефон')
+									.col-sm-6
+										+input('','email','E-mail')
+								+e.custom-input-wrap
+									+in-c2('checkbox','НЕ звонить для подтверждения')
+									+in-c2('checkbox','Получаю лично')
+							+e.form
+								+e.formTitle Получатель
+								.row
+									.col-sm-6
+										+input('','text','Имя')
+									.col-sm-6
+										+input('','text','Фамилия')
+									.col-12
+										+input('','text','Адрес')
+									.col-sm-6
+										+input('','tel','Телефон')
+								+e.custom-input-wrap
+									+in-c2('checkbox','Вручить инкогнито')
+									+in-c2('checkbox','Фото с получателем')
+									+in-c2('checkbox','Сюрприз, не звонить заранее')
+								+b.LABEL.custom-input-radio
+									+e.topLine
+										.row.justify-content-between
+											.col-sm-auto.d-flex
+												+e.SPAN.lab
+												+e.INPUT.hidden(type="radio" name="size")
+												+e.span.text добавить бесплатную открытку
+											.col-sm-auto
+												+e.SPAN.characters 70 символов
+									+input('','text')(maxlength="70")
+								+b.LABEL.custom-input-radio
+									+e.topLine
+										.row.justify-content-between
+											.col-sm-auto.d-flex
+												+e.SPAN.lab
+												+e.INPUT.hidden(type="radio" name="size")
+												+e.span.text Добавить дизайнерскую открытку
+											.col-sm-auto
+												+e.SPAN.characters 900 символов
+									+input('','text')(maxlength="900")
+							+e.form
+								+e.formTitle Доставка и оплата
+								.row
+									.col-sm-auto
+										+input('','date')
+									.col-sm-auto
+										+b.catalog-sort
+											+e.SELECT.input.form-control(id="vertical")
+												mixin option(t)
+													option(value= t)= t
+												+option('18:30')
+												+option('19:00')
+												+option('19:30')
+												+option('20:00')
+												+option('20:30')
+												+option('21:00')
+												+option('21:30')
+												+option('22:00')
+												+option('22:30')
+												+option('23:00')
+									.col-sm-auto
+										+in-c2('checkbox','Добавить в личный календарь')
+									.col-sm-auto
+										+in-c2('checkbox','Бесконтактная доставка')
+								.h5 Доставка
+								+e.radioWrap
+									+radio('самовывоз Бауманская','delivery')
+									+radio('самовывоз Добрынинская','delivery')
+									+radio('Стандартная доставка - 300 р.','delivery')
+									+radio('Сторого ко времени - 800 р.','delivery','+/- 8 минут')
+									+radio('Аэропорт - 1 500 р.','delivery','Внуково, Домодедово, Шереметьево')
+								.h5 Оплата
+								+e.radioWrap
+									+radio('Он-лайн','payment')
+									+radio('Наличными при получении','payment')
+									+radio('Картой при получении','payment')
+									+radio('PayPal','payment')
+									+radio('Оплата от юр лица','payment','/* Должно быть заполненны данные юр лица в личном кабинете */')
 				+e.col.col
 					+e.order
 						+e.title

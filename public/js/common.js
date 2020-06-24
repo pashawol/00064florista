@@ -188,8 +188,8 @@ function eventHandler() {
 	JSCCommon.inputMask();
 	JSCCommon.customRange(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/PersonalA-has-entity.png);"></div>'); // /добавляет подложку для pixel perfect
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/checkoit.jpg);"></div>')
+	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
