@@ -42,11 +42,17 @@ block pagecontent
 						+e.white-txt Ваша скидка - 5%
 						+e.black-txt купите еще на 1 500 р. и получите 10% скидки
 					+e.A.learn-more-link(href="#") Узнать больше о накопительной системе...
-			+e.pa-nav-links
-				+e.A.nav-link.active(href="#") Личные данные
-				+e.A.nav-link(href="#") История заказов
-				+e.A.nav-link(href="#") Календарь
-				+e.A.nav-link(href="#") Адреса
+			+e.pa-nav-slider
+				.swiper-container.pa-nav-slider-js
+					.swiper-wrapper
+						.swiper-slide
+							+e.A.nav-link.active(href="#") Личные данные
+						.swiper-slide
+							+e.A.nav-link(href="#") История заказов
+						.swiper-slide
+							+e.A.nav-link(href="#") Календарь
+						.swiper-slide
+							+e.A.nav-link(href="#") Адреса
 		+sPersonalData()
 			+hasEnitity()
 	//-+sSocial

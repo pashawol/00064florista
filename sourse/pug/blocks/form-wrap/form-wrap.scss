@@ -1,5 +1,30 @@
+#modal-user .form-wrap__btn{
+	min-width: rem(120);
+}
 .form-wrap{
+	&__footer{
+		border-top: 1px solid rgba($color: #595959, $alpha: .2);
+	}
+	&__footer,
+	&__body{
+		padding: rem(34) rem(33);
+	}
+	&__title-head{
+		@extend .h3;
+		@extend .mono;
+		padding-bottom: rem(5);
+		border-bottom: 1px solid $primary;
+		margin-bottom: rem(22);
+		
+	}
+	&__btn{
+		@extend .btn;
+		@extend .btn-accent;
+		padding-left: rem(20);
+		padding-right: rem(20);
+	}
  	&__input-wrap{
+		 margin-bottom: 1rem;
 			// @extend .form-group;
 			
 		}

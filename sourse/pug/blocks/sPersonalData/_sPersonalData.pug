@@ -3,7 +3,7 @@ mixin sPersonalData()
 	+b.sPersonalData#sPersonalData&attributes(attributes)
 		.container
 			+e.row.row
-				+e.individual-col.col-lg-6.col-xl-8
+				+e.individual-col.col-lg-7.col-xxl-8
 					+e.col-headline Данные физ.лица
 					+e.individual-box
 						+e.left-col
@@ -18,14 +18,14 @@ mixin sPersonalData()
 								+input('', 'password','Новый пароль', 'new_password')
 								+input('', 'password','Повторите пароль', 'new_password2')
 								+e.BUTTON.change-pass-btn(type='submit') Сменить пароль
-				+e.entity-col.col.col-lg-6.col-xl-4
+				+e.entity-col.col.col-lg-5.col-xxl-4
 					+e.col-headline Данные юр.лица
 					block
 
 mixin addEnitity()
-	+e.A.add-entity-bnt(href="#")
-		+e.plus-cont +
-		+e.add-txt Добавить юр. лицо
+	+e.A.add-entity-bnt.link-modal(href="#modal-addData")
+		.plus-cont +
+		.add-txt Добавить юр. лицо
 	+e.after-txt-cont
 		p Вы&nbsp;можете добавить данные своей компании в&nbsp;личном кабинете и&nbsp;осуществлять оплату как от&nbsp;физического так и&nbsp;от&nbsp;юридического лица (посредством выставления счетов на&nbsp;организацию)
 
@@ -40,4 +40,4 @@ mixin hasEnitity()
 			li р/с: 40802810309500000689
 		+e.entity-item-footer
 			a.green-link(href="#") Запросить закрывающие документы
-			a.red-link(href="#") Удалить
+			a.link-pink(href="#") Удалить

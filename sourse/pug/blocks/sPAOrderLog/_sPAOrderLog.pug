@@ -1,0 +1,47 @@
+mixin sPAOrderLog()
+	// start sPAOrderLog
+	+b.sPAOrderLog#sPAOrderLog&attributes(attributes)
+		.container
+			.row
+				+e.table-col.col-xl-8
+					+e.table-cont
+						+tableItem('active')
+						+tableItem()
+						+tableItem()
+				+e.txt-col.col.col-xl-4
+					p Мы&nbsp;всегда храним ваши заказы, чтобы в&nbsp;любой момент вы&nbsp;смогли освежить память или повторить заказ, не&nbsp;тратя лишнее время
+mixin tableItem(collapseClass='')
+	+e.table-item
+		+e.table-item-header
+			+tableCell('Номер заказа', '65889', 'order-cell')
+			+tableCell('Дата оформления', '15.06.2020', 'date-cell')
+			+tableCell('Дата доставки', '16.06.2020', 'delivery-cell')
+			+tableCell('Получатель', 'Галининская А.В', 'reciver-cell')
+			+tableCell('Плательщик', 'Физ.лицо', 'payer-cell')
+			+e.table-item-cell.refresh-btn-cell
+				+e.A.refresh-btn-cont(href="#")
+					+icon('pa-recicle')
+		+e.table-item-content
+			+e.content-header.content-header-js(class=collapseClass)
+				+e.order-consist-txt
+					span Состав заказа
+					+icon('chevron-right')
+				+e.order-sum-line.d-none.d-md-block
+					span Сумма заказа
+					span 12 300 р.
+			+b.order-content-bl.content-items-js(class=collapseClass)
+				+e.item
+					+e.img-block
+						img(src="img/@2x/pa-order-item.jpg" alt="")
+					+e.item-name КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"
+					+e.item-size L (45 см)
+					+e.item-amount 1 шт.
+					+e.item-price 12 300 р.
+
+
+
+mixin tableCell(headlineTxt='headlineTxt', contentTxt='contentTxt', cellClass='')
+	+e.table-item-cell(class=cellClass)
+		+e.th-headline=headlineTxt
+		+e.th-content=contentTxt
+	//- end sPAOrderLog

@@ -1,0 +1,86 @@
+mixin sPACalendar()
+	// start sPACalendar
+	+b.sPACalendar#sPACalendar&attributes(attributes)
+		.container
+			.row
+				+e.calendar-col.col-12.col-lg-8.col-xl-6.col-xxl-5
+					+e.calendar
+						+e.calendar-header
+							+e.controll-btn.left-btn
+								+icon('chevron-left')
+							+e.month-name Август
+							+e.controll-btn.right-btn
+								+icon('chevron-right')
+						+e.A.fancy-link.link-modal(href='#modal-addEvent' )
+							+calendarTable()
+				+e.calendar-txt.col-md-6.col-lg-4.col-xl-3.col-xxl-3
+					+e.calendar-txt-content
+						+e.date-headline 6 июня
+						+e.date-event День рождение моей любимой бабушки
+						+e.preferences
+							b Предпочтения:
+							|
+							| Пионы, большой букет, все ярко красное
+				+e.txt-col.col-md-6.col-lg-12.col-xl-3.col-xxl-4
+					p В&nbsp;календарь&nbsp;Вы можете добавить даты, о&nbsp;которых мы&nbsp;напомним за&nbsp;3&nbsp;дня и&nbsp;поможем подобрать подходящий букет, чтобы не&nbsp;забыть о&nbsp;важном событии, текст прям рыба нужно перефразировать. Вам всего лишь нужно выбрать дату на&nbsp;календаре и&nbsp;нажать &laquo;плюсик&raquo; для добавления события.&nbsp;не&nbsp;забудьте указать предпочтения, чтобы мы&nbsp;сразу смогли вам подобрать подходящий букет и&nbsp;съекономить ваше время при заказе
+	// end sPACalendar
+
+mixin calendarTable()
+	+e.TABLE.calendar-body
+		tbody
+			tr
+				td.header-cell Пн
+				td.header-cell Вт
+				td.header-cell Ср
+				td.header-cell Чт
+				td.header-cell Пт
+				td.header-cell Сб
+				td.header-cell Вс
+			tr
+				td.day-of-other-month 27
+				td.day-of-other-month 28
+				td.day-of-other-month 29
+				td.day-of-other-month 30
+				td.default-day 1
+				td.default-day 2
+				td.default-day 3
+			tr
+				td.default-day 4
+				td.default-day 5
+				td.default-day 6
+				td.default-day 7
+				td.default-day.pink-doted 8
+				td.default-day 9
+				td.default-day 10
+			tr
+				td.default-day 11
+				td.default-day 12
+				td.default-day 13
+				td.default-day 14
+				td.default-day 15
+				td.default-day 16
+				td.default-day 17
+			tr
+				td.default-day 18
+				td.default-day 19
+				td.default-day 20
+				td.default-day 21
+				td.default-day.pink-doted 22
+				td.default-day 23
+				td.default-day 24
+			tr
+				td.default-day 25
+				td.default-day 26
+				td.default-day 27
+				td.default-day 28
+				td.default-day 29
+				td.default-day 30
+				td.default-day 31
+			tr
+				td.day-of-other-month 1
+				td.day-of-other-month 2
+				td.day-of-other-month 3
+				td.day-of-other-month 4
+				td.day-of-other-month 5
+				td.day-of-other-month 6
+				td.day-of-other-month 7

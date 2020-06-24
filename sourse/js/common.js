@@ -73,13 +73,7 @@ const JSCCommon = {
 		if (_this.menuMobileLink) {
 
 			_this.toggleMenu();
-			_this.menuMobileLink.forEach(function (element) {
-				element.addEventListener('click', function (e) {
-					console.log(element);
-					_this.closeMenu();
-
-				});
-			})
+ 
 			document.addEventListener('mouseup', function (event) {
 				let container = event.target.closest(".menu-mobile--js.active"); // (1)
 				if (!container) {
@@ -470,7 +464,55 @@ function eventHandler() {
 		$(this).toggleClass("active").next().slideToggle();
 	});
 
+
+	$(".menu-mobile__item.menu-item-has-children ").each(function () {
+		$(this).append('<div class="toggle-l"></div>');
+	})
+
+
+	// $(".nav__item--has-children-js   .nav__link").click(function () {
+	// 	return false;
+	// })
+	$(".menu-mobile  ").on('click', '.toggle-l', function () {
+
+		$(this).toggleClass('active').prev('.sub-menu').slideToggle();
+		// return false;
+	})
+
 	//luckyoneJs
+	let paNavSlider;
+	window.setTimeout(function () {
+		paNavSlider = new Swiper('.pa-nav-slider-js', {
+			//spaceBetween: 72,
+			breakpoints: {
+				320:{
+					spaceBetween: 21,
+				},
+				768:{
+					spaceBetween: 72,
+				},
+			},
+
+			slidesPerView: 'auto',
+			freeMode: true,
+			freeModeMomentum: true,
+			watchOverflow: true,
+		});
+	},300);
+
+	$('.content-header-js').click(function () {
+		$(this).toggleClass('active');
+		$(this.parentElement).find('.content-items-js').slideToggle(function () {
+			$(this).toggleClass('active');
+		});
+	});
+	//calendar js
+	$('.sPACalendar__fancy-link').click(function () {
+		let defaultDay = event.target.classList.contains('default-day');
+		if (!defaultDay) return
+
+	});
+
 
 	//end luckyoneJs
 
