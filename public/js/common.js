@@ -181,7 +181,7 @@ function eventHandler() {
 	JSCCommon.customRange(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/pa-address.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/pa-calendar.png);"></div>'); // /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
 	// 	if (this.href == url) {
@@ -418,6 +418,11 @@ function eventHandler() {
 		$(this.parentElement).find('.content-items-js').slideToggle(function () {
 			$(this).toggleClass('active');
 		});
+	}); //calendar js
+
+	$('.sPACalendar__fancy-link').click(function () {
+		var defaultDay = event.target.classList.contains('default-day');
+		if (!defaultDay) return;
 	}); //end luckyoneJs
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;

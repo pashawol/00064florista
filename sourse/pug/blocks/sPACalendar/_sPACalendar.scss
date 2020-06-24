@@ -1,6 +1,207 @@
 // start .sPACalendar
 .sPACalendar {
+	position: relative;
 
+	padding-bottom: rem(30);
+	@include media-breakpoint-up(xl){
+		margin-top: -36px;
+		padding-bottom: rem(72);
+	}
+	//calendar
+	&__calendar{
+		width: 100%;
+		@include media-breakpoint-up(lg){
+			width: rem(614px);
+			max-width: 100%;
+		}
+
+		margin-bottom: rem(30px);
+		@include media-breakpoint-up(xl){
+			margin-bottom: 0;
+		}
+	}
+	//header
+	&__calendar-header{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: rem(19px) 0;
+	}
+	//btns
+	&__controll-btn{
+		width: 28px;
+		height: 28px;
+		border-radius: 2px;
+
+		@extend .btn;
+		@extend .btn-accent;
+
+		display: inline-flex;
+		vertical-align: top;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		padding: 0;
+
+		.icon{
+			color: transparent;
+			stroke: $white;
+			font-size: rem(25px);
+		}
+	}
+	&__month-name{
+		font-family: $mono;
+		font-size: rem(30px);
+		line-height: (41/30);
+		letter-spacing: 0.06em;
+		color: #2E2F33;
+	}
+	//facny link
+
+	&__fancy-link{
+		color: $black;
+		display: block;
+		width: 100%;
+	}
+
+	//TABLE
+	&__calendar-body{
+		width: 100%;
+		tbody{
+			border-radius: 2px;
+			border: 1px solid #DDE2E5;
+		}
+		tr{
+
+		}
+		td{
+			border: 1px solid #DDE2E5;
+			text-align: center;
+			@include mt();
+		}
+		.header-cell{
+			background-color: rgba(#015F38, .1);
+
+			font-weight: bold;
+			font-size: rem(10px);
+
+			height: rem(34);
+			line-height: rem(34);
+
+			text-align: center;
+		}
+		.day-of-other-month, .default-day{
+			position: relative;
+
+			height: rem(40);
+			font-size: rem(16px);
+			text-align: center;
+			@include media-breakpoint-up(sm){
+				height: auto;
+				font-size: rem(18px);
+				text-align: left;
+				padding-top: rem(11px);
+				padding-left: rem(10px);
+				padding-bottom: rem(47px);
+			}
+
+			line-height: 1;
+
+
+			font-weight: bold;
+
+		}
+		.day-of-other-month{
+			color: rgba($black, .12);
+		}
+		.default-day{
+
+		}
+		.pink-doted{
+			&:after{
+				content: '';
+				position: absolute;
+				border-radius: 50%;
+				background-color: $pink;
+
+				width: rem(8px);
+				height: rem(8px);
+				right: rem(4px);
+				top: rem(4px);
+				@include media-breakpoint-up(sm){
+					width: rem(16px);
+					height: rem(16px);
+					right: rem(9px);
+					top: rem(7px);
+				}
+			}
+		}
+		//hover
+		.default-day:hover{
+			background-color: #8BB710;
+			box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.13);
+			transform: scale(1.1);
+			color: $white;
+		}
+	}
+	//calendar-txt
+	&__calendar-txt{
+		margin-bottom: rem(30);
+		@include media-breakpoint-up(md){
+			margin-bottom: 0;
+		}
+
+		@include media-breakpoint-up(lg){
+			padding-top: rem(79);
+			padding-left: 10px;
+		}
+		@include media-breakpoint-up(xxl){
+			padding-top: rem(25px);
+			padding-left: 0;
+		}
+	}
+	&__calendar-txt-content{
+		max-width: rem(275px);
+	}
+	&__date-headline{
+		font-weight: 600;
+		font-size: rem(24px);
+		line-height: 1.33;
+		letter-spacing: 0.03em;
+		margin-bottom: rem(28px);
+	}
+	&__date-event{
+		font-weight: 600;
+		font-size: rem(20px);
+		line-height: 1.5;
+
+		margin-bottom: rem(18);
+	}
+	&__preferences{
+		font-weight: 600;
+		font-size: rem(14px);
+		line-height: 1.43;
+		letter-spacing: 0.03em;
+		color: $black;
+	}
+	//txt-col
+	&__txt-col{
+		@include media-breakpoint-up(xl) {
+			padding-top: rem(79px);
+		}
+		p{
+			max-width: 372px;
+			font-size: rem(14px);
+			line-height: 1.43;
+			letter-spacing: 0.03em;
+		}
+	}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
+	&__{}
 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

@@ -19,7 +19,6 @@ include ../blocks/sSeo/_sSeo.pug
 	//personal Area
 include ../blocks/sPersonalData/_sPersonalData.pug
 include ../blocks/sPAOrderLog/_sPAOrderLog.pug
-
 include ../blocks/sPACalendar/_sPACalendar.pug
 
 
@@ -52,9 +51,9 @@ block pagecontent
 						.swiper-slide
 							+e.A.nav-link(href="#") История заказов
 						.swiper-slide
-							+e.A.nav-link(href="#") Календарь
+							+e.A.nav-link.active(href="#") Календарь
 						.swiper-slide
-							+e.A.nav-link.active(href="#") Адреса
+							+e.A.nav-link(href="#") Адреса
 		+sPACalendar()
 	+footer()
 	// end sPersonalData
