@@ -166,7 +166,7 @@
 			}
 
 			font-size: rem(16px);
-			line-height: rem(24px);
+			line-height: (24/16);
 			color: #015F38;
 		}
 		.link-pink{
@@ -318,7 +318,6 @@
 
 	}
 	&__black-txt{
-		font-family: $default-font;
 
 		margin-left: auto;
 		margin-right: 10px;

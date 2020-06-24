@@ -1,40 +1,47 @@
 // start .sCheckout
 .sCheckout {
 	
-	padding-top: var(--sPT);
+	padding-top: calc(var(--sPT) - #{rem(57)});
 	padding-bottom: var(--sPB);
 
 	&__col {
-		max-width: rem(512);
+		max-width: rem(540);
 		margin-left: auto;
 	}
 
+	&__sliderBlock {
+		padding-top: rem(33);
+	}
+
 	&__order {
-		border: 1px solid #595959;
-		padding: rem(18) rem(24) rem(24) rem(24);
+		border: 1px solid rgba($color:#595959, $alpha: 0.5);
+		// padding: rem(18) rem(24) rem(24) rem(22);
 		overflow: hidden;
 		position: relative;
-		margin-bottom: rem(25);
+		margin-bottom: rem(28);
+
+		.h5 {
+			font-family: $mono;
+			margin-bottom: 0;
+		}
+		
+		.h3 {
+			font-family: $mono;
+			margin-bottom: 0;
+			margin-left: -2px;
+		}
 	}
 
 	&__title {
 		display: flex;
 		justify-content: space-between;
+		padding: rem(18) rem(24) rem(0) rem(22);
 	}
 
 	&__totalPrice {
 		display: flex;
 		align-items: center;
-	}
-
-	.h3 {
-		font-family: $mono;
-		margin-bottom: 0;
-	}
-
-	.h5 {
-		font-family: $mono;
-		margin-bottom: 0;
+		padding-right: rem(10);
 	}
 
 	.input-group  {
@@ -46,14 +53,16 @@
 	&__discount {
 		text-align: center;
 		margin-right: rem(26);
+		margin-top: rem(-10px);
 
 		span {
 			font-size: $xsmall;
+			// line-height: 1;
 		}
 	}
 
 	&__title {
-		margin-bottom: rem(10);
+		margin-bottom: rem(14);
 	}
 
 	&__oldPrice {
@@ -79,13 +88,14 @@
 	}
 
 	&__remove {
+		margin-top: rem(13);
 		font-size: $xsmall;
 	}
 
 	&__orderItem {
 		position: relative;
 		padding-bottom: rem(17);
-		padding-top: rem(22);
+		margin-bottom: rem(22);
 
 		&::before {
 			content: '';
@@ -101,9 +111,61 @@
 	}
 
 	&__totalOrder {
-		max-height: rem(470);
+		max-height: rem(425);
+		padding-left: rem(22);
+		margin-bottom: rem(20);
+		margin-right: rem(10);
+		// padding-right: rem(20);
 		overflow-y: auto;
 		overflow-x: hidden;
+		position: relative;
+
+		scrollbar-width: thin;
+		scrollbar-color: $secondary #fff;
+		scrollbar-color: $primary #fff;
+		
+		@include media-breakpoint-up(lg) {
+
+			scrollbar-width: thin;
+	 scrollbar-color: $primary #fff;
+			
+		}
+				&::-webkit-scrollbar {
+					width: 5px;
+					height: 5px;
+					background-color: $light;
+					/* or add it to the track */
+					border-color: $light;
+					// opacity: 0;
+					// -webkit-box-shadow: none;
+				}
+
+				/* Add a thumb */
+				&::-webkit-scrollbar-thumb {
+					background: $primary;
+				}
+
+				&::-webkit-scrollbar-button {
+					display: none
+				}
+	}
+
+	&__coupon {
+		position: relative;
+		padding-bottom: rem(9);
+		padding-right: rem(22);
+		margin-left: rem(22);
+		margin-bottom: rem(24);
+
+		&::before {
+			content: '';
+			width: 200%;
+			height: 1px;
+			position: absolute;
+			bottom: 0;
+			left: -30%;
+			background-color: #595959;
+		}
 	}
 
 	&__buttonBlock {
@@ -113,17 +175,29 @@
 
 	&__backToBascket {
 		white-space: nowrap;
-		padding: rem(11) rem(13);
+		padding: rem(11) rem(15);
 		margin-top: rem(-3);
-		letter-spacing: rem(-0.1);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		border: solid 1px #5cbf1a;
+		font-weight: 600;
 
 		&:hover {
 			color: $green2;
 		}
+	}
+
+	.form-wrap {
+
+		&__formTitle {
+			@extend .h3;
+		}
+
+		&__custom-input-wrap {
+			display: flex;
+		}
+
 	}
 
 	@include media-breakpoint-up(xl) {}
@@ -150,4 +224,102 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+	.form-wrap__radioWrap {
+		// display: flex;
+		// flex-wrap: wrap;
+	}
+
+	.custom-radio {
+		display: inline-block;
+		width: auto;
+		&__text {
+			// height: calc(100% - 16px);
+			// margin-bottom: rem(16);
+			width: auto;
+			display: inline-block;
+			margin-right: rem(15px);
+		}
+
+		&__radioDescr {
+			font-size: $xsmall;
+			opacity: 0.5;
+			display: block;
+		}
+
+		&__input[type="checkbox"] + &__lab {
+
+		}
+	}
+
+	.custom-input {
+		&__lab {
+			border: 1px solid #000000;
+			background-color: #fff;
+
+			&::after {
+				// padding: 2px;
+				width: 100%;
+				height: 100%;
+
+			}
+		}
+
+		.custom-input__input:checked+.custom-input__lab {
+			background-color: #fff;
+			&::after {
+				// content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' color='#8BB710' width='13' height='8' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M413.505 91.951L133.49 371.966l-98.995-98.995c-4.686-4.686-12.284-4.686-16.971 0L6.211 284.284c-4.686 4.686-4.686 12.284 0 16.971l118.794 118.794c4.686 4.686 12.284 4.686 16.971 0l299.813-299.813c4.686-4.686 4.686-12.284 0-16.971l-11.314-11.314c-4.686-4.686-12.284-4.686-16.97 0z' class='st0'/%3E%3C/svg%3E");
+				// content: url('../img/svg/check.svg');
+				content: '';
+				background-image: url('../img/svg/check.svg');
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+	}
 } // end.sCheckout
+
+.custom-input-radio {
+	&__hidden {
+		@extend .invisible;
+	}
+
+	.custom-input-radio__hidden:checked ~ .custom-input-radio__lab {
+		&::before {
+			opacity: 1;
+		}
+	}
+
+	&__lab {
+		cursor: pointer;
+		border: 1px solid #000000;
+		border-radius: 50%;
+		display: block;
+		width: rem(24px);
+		height: rem(24px);
+		margin-right: rem(15);
+		position: relative;
+
+		&::before {
+			content: '';
+			@include mt;
+			width: rem(16px);
+			height: rem(16px);
+			background-color: $primary;
+			@include a-cent;
+			border-radius: 50%;
+			opacity: 0;
+		}
+	}
+
+	&__topLine {
+		margin-bottom: rem(17);
+		display: block;
+	}
+
+	&__characters {
+		color: $green3;
+		font-size: $xsmall;
+	}
+
+	margin-bottom: rem(20);
+}

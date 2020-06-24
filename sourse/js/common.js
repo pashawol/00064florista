@@ -183,7 +183,7 @@ function eventHandler() {
 	JSCCommon.customRange();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/pa-address.png);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/checkoit.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -506,7 +506,12 @@ function eventHandler() {
 			$(this).toggleClass('active');
 		});
 	});
+	//calendar js
+	$('.sPACalendar__fancy-link').click(function () {
+		let defaultDay = event.target.classList.contains('default-day');
+		if (!defaultDay) return
 
+	});
 
 
 	//end luckyoneJs
