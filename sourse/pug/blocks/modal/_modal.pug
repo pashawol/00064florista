@@ -1,46 +1,60 @@
 
 mixin modal() 
- 
-	//- #modal-win.modal.fade(tabindex='-1', role='dialog', aria-labelledby='modal-win', aria-hidden='true')
-		
-	//- 	div( class="   modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			+input("tel","Введите ваш телефон")(name="tel" required) 
-				
-	//- 			+e.BUTTON.btn.btn.btn-accent.btn-block Отправить
-	//- 			+b.wrap-polite
-	//- 				+b.custom-input.polite
-	//- 					+b.LABEL.custom-input.polite
-	//- 						+e.INPUT.input.__input-radio(type="checkbox" checked name="polite" required value="")
-	//- 						+e.SPAN.lab
-	//- 						| Даю 
-	//- 						| 
-	//- 						span.link( data-toggle='modal', data-target='#exampleModal2') согласие 
-
-	//- 						| на хранение и обработку   персональных данных
-	
- 
-
-	//- #thanks.modal.fade(tabindex='-1', role='dialog', aria-labelledby='thanks', aria-hidden='true')
-	//- 	div( class=" ttext-center  modal-dialog  modal-dialog-centered  " role='document') 
-	//- 		+form-wrap()(class=" modal-content modal-win ")
-	//- 			button.close.mfp-close(type='button', data-dismiss='modal', aria-label='Close')  ×
-	//- 			br
-	//- 			.h2 Заявка принята
-	//- 			br
-	//- 			.h3 Скоро с Вами свяжутся
-	//- 			br 
+  
 	.d-none
-		+form-wrap()(id="modal-call" class="  modal-win modal-form" )
-			.text-center
-				+e.title.h3.ttu Обратный звонок
-				p Заполните заявку и&nbsp;мы&nbsp;с&nbsp;Вами свяжемся в&nbsp;течение 15&nbsp;минут
-			+input("Ваше Имя")(required) 
-			+input("Ваш телефон","tel")(required)
-			//- +input("email","Ваше email")(required)
-			//- +text( "Комментарий")
-			+e.INPUT.btn(type="submit" value="Рассчитать") 
-			+polite()
-		// #modal-call
+		+form-wrap()(id="modal-user" class="  modal-win modal-form" )
+			+e.body
+				+e.title-head Личный кабинет
+				+input("Логин")(required) 
+				+input("Пароль")(required)
+				.row.align-items-center
+					.col
+						+e.INPUT.btn(type="submit" value="Войти") 
+					.col-auto
+						a.link-pink.small(href="#") Забыли пароль?
+			+e.footer
+				.small Еще нет аккаунта? #[a.link-pink(href="#") Зарегистрируйтесь]
+		// #modal-user
+		
+		+form-wrap()(id="modal-addData" class="  modal-win modal-form" )
+			+e.body
+				+e.title-head Добавить юр.лицо
+				+input("",'text','Наименование компании')(required) 
+				+input("",'text','ИНН')(required) 
+				+input("",'text','Юридический адрес с почтовым индексом')(required) 
+				+input("",'text','БИК банка плательщика')(required) 
+				+input("",'text','Номер расчётного счета')(required) 
+				 
+				.row.align-items-center
+					.col-7
+						+e.INPUT.btn.btn-block(type="submit" value="Добавить юр.лицо") 
+		// #modal-addData
+		+form-wrap()(id="modal-addAddr" class="  modal-win modal-form" )
+			+e.body
+				+e.title-head Добавить адрес
+				+input("",'text','ФИО Получателя')
+				+input("",'text','Город')
+				+input("",'text','Улица')
+				.row
+					.col-4
+						+input("",'text','Дом')
+		 
+					.col-4
+						+input("",'text','Корпус')
+		 
+					.col-4
+						+input("",'text','Кв./офис')
+		 
+					.col-4
+						+input("",'text','Подъезд')
+		 
+					.col-4
+						+input("",'text','Домофон')
+		 
+				.row.align-items-center
+					.col-7
+						+e.INPUT.btn.btn-block(type="submit" value="Добавить") 
+		// #modal-addAddr
+
 	// modal
+	a.link-modal(href="#modal-addEvent") modal-addEvent

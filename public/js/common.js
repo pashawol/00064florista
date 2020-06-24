@@ -80,14 +80,6 @@ var JSCCommon = {
 		if (_this.menuMobileLink) {
 			_this.toggleMenu();
 
-			_this.menuMobileLink.forEach(function (element) {
-				element.addEventListener('click', function (e) {
-					console.log(element);
-
-					_this.closeMenu();
-				});
-			});
-
 			document.addEventListener('mouseup', function (event) {
 				var container = event.target.closest(".menu-mobile--js.active"); // (1)
 
@@ -392,6 +384,15 @@ function eventHandler() {
 
 	$(".showhide").click(function () {
 		$(this).toggleClass("active").next().slideToggle();
+	});
+	$(".menu-mobile__item.menu-item-has-children ").each(function () {
+		$(this).append('<div class="toggle-l"></div>');
+	}); // $(".nav__item--has-children-js   .nav__link").click(function () {
+	// 	return false;
+	// })
+
+	$(".menu-mobile  ").on('click', '.toggle-l', function () {
+		$(this).toggleClass('active').prev('.sub-menu').slideToggle(); // return false;
 	}); //luckyoneJs
 
 	var paNavSlider;

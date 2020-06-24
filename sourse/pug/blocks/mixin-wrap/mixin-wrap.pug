@@ -107,7 +107,7 @@ mixin mnu()
 mixin mnu()
 	-
 		var nav= {
-			"8 марта":"#",
+		 
 			"Цветы":"#",
 			"Букеты":"#",
 			"Композиции":"#",
@@ -117,10 +117,42 @@ mixin mnu()
 			"Подарки":"#",
 			 
 			}
-	ul(itemscope itemtype="http://schema.org/SiteNavigationElement")
+	+e.UL.nav(itemscope itemtype="http://schema.org/SiteNavigationElement")
+		+e.LI.item( itemprop="item" ): +e.link.text-green2(href="#"  itemprop="url") 8 марта
 		each linkPatch, linkName in nav
-			li( itemprop="item" ): a(href= linkPatch  itemprop="url")= linkName
-		li( itemprop="item" ): a.link-pink(href="#"  itemprop="url") Акции %
+			+e.LI.item.menu-item-has-children( itemprop="item" )
+				+e.link(href= linkPatch  itemprop="url")= linkName
+				+b.sub-menu
+					+e.inner
+						+b.UL.menu-with-thumb
+							mixin item(i,a)
+								li
+									a(href="#")
+										+pic(`menu-${i}.png`,'bg','',0)
+										= a
+							- for (var x = 0; x < 3; x++)
+								+item("1","	Гортензия")
+								+item("2","Розы")
+								+item("3","Пионы")
+								+item("4","Орхидеи")
+								+item("5","Гвоздики")
+								+item("6","Ирисы")
+								+item("7","Маттиола")
+								+item("8","Подсолнухи") 
+							//- +item("8","Подсолнухи") 
+						+b.UL.menu
+							li.h5.strong Бюджет
+							mixin item(a)
+								li
+									a(href="#")= a
+							+item("до 2500")
+							+item("2501 — 4500")
+							+item("4501 — 9500")
+							+item("9501 — 15000, ")
+							+item("15001 — 25000")
+							+item("от 25001")
+
+		+e.LI.item( itemprop="item" ): +e.link.text-pink(href="#"  itemprop="url") Акции %
 //- /menu
 mixin pic(i, bg, lazy="lazy", media='576px')
 	-
@@ -147,7 +179,7 @@ mixin pic(i, bg, lazy="lazy", media='576px')
 				each val2 in [smpath2,smpath1] 
 					+src(i,val,`${val2 + (val ==  "webp" ? "/webp" : "") }`,lazy,"source")(media=(val2 == smpath2 ? "(min-width:"+ media+")" : null))
 		else 
-			//- +src(i,'webp',smpath2+`/webp`,lazy,"source")
+			+src(i,'webp',smpath2+`/webp`,lazy,"source")
 			//- // /webp images  
 		+src(i, exp,smpath2, lazy,"",bg) 
 	// /picture

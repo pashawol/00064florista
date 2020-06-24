@@ -1,6 +1,9 @@
 .footer {
 		border-top: 1px solid #E0E0E0;
 		font-size: $small;
+		.sub-menu{
+			display: none !important;
+		}
 		&__body{
 			border-bottom: 1px solid #E0E0E0;
 			padding-top: rem(30);
@@ -8,7 +11,7 @@
 		}
 		&__foot{
 			padding-top: rem(30);
-			padding-bottom: rem(30);
+			padding-bottom: rem(15);
 			.row{
 				align-items: center;
 			}
