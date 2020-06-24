@@ -1,0 +1,42 @@
+mixin s-basket()
+	// start s-basket
+	+b.s-basket#s-basket&attributes(attributes)
+		.container
+			.form-wrap
+				.row
+					.col-lg-9.col-xxl-8
+						mixin basketItem
+							+e.basketItem
+								.table-wrap
+									table
+										tr
+											td
+												+e.product(href="#")
+													+e.imgWrap
+														img.res-i.lazy(src="#" data-src="img/@1x/basket.jpg", alt="")
+													p КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"
+											td 
+												+e.size L (45 см)
+											td 
+												+e.quantity
+													+e.BUTTON.minus(type="button")
+													input(type="numb" value="2")
+													+e.BUTTON.plus(type="button")
+											td 
+												+e.price
+													span Цена
+													.h5 12 300 р.
+											td 
+												+e.price--total
+													span Сумма
+													.h5 24 600 р.
+											td 
+												+e.BUTTON.cancel(type="button")
+						+basketItem()
+						+basketItem()
+						+basketItem()
+					.col.align-self-end
+						+e.order(type="submit") Оформить заказ
+							img.ml-3(src="img/svg/arrow-lg-right.svg", alt="")
+
+	// end s-basket

@@ -1,0 +1,153 @@
+// start .sCheckout
+.sCheckout {
+	
+	padding-top: var(--sPT);
+	padding-bottom: var(--sPB);
+
+	&__col {
+		max-width: rem(512);
+		margin-left: auto;
+	}
+
+	&__order {
+		border: 1px solid #595959;
+		padding: rem(18) rem(24) rem(24) rem(24);
+		overflow: hidden;
+		position: relative;
+		margin-bottom: rem(25);
+	}
+
+	&__title {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__totalPrice {
+		display: flex;
+		align-items: center;
+	}
+
+	.h3 {
+		font-family: $mono;
+		margin-bottom: 0;
+	}
+
+	.h5 {
+		font-family: $mono;
+		margin-bottom: 0;
+	}
+
+	.input-group  {
+		button {
+			border-radius: .25rem !important;
+		}
+	}
+
+	&__discount {
+		text-align: center;
+		margin-right: rem(26);
+
+		span {
+			font-size: $xsmall;
+		}
+	}
+
+	&__title {
+		margin-bottom: rem(10);
+	}
+
+	&__oldPrice {
+		text-decoration-line: line-through;
+		color: #000;
+		font-size: $small;
+		font-family: $mono;
+	}
+
+	&__imgWrap {
+		margin-right: rem(24);
+		width: rem(64px);
+		height: rem(64px);
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+	}
+
+	&__itemPrice {
+		text-align: center;
+	}
+
+	&__remove {
+		font-size: $xsmall;
+	}
+
+	&__orderItem {
+		position: relative;
+		padding-bottom: rem(17);
+		padding-top: rem(22);
+
+		&::before {
+			content: '';
+			width: 200%;
+			height: 1px;
+			background-color:#595959;
+			position: absolute;
+			bottom: 0;
+			left: -30%;
+			opacity: 0.1;
+
+		}
+	}
+
+	&__totalOrder {
+		max-height: rem(470);
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	&__buttonBlock {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__backToBascket {
+		white-space: nowrap;
+		padding: rem(11) rem(13);
+		margin-top: rem(-3);
+		letter-spacing: rem(-0.1);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: solid 1px #5cbf1a;
+
+		&:hover {
+			color: $green2;
+		}
+	}
+
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(xs) {}
+	
+	//
+	@include media-breakpoint-between(md, xl) { }
+	
+	
+	//
+	@include media-breakpoint-only(xs) {}
+	@include media-breakpoint-only(sm) {}
+	@include media-breakpoint-only(md) {}
+	@include media-breakpoint-only(lg) {}
+	@include media-breakpoint-only(xl) {}
+	
+	//
+	@include media-breakpoint-down(xl) {}
+	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(xs) {} 
+
+} // end.sCheckout

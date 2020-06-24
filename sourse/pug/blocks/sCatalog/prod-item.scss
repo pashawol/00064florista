@@ -106,4 +106,15 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+
+	&__checkout-text {
+		color: #595959;
+		text-align: center;
+		text-transform: none;
+		display: block;
+		span {
+			display: block;
+			color: #000;
+		}
+	}
 } // end.prod-item

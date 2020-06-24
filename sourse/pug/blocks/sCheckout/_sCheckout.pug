@@ -1,0 +1,53 @@
+mixin sCheckout()
+	// start sCheckout
+	+b.sCheckout#sCheckout&attributes(attributes)
+		.container
+			.row
+				.col-xl-6
+					+e.sliderBlock
+						+sCatalog-checkout()
+				+e.col.col
+					+e.order
+						+e.title
+							.h3 Заказ
+							+e.totalPrice
+								+e.discount 
+									span.text-pink купон -5%
+									+e.oldPrice 75 800 р.
+								.h5 73 800 р.
+						+e.coupon
+							+form-wrap
+								<div class="input-group mb-3">
+									<input type="text" class="form-control" placeholder="Купон на скидку" aria-label="Купон на скидку" aria-describedby="button-addon3">
+									<button class="btn btn-accent" type="button" id="button-addon3">
+										span.d-none.d-sm-block Применить
+										span.d-sm-none ОК
+									</button>
+								</div>
+						+e.totalOrder
+							mixin orderItem
+								+e.orderItem
+									.row
+										.col-sm-8.d-flex
+											+e.imgWrap
+												img.lazy.res-i(src="#" data-src="img/@2x/basket.jpg", alt="")
+											+e.name КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА" #[span l 45 см, 2 ШТ]
+										.col
+											+e.itemPrice
+												.h5 24 600 р.
+												+e.BUTTON.remove.btn.link-pink(type="button") Убрать из заказа
+							+orderItem()
+							+orderItem()
+							+orderItem()
+							+orderItem()
+							+orderItem()
+							+orderItem()
+							+orderItem()
+							+orderItem()
+							+orderItem()
+					+e.buttonBlock
+						+e.backToBascket.btn(href="#") Вернуться в корзину
+						+e.BUTTON.done.btn.btn-accent(type="button") Оформить заказ
+
+
+	// end sCheckout

@@ -73,3 +73,19 @@ mixin sCatalog-05()
 			+pugin
 	// end sCatalog
 	
+
+mixin sCatalog-checkout()
+	// start sCatalog
+	+b.sCatalog--checkout#sCatalog&attributes(attributes)
+		+e.slider--js.swiper-container
+			.swiper-wrapper
+				+e.slide.swiper-slide
+					+prod-item("1",'','','','Мишка','1 800 руб.')
+				+e.slide.swiper-slide
+					+prod-item("2",'','','','Макаронсы 10 шт.','1 800 руб.')
+				+e.slide.swiper-slide
+					+prod-item("3",'','','','Подарок','1 800 руб.')
+				+e.slide.swiper-slide
+					+prod-item("4",'','','','Залипуха','1 800 руб.')
+			+arrow
+	// end sCatalog

@@ -131,4 +131,11 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
+	&--checkout {
+		overflow: hidden;
+		padding-left: 15px;
+		padding-right: 15px;
+		// .sCatalog__slider {
+		// }
+	}
 } // end.sCatalog
