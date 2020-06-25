@@ -147,10 +147,14 @@
 			font-size: $small;
 		}
 		.swiper-button-hand-next {
-			right: calc(var(--sw-w) - #{rem(61)});
+			@include media-breakpoint-up(sm) {
+				right: calc(var(--sw-w) - #{rem(61)});
+			}
 		}
 		.swiper-button-hand-prev {
-			left: calc(var(--sw-w) - #{rem(61)});
+			@include media-breakpoint-up(sm) {
+				left: calc(var(--sw-w) - #{rem(61)});
+			}
 		}
 		.prod-item__img-wrap {
 			margin-bottom: rem(10);
