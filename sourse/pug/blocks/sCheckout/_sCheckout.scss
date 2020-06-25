@@ -18,10 +18,6 @@
 		}
 	}
 
-	&__orderWrap {
-
-	}
-
 	&__sliderBlock {
 		padding-top: rem(33);
 
@@ -272,9 +268,10 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
-	.form-wrap__radioWrap {
-		// display: flex;
-		// flex-wrap: wrap;
+	.catalog-sort__input {
+		@include media-breakpoint-down(sm) {
+			width: 100%;
+		}
 	}
 
 	.custom-radio {
