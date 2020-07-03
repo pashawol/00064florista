@@ -1,0 +1,147 @@
+.tabs {
+	
+	&__caption {
+		margin-bottom: rem(24);
+	}
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		// display: block;
+		border-radius: 3px;
+		border: 1px solid $primary;
+		@include media-breakpoint-up(sm) {
+			
+			padding: rem(7) rem(17);
+		}
+		padding: rem(5);
+		// width: 100%;
+		@include media-breakpoint-up(xl) {
+			margin-right: rem(22);
+
+				// width: rem(114);
+			}
+		cursor: pointer;
+		text-align: center;
+		@include mt;
+
+		&.active, &:hover {
+			background: rgba(127, 177, 21, 0.28);
+		}
+	}
+
+	&__formTitle {
+		font-size: $xsmall;
+		margin-bottom: rem(7);
+	}
+
+	.input-group  {
+		.btn-accent {
+			@include media-breakpoint-up(sm) {
+				min-width: rem(160);
+			}
+		}
+	}
+	iframe {
+		margin-top: rem(16);
+		margin-bottom: rem(20);
+	}
+
+	&__deliveryType {
+
+		.custom-radio {
+			@include media-breakpoint-up(sm) {
+				display: block;
+				width: 100%;
+				margin-bottom: rem(7);
+			}
+
+			&__text {
+				// @include media-breakpoint-up(sm) {
+					padding: rem(4) rem(4) rem(4) rem(10);
+					width: 100%;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+				// }
+				min-height: rem(49);
+			}
+
+			&__deliveryPrice {
+				@include mt;
+				background: rgba(73, 134, 32, 0.2);
+				color: $green3;
+				width: rem(70);
+				@include media-breakpoint-up(md) {
+					width: rem(82);
+				}
+				@include media-breakpoint-up(sm) {
+					padding: rem(7);
+				}
+				flex-shrink: 0;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 3px;
+			}
+
+			&:hover {
+				.custom-radio__deliveryPrice {
+					background-color: #fff;
+					color: $body-color;
+				}
+			}
+		}
+	}
+
+	.custom-input__text {
+		font-size: $small;
+	}
+
+	.custom-input {
+		padding-bottom: rem(15);
+	}
+
+	&__smText {
+		font-size: $xsmall;
+	}
+
+	&__title {
+		font-size: $xsmall;
+		font-weight: normal;
+	}
+
+	.h5 {
+		margin-bottom: rem(13);
+		font-weight: 600;
+	}
+
+	&__home {
+		.custom-input {
+			margin-right: 0;
+			margin-bottom: 0 !important;
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__deliveryTypeDescr {
+
+		@include media-breakpoint-up(sm) {
+			padding-top: rem(30);
+		}
+		@include media-breakpoint-only(lg) {
+			padding-top: 0;
+			max-width: 100%;
+		}
+		@include media-breakpoint-down(xl) {
+			margin-bottom: rem(25);
+		}
+
+		@include media-breakpoint-up(lg) {
+			max-width: rem(273);
+			margin-left: auto;
+		}
+	}
+}

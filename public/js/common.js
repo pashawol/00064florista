@@ -180,7 +180,7 @@ function eventHandler() {
 	JSCCommon.inputMask();
 	JSCCommon.customRange(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/checkoit.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/LK.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 	// const url = document.location.href;
 	// $.each($(".top-nav__nav a "), function() {
@@ -288,8 +288,18 @@ function eventHandler() {
 			// 	slidesPerView: 4, 
 			// },
 			1200: {
-				slidesPerView: 5
+				slidesPerView: 5,
+				spaceBetween: 100
 			}
+		}
+	}));
+	var swiper9 = new Swiper('.sCheckout-slider-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		spaceBetween: 15,
+		slidesPerView: 1,
+		loop: false,
+		navigation: {
+			nextEl: '.orderButton__next',
+			prevEl: '.orderButton__back'
 		}
 	})); // })
 

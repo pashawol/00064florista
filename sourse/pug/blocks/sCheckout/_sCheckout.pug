@@ -2,25 +2,264 @@ mixin sCheckout()
 	// start sCheckout
 	+b.sCheckout#sCheckout&attributes(attributes)
 		.container
-			mixin radio(t,n,sm)
+			mixin radio(t,n,sm,price)
 				+b.LABEL.custom-radio
 					input(type="radio" name= n)&attributes(attributes)
-					+e.SPAN.text= t
-						if sm
-							+e.radioDescr= sm
+					+e.SPAN.text
+						+e.SPAN.textWrap
+							+e.SPAN.radioTitle= t
+							if sm
+								+e.SPAN.radioDescr= sm
+						if price
+							+e.SPAN.deliveryPrice= price
 			mixin in-c2(typ="checkbox", text, name= typ )
 				+b.LABEL.custom-input
 					+e.INPUT.input(type= typ , name= name)&attributes(attributes)
 					+e.SPAN.lab
 					+e.SPAN.text= text
+			mixin step(i)
+				+b.orderStep
+					if i == 1
+						+e.numb.active 1
+						+e.numb.inctive 2
+						+e.numb.inctive 3
+					if i == 2
+						+e.numb.passed 1
+						+e.numb.active 2
+						+e.numb.inctive 3
+					if i == 3
+						+e.numb.passed 1
+						+e.numb.passed 2
+						+e.numb.active 3
+			mixin orderButton
+				+b.orderButton&attributes(attributes)
+					.row.justify-content-between
+						.col-auto
+							+e.back.btn Назад
+						.col-auto
+							+e.next.btn.btn-accent Далее
 			.row
 				.col-lg-6.col-xl-7.col-xxl-6.pb-4
-					+e.sliderBlock
-						.h3 Дополните букет подарком
-						+sCatalog-checkout()
+					+e.waterData
+						+form-wrap()
+							.swiper-container.sCheckout-slider-js
+								.swiper-wrapper
+									+e.form.swiper-slide
+										+step(1)
+										+e.formTitle Заказчик
+										.row
+											.col-sm-6
+												+input('','text','Имя')(required)
+											.col-sm-6
+												+input('','text','Фамилия')(required)
+											.col-12
+												+input('','text','Адрес')(required)
+											.col-sm-6
+												+input('','tel','Телефон')(required)
+											.col-sm-6
+												+input('','email','E-mail')(required)
+										+e.custom-input-wrap
+											+in-c2('checkbox','НЕ звонить для подтверждения')
+											+in-c2('checkbox','Получаю лично')
+										+orderButton
+									+e.form.swiper-slide
+										+step(2)
+										+e.formTitle Получатель
+										.row
+											.col-sm-6
+												+input('','text','Имя')(required)
+											.col-sm-6
+												+input('','text','Фамилия')(required)
+											.col-12
+												+input('','text','Адрес')(required)
+											.col-sm-6
+												+input('','tel','Телефон')(required)
+										+e.custom-input-wrap
+											+in-c2('checkbox','Вручить инкогнито')
+											+in-c2('checkbox','Фото с получателем')
+											+in-c2('checkbox','Сюрприз, не звонить заранее')
+										+b.LABEL.custom-input-radio
+											+e.topLine
+												span.row.justify-content-between
+													span.col-sm-auto.d-flex
+														+e.INPUT.hidden(type="radio" name="size")
+														+e.SPAN.lab
+														+e.SPAN.text добавить бесплатную открытку
+													span.col-sm-auto
+														+e.SPAN.characters 70 символов
+										+input('','text')(maxlength="70")
+										+b.LABEL.custom-input-radio
+											+e.topLine
+												span.row.justify-content-between
+													span.col-sm-auto.d-flex
+														+e.INPUT.hidden(type="radio" name="size")
+														+e.SPAN.lab
+														+e.SPAN.text Добавить дизайнерскую открытку
+													span.col-sm-auto
+														+e.SPAN.characters 900 символов
+										+input('','textarea')(maxlength="900")
+										+orderButton
+									+e.form.swiper-slide
+										+step(3)
+										+e.formTitle Доставка 
+										+b.tabs
+											+e.caption
+												+e.btn.btn.active Доставка по адресу
+												+e.btn.btn Самовывоз
+											+e.wrap
+												+e.content.active
+													.h5 Доставка
+													+form-wrap
+														<div class="input-group mb-3">
+															<input type="text" class="form-control" placeholder="Россия, Москва, Москва, Болотная набережная, 15к1" aria-label="Россия, Москва, Москва, Болотная набережная, 15к1" aria-describedby="button-addon3">
+															<button class="btn btn-accent" type="button" id="button-addon3">
+																span.d-none.d-sm-block Найти
+																span.d-sm-none ОК
+															</button>
+														</div>
+													+e.home
+														.row.align-items-center
+															.col-xl
+																+input('','text','Дом, корпус')
+															.col-sm-auto.align-self-end
+																+in-c2('checkbox','Частный дом')
+															.col-sm-auto.align-self-end
+																+in-c2('checkbox','Узнать время у получателя')
+													<iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3A4822151dc4712f8b03c3babfa5d92f002b76010757a1275f7e9ece82dc99131c&amp;source=constructor" width="100%" height="395"></iframe>
+													.row
+														.col-sm-6
+															.h5 Тип доставки
+															+e.deliveryType
+																+radio('Стандартная доставка','delivery-type','','0р')
+																+radio('Ночная доставка','delivery-type','','360р')
+																+radio('Экспресс-доставка','delivery-type','в течении 2-х часов','600р')
+																+radio('Сторого ко времени','delivery-type','+/- 8 минут','700р')
+																+radio('Аэропорт','delivery-type','Внуково, Домодедово, Шереметьево','1500р')
+														.col
+															+e.deliveryTypeDescr
+																p Заказ будет доставлен после согласования с&nbsp;флористом в&nbsp;один из&nbsp;выбранных интервалов.
+													.row
+														.col-sm-auto
+															+input('','date')(placeholder=none)
+														.col-sm-auto
+															+b.catalog-sort
+																+e.SELECT.input.form-control(id="vertical")
+																	mixin option(t)
+																		option(value= t)= t
+																	+option('18:30')
+																	+option('19:00')
+																	+option('19:30')
+																	+option('20:00')
+																	+option('20:30')
+																	+option('21:00')
+																	+option('21:30')
+																	+option('22:00')
+																	+option('22:30')
+																	+option('23:00')
+												+e.content
+
+													<iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3A4822151dc4712f8b03c3babfa5d92f002b76010757a1275f7e9ece82dc99131c&amp;source=constructor" width="100%" height="395"></iframe>
+													.row
+														.col-sm-6
+															.h5 Тип доставки
+															+e.deliveryType
+																+radio('Салон на Бауманской','delivery-type')
+																+radio('Салон на Добрынинский','delivery-type')
+														.col
+															+e.deliveryTypeDescr
+																p Ул. Ладожская д.10, вход со стороны ул. Ладожская 
+																p Связь с салоном +7(985) 400-45-34
+																strong При себе обязательно иметь документ, удостоверяющий личность
+										.h5 Тип оплаты
+										+e.radioWrap
+											+radio('Он-лайн','payment')(checked)
+											+radio('Наличными при получении','payment')
+											+radio('Картой при получении','payment')
+											+radio('PayPal','payment')
+											+radio('Оплата от юр лица','payment','/* Должно быть заполненны данные юр лица в личном кабинете */')
+										+orderButton
+				+e.col.col(data-sticky-container)
+					+e.orderWrap(data-sticky data-margin-top="20")
+						+e.order
+							+e.title
+								.h3 Заказ
+								+e.totalPrice
+									//- +e.discount 
+										span.text-pink купон -5%
+										+e.oldPrice 75 800 р.
+									.h5 73 800 р.
+							+e.totalOrder
+								mixin orderItem
+									+e.orderItem
+										.row
+											.col-sm-8.d-flex
+												+e.imgWrap(href="#")
+													img.lazy.res-i(src="#" data-src="img/@2x/basket.jpg", alt="")
+												+e.name(href="#") КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА" #[span l 45 см, 2 ШТ]
+											.col
+												+e.itemPrice
+													.h5 24 600 р.
+													+e.BUTTON.remove.btn.link-pink(type="button") Убрать из заказа
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+						+e.buttonBlock
+							+e.backToBascket.btn(href="#") Вернуться в корзину
+							+e.BUTTON.done.btn.btn-accent(type="button") Оформить заказ
+
+
+mixin sCheckout-1()
+	// start sCheckout
+	+b.sCheckout#sCheckout&attributes(attributes)
+		.container
+			mixin radio(t,n,sm,price)
+				+b.LABEL.custom-radio
+					input(type="radio" name= n)&attributes(attributes)
+					+e.SPAN.text
+						+e.SPAN.textWrap
+							+e.SPAN.radioTitle= t
+							if sm
+								+e.SPAN.radioDescr= sm
+						if price
+							+e.SPAN.deliveryPrice= price
+			mixin in-c2(typ="checkbox", text, name= typ )
+				+b.LABEL.custom-input
+					+e.INPUT.input(type= typ , name= name)&attributes(attributes)
+					+e.SPAN.lab
+					+e.SPAN.text= text
+			mixin step(i)
+				+b.orderStep
+					if i == 1
+						+e.numb.active 1
+						+e.numb.inctive 2
+						+e.numb.inctive 3
+					if i == 2
+						+e.numb.passed 1
+						+e.numb.active 2
+						+e.numb.inctive 3
+					if i == 3
+						+e.numb.passed 1
+						+e.numb.passed 2
+						+e.numb.active 3
+			mixin orderButton
+				+b.orderButton&attributes(attributes)
+					.row.justify-content-between
+						.col-auto
+							+e.back.btn Назад
+						.col-auto
+							+e.next.btn.btn-accent Далее
+			.row
+				.col-lg-6.col-xl-7.col-xxl-6.pb-4
 					+e.waterData
 						+form-wrap()
 							+e.form
+								+step(1)
 								+e.formTitle Заказчик
 								.row
 									.col-sm-6
@@ -36,7 +275,89 @@ mixin sCheckout()
 								+e.custom-input-wrap
 									+in-c2('checkbox','НЕ звонить для подтверждения')
 									+in-c2('checkbox','Получаю лично')
+								+orderButton
+				+e.col.col(data-sticky-container)
+					+e.orderWrap(data-sticky data-margin-top="20")
+						+e.order
+							+e.title
+								.h3 Заказ
+								+e.totalPrice
+									//- +e.discount 
+										span.text-pink купон -5%
+										+e.oldPrice 75 800 р.
+									.h5 73 800 р.
+							+e.totalOrder
+								mixin orderItem
+									+e.orderItem
+										.row
+											.col-sm-8.d-flex
+												+e.imgWrap(href="#")
+													img.lazy.res-i(src="#" data-src="img/@2x/basket.jpg", alt="")
+												+e.name(href="#") КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА" #[span l 45 см, 2 ШТ]
+											.col
+												+e.itemPrice
+													.h5 24 600 р.
+													+e.BUTTON.remove.btn.link-pink(type="button") Убрать из заказа
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+						+e.buttonBlock
+							+e.backToBascket.btn(href="#") Вернуться в корзину
+							+e.BUTTON.done.btn.btn-accent(type="button") Оформить заказ
+
+
+mixin sCheckout-2()
+	// start sCheckout
+	+b.sCheckout#sCheckout&attributes(attributes)
+		.container
+			mixin radio(t,n,sm,price)
+				+b.LABEL.custom-radio
+					input(type="radio" name= n)&attributes(attributes)
+					+e.SPAN.text
+						+e.SPAN.textWrap
+							+e.SPAN.radioTitle= t
+							if sm
+								+e.SPAN.radioDescr= sm
+						if price
+							+e.SPAN.deliveryPrice= price
+			mixin in-c2(typ="checkbox", text, name= typ )
+				+b.LABEL.custom-input
+					+e.INPUT.input(type= typ , name= name)&attributes(attributes)
+					+e.SPAN.lab
+					+e.SPAN.text= text
+			mixin step(i)
+				+b.orderStep
+					if i == 1
+						+e.numb.active 1
+						+e.numb.inctive 2
+						+e.numb.inctive 3
+					if i == 2
+						+e.numb.passed 1
+						+e.numb.active 2
+						+e.numb.inctive 3
+					if i == 3
+						+e.numb.passed 1
+						+e.numb.passed 2
+						+e.numb.active 3
+			mixin orderButton
+				+b.orderButton&attributes(attributes)
+					.row.justify-content-between
+						.col-auto
+							+e.back.btn Назад
+						.col-auto
+							+e.next.btn.btn-accent Далее
+			.row
+				.col-lg-6.col-xl-7.col-xxl-6.pb-4
+					+e.waterData
+						+form-wrap()
 							+e.form
+								+step(2)
 								+e.formTitle Получатель
 								.row
 									.col-sm-6
@@ -71,63 +392,18 @@ mixin sCheckout()
 											span.col-sm-auto
 												+e.SPAN.characters 900 символов
 								+input('','textarea')(maxlength="900")
-							+e.form
-								+e.formTitle Доставка и оплата
-								.row
-									.col-sm-auto
-										+input('','date')(placeholder=none)
-									.col-sm-auto
-										+b.catalog-sort
-											+e.SELECT.input.form-control(id="vertical")
-												mixin option(t)
-													option(value= t)= t
-												+option('18:30')
-												+option('19:00')
-												+option('19:30')
-												+option('20:00')
-												+option('20:30')
-												+option('21:00')
-												+option('21:30')
-												+option('22:00')
-												+option('22:30')
-												+option('23:00')
-									.col-sm-auto.align-self-end
-										+in-c2('checkbox','Добавить в личный календарь')
-									.col-sm-auto
-										+in-c2('checkbox','Бесконтактная доставка')
-								.h5 Доставка
-								+e.radioWrap
-									+radio('самовывоз Бауманская','delivery')(checked)
-									+radio('самовывоз Добрынинская','delivery')
-									+radio('Стандартная доставка - 300 р.','delivery')
-									+radio('Сторого ко времени - 800 р.','delivery','+/- 8 минут')
-									+radio('Аэропорт - 1 500 р.','delivery','Внуково, Домодедово, Шереметьево')
-								.h5 Оплата
-								+e.radioWrap
-									+radio('Он-лайн','payment')(checked)
-									+radio('Наличными при получении','payment')
-									+radio('Картой при получении','payment')
-									+radio('PayPal','payment')
-									+radio('Оплата от юр лица','payment','/* Должно быть заполненны данные юр лица в личном кабинете */')
+								+orderButton
+
 				+e.col.col(data-sticky-container)
 					+e.orderWrap(data-sticky data-margin-top="20")
 						+e.order
 							+e.title
 								.h3 Заказ
 								+e.totalPrice
-									+e.discount 
+									//- +e.discount 
 										span.text-pink купон -5%
 										+e.oldPrice 75 800 р.
 									.h5 73 800 р.
-							+e.coupon
-								+form-wrap
-									<div class="input-group mb-3">
-										<input type="text" class="form-control" placeholder="Купон на скидку" aria-label="Купон на скидку" aria-describedby="button-addon3">
-										<button class="btn btn-accent" type="button" id="button-addon3">
-											span.d-none.d-sm-block Применить
-											span.d-sm-none ОК
-										</button>
-									</div>
 							+e.totalOrder
 								mixin orderItem
 									+e.orderItem
@@ -154,4 +430,163 @@ mixin sCheckout()
 							+e.BUTTON.done.btn.btn-accent(type="button") Оформить заказ
 
 
+mixin sCheckout-3()
+	// start sCheckout
+	+b.sCheckout#sCheckout&attributes(attributes)
+		.container
+			mixin radio(t,n,sm,price)
+				+b.LABEL.custom-radio
+					input(type="radio" name= n)&attributes(attributes)
+					+e.SPAN.text
+						+e.SPAN.textWrap
+							+e.SPAN.radioTitle= t
+							if sm
+								+e.SPAN.radioDescr= sm
+						if price
+							+e.SPAN.deliveryPrice= price
+			mixin in-c2(typ="checkbox", text, name= typ )
+				+b.LABEL.custom-input
+					+e.INPUT.input(type= typ , name= name)&attributes(attributes)
+					+e.SPAN.lab
+					+e.SPAN.text= text
+			mixin step(i)
+				+b.orderStep
+					if i == 1
+						+e.numb.active 1
+						+e.numb.inctive 2
+						+e.numb.inctive 3
+					if i == 2
+						+e.numb.passed 1
+						+e.numb.active 2
+						+e.numb.inctive 3
+					if i == 3
+						+e.numb.passed 1
+						+e.numb.passed 2
+						+e.numb.active 3
+			mixin orderButton
+				+b.orderButton&attributes(attributes)
+					.row.justify-content-between
+						.col-auto
+							+e.back.btn Назад
+						.col-auto
+							+e.next.btn.btn-accent Далее
+			.row
+				.col-lg-6.col-xl-7.col-xxl-6.pb-4
+					+e.waterData
+						+form-wrap()
+							+e.form
+								+step(3)
+								+e.formTitle Доставка 
+								+b.tabs
+									+e.caption
+										+e.btn.btn.active Доставка по адресу
+										+e.btn.btn Самовывоз
+									+e.wrap
+										+e.content.active
+											+e.formTitle Адрес
+											+form-wrap
+												<div class="input-group mb-2">
+													<input type="text" class="form-control" placeholder="Россия, Москва, Москва, Болотная набережная, 15к1" aria-label="Россия, Москва, Москва, Болотная набережная, 15к1" aria-describedby="button-addon3">
+													<button class="btn btn-accent" type="button" id="button-addon3">
+														span.d-none.d-sm-block Найти
+														span.d-sm-none ОК
+													</button>
+												</div>
+											+e.home
+												.row.align-items-center
+													.col-xl.mb-3
+														+input('','text','Дом, корпус')
+													.col-sm-auto.align-self-end
+														+in-c2('checkbox','Частный дом')
+													.col-sm-auto.align-self-end
+														+in-c2('checkbox','Узнать время у получателя')
+											<iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3A4822151dc4712f8b03c3babfa5d92f002b76010757a1275f7e9ece82dc99131c&amp;source=constructor" width="100%" height="395"></iframe>
+											.row
+												.col-sm-6.col-lg-12.col-xl-6.mb-3
+													.h5 Тип доставки
+													+e.deliveryType
+														+radio('Стандартная доставка','delivery-type','','0р')
+														+radio('Ночная доставка','delivery-type','','360р')
+														+radio('Экспресс-доставка','delivery-type','в течении 2-х часов','600р')
+														+radio('Сторого ко времени','delivery-type','+/- 8 минут','700р')
+														+radio('Аэропорт','delivery-type','Внуково, Домодедово, Шереметьево','1500р')
+												.col
+													+e.deliveryTypeDescr
+														p Заказ будет доставлен после согласования с&nbsp;флористом в&nbsp;один из&nbsp;выбранных интервалов.
+											.row
+												.col-sm-4
+													+e.smText Дата доставки
+													+input('','date')(placeholder=none)
+												.col-sm-auto
+													+e.smText Время доставки
+													+b.catalog-sort
+														+e.SELECT.input.form-control(id="vertical")
+															mixin option(t)
+																option(value= t)= t
+															+option('18:30')
+															+option('19:00')
+															+option('19:30')
+															+option('20:00')
+															+option('20:30')
+															+option('21:00')
+															+option('21:30')
+															+option('22:00')
+															+option('22:30')
+															+option('23:00')
+										+e.content
+
+											<iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3A4822151dc4712f8b03c3babfa5d92f002b76010757a1275f7e9ece82dc99131c&amp;source=constructor" width="100%" height="395"></iframe>
+											.row
+												.col-sm-6
+													.h5 Тип доставки
+													+e.deliveryType
+														+radio('Салон на Бауманской','delivery-type')
+														+radio('Салон на Добрынинский','delivery-type')
+												.col
+													+e.deliveryTypeDescr
+														p Ул. Ладожская д.10, вход со стороны ул. Ладожская 
+														p Связь с салоном +7(985) 400-45-34
+														strong При себе обязательно иметь документ, удостоверяющий личность
+								.h5 Тип оплаты
+								+e.radioWrap
+									+radio('Он-лайн','payment')(checked)
+									+radio('Наличными при получении','payment')
+									+radio('Картой при получении','payment')
+									+radio('PayPal','payment')
+									+radio('Оплата от юр лица','payment','/* Должно быть заполненны данные юр лица в личном кабинете */')
+								+orderButton
+				+e.col.col(data-sticky-container)
+					+e.orderWrap(data-sticky data-margin-top="20")
+						+e.order
+							+e.title
+								.h3 Заказ
+								+e.totalPrice
+									//- +e.discount 
+										span.text-pink купон -5%
+										+e.oldPrice 75 800 р.
+									.h5 73 800 р.
+							+e.totalOrder
+								mixin orderItem
+									+e.orderItem
+										.row
+											.col-sm-8.d-flex
+												+e.imgWrap(href="#")
+													img.lazy.res-i(src="#" data-src="img/@2x/basket.jpg", alt="")
+												+e.name(href="#") КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА" #[span l 45 см, 2 ШТ]
+											.col
+												+e.itemPrice
+													.h5 24 600 р.
+													+e.BUTTON.remove.btn.link-pink(type="button") Убрать из заказа
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+						+e.buttonBlock
+							+e.backToBascket.btn(href="#") Вернуться в корзину
+							+e.BUTTON.done.btn.btn-accent(type="button") Оформить заказ
 	// end sCheckout

@@ -256,6 +256,12 @@
 		font-family: $mono;
 		white-space: nowrap;
 	}
+
+	&__oldPrice {
+		opacity: 0.5;
+		text-decoration-line: line-through;
+	}
+	
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

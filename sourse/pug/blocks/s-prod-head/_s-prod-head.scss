@@ -330,7 +330,7 @@
 } // end.s-prod-head
 
 
-.custom-radio{
+.custom-radio {
 	margin-bottom: 1rem;
 	display: block;
 	&__text{
@@ -339,7 +339,7 @@
 			border: 1px solid $primary;
 			@include media-breakpoint-up(sm) {
 
-				padding: rem(16);
+				padding: rem(12) rem(16);
 			}
 			padding: rem(5);
 			width: 100%;
@@ -359,7 +359,12 @@
 		@extend .invisible;
 	}
  
-	input:checked ~ &__text{
+	input:checked ~ &__text {
 		background: rgba(127, 177, 21, 0.28);
+		.custom-radio__deliveryPrice {
+			background-color: #fff;
+			color: $body-color;
+		}
 	}
+
 }

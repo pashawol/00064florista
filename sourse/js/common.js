@@ -183,7 +183,7 @@ function eventHandler() {
 	JSCCommon.customRange();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/checkoit.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/LK.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -324,9 +324,23 @@ function eventHandler() {
 				
 				1200: {
 					slidesPerView: 5, 
+					spaceBetween: 100
+
 				},
 	
 			}
+		});
+
+		const swiper9 = new Swiper('.sCheckout-slider-js', {
+			// slidesPerView: 5,
+			...defaultSl,
+			spaceBetween: 15,
+			slidesPerView: 1,
+			loop: false,
+			navigation: {
+				nextEl: '.orderButton__next',
+				prevEl: '.orderButton__back',
+			},
 		});
 
 	// })

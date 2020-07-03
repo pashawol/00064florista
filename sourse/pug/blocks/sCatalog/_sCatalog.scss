@@ -158,6 +158,28 @@
 		}
 		.prod-item__img-wrap {
 			margin-bottom: rem(10);
+			position: relative;
+
+			&::before {
+				content: '';
+				@include a-cent;
+				width: rem(64);
+				height: rem(64);
+				background-image: url('../img/svg/+.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-color: $primary;
+				border-radius: 50%;
+				opacity: 0;
+				@include mt;
+			}
+		}
+		.prod-item {
+			&:hover {
+				.prod-item__img-wrap::before {
+					opacity: 1;
+				}
+			}
 		}
 		.prod-item:before {
 			content: none;

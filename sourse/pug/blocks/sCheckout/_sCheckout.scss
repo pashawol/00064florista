@@ -18,16 +18,6 @@
 		}
 	}
 
-	&__sliderBlock {
-		padding-top: rem(33);
-
-		.h3 {
-			letter-spacing: rem(1.8) !important;
-			font-family: $mono;
-			margin-bottom: rem(27);
-		}
-	}
-
 	&__order {
 		border: 1px solid rgba($color:#595959, $alpha: 0.5);
 		// padding: rem(18) rem(24) rem(24) rem(22);
@@ -51,7 +41,20 @@
 		display: flex;
 		justify-content: space-between;
 		padding: rem(18) rem(24) rem(0) rem(22);
+		padding-bottom: rem(14);
 		margin-bottom: rem(14);
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 150%;
+			height: 1px;
+			background-color: #595959;
+		}
+
 	}
 
 	&__totalPrice {
@@ -230,7 +233,7 @@
 		&__formTitle {
 			@extend .h3;
 			font-family: $mono;
-			margin-bottom: rem(22);
+			margin-bottom: rem(25);
 		}
 
 		&__custom-input-wrap {
@@ -280,8 +283,7 @@
 		}
 		width: auto;
 		&__text {
-			// height: calc(100% - 16px);
-			// margin-bottom: rem(16);
+			text-align: left;
 			@include media-breakpoint-up(sm) {
 				width: auto;
 				display: inline-block;
@@ -382,4 +384,15 @@
 	}
 
 	margin-bottom: rem(20);
+}
+
+.sliderBlock {
+	padding-top: rem(33);
+	margin-bottom: rem(50);
+
+	.h3 {
+		letter-spacing: rem(1.8) !important;
+		font-family: $mono;
+		margin-bottom: rem(27);
+	}
 }
