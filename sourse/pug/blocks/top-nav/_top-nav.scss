@@ -96,7 +96,7 @@
 }
 @include media-breakpoint-up(lg) {
 
-	.menu-item-has-children{
+	.menu-item-has-children.hover{
 		&:hover{
 			.sub-menu{
 				// pointer-events: painted;

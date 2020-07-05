@@ -240,12 +240,13 @@
 	&__sidebar-list {
 		display: flex;
 		justify-content: space-between;
+		@include roww(rem(10))
 		@include media-breakpoint-between(sm, md) {
 			justify-content: space-around;
 		}
 		align-items: center;
 		padding-top: rem(10);
-		@include media-breakpoint-up(xl) {
+		@include media-breakpoint-up(xxl) {
 			padding-left: rem(16);
 		}
 	}
@@ -255,6 +256,8 @@
 	color: #9fa3a7;
 	border: 1px solid #9fa3a7;
 		@extend .btn;
+			padding-left: rem(2);
+			padding-right: rem(2);
 		// @extend .btn-sm;
 		// @extend .btn-accent;
 		background-color: transparent;
@@ -271,7 +274,7 @@
 		@extend .btn-sm;
 		@extend .btn-accent;
 		font-size: 1rem;
-		padding: rem(8) rem(27);
+		padding: rem(10) rem(0);
 		font-weight: 900;
 	}
 
@@ -374,7 +377,8 @@
 	}
 } // end.s-filter
 .s-filter-wrap{
-
+	// @include media-breakpoint-down()
+	display: none;
 	.sForm__block {
 		display: block;
 	clip-path: none;

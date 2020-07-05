@@ -425,6 +425,13 @@ function eventHandler() {
 		if (!defaultDay) return;
 	}); //end luckyoneJs
 
+	$(".top-nav .menu-item-has-children").hover(function () {
+		var _this2 = this;
+
+		setTimeout(function () {
+			$(_this2).toggleClass('hover');
+		}, 200);
+	});
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 
 	if (isIE11) {

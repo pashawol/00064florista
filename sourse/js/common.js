@@ -511,10 +511,14 @@ function eventHandler() {
 		let defaultDay = event.target.classList.contains('default-day');
 		if (!defaultDay) return
 
-	});
-
-
+	}); 
 	//end luckyoneJs
+
+	$(".top-nav .menu-item-has-children").hover(function () {
+		setTimeout(() => {
+			$(this).toggleClass('hover')
+		}, 200);
+	})
 
 	var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
 	if (isIE11) {
