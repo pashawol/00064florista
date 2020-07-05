@@ -1213,7 +1213,7 @@
 			</div>
 			<!--  мобильное меню-->
 			<!-- start header-->
-			<heder class="header">
+			<header class="header">
 				<!-- start topLine-->
 				<div class="topLine" id="topLine">
 					<div class="topLine__head">
@@ -1239,30 +1239,38 @@
 										</ul>
 									</div>
 								</div>
-								<div class="col-auto"><a class="topLine__link link-modal" href="#modal-user"><span class="topLine__link-inner">
-									<div class="topLine__icon-wrap">
-										<svg class="icon icon-feather_user-check ">
-											<use xlink:href="img/svg/sprite.svg#feather_user-check"></use>
-										</svg>
-									</div>
-									<div class="topLine__link-text d-none d-sm-block">Войти
-									</div></span></a>
-								</div>
-								<div class="col-auto"><a class="topLine__link topLine__link--like" href="#"><span class="topLine__link-inner">
-									<div class="topLine__icon-wrap topLine__icon-wrap--like">
-										<svg class="icon icon-heart-outlined ">
-											<use xlink:href="img/svg/sprite.svg#heart-outlined"></use>
-										</svg>
-										<div class="topLine__count topLine__count--like">
+								<div class="col-auto"><a class="topLine__link link-modal" href="#modal-user">
+									<div class="topLine__link-inner">
+										<div class="topLine__icon-wrap">
+											<svg class="icon icon-feather_user-check ">
+												<use xlink:href="img/svg/sprite.svg#feather_user-check"></use>
+											</svg>
 										</div>
-									</div></span></a>
+										<div class="topLine__link-text d-none d-sm-block">Войти
+										</div>
+									</div></a>
 								</div>
-								<div class="col-auto"><a class="topLine__link topLine__link--basket" href="#"><span class="topLine__link-inner">
-									<div class="topLine__icon-wrap">
-										<svg class="icon icon-basket ">
-											<use xlink:href="img/svg/sprite.svg#basket"></use>
-										</svg>
-									</div><span class="topLine__count topLine__count--active">5</span></span></a>
+								<div class="col-auto"><a class="topLine__link topLine__link--like" href="#">
+									<div class="topLine__link-inner">
+										<div class="topLine__icon-wrap topLine__icon-wrap--like">
+											<svg class="icon icon-heart-outlined ">
+												<use xlink:href="img/svg/sprite.svg#heart-outlined"></use>
+											</svg>
+											<div class="topLine__count topLine__count--like">
+											</div>
+										</div>
+									</div></a>
+								</div>
+								<div class="col-auto"><a class="topLine__link topLine__link--basket" href="#">
+									<div class="topLine__link-inner">
+										<div class="topLine__icon-wrap">
+											<svg class="icon icon-basket ">
+												<use xlink:href="img/svg/sprite.svg#basket"></use>
+											</svg>
+										</div>
+										<div class="topLine__count topLine__count--active">5
+										</div>
+									</div></a>
 								</div>
 							</div>
 						</div>
@@ -2467,7 +2475,7 @@
 					</div>
 				</div>
 				<!-- end top-nav-->
-			</heder>
+			</header>
 			<!-- end header-->
 			<nav class="breadcrumb" aria-label="breadcrumb">
 				<div class="container breadcrumb-slider-js swiper-container">
@@ -4583,7 +4591,7 @@
 						</div>
 						<!-- +e.input-wrap-->
 						<div class="row align-items-center">
-							<div class="col-7"><input class="form-wrap__btn btn-block" type="submit" value="Добавить юр.лицо"/>
+							<div class="col-7"><input class="form-wrap__btn btn-block" type="submit" value="Добавить"/>
 							</div>
 						</div>
 					</div>
@@ -4613,9 +4621,9 @@
 							</label> 
 						</div>
 						<!-- +e.input-wrap-->
-						<div class="smallest">Это может быть как описание размера букета, типа цветов и цветового преобладания (например ярко красный)</div>
+						<div class="smallest mb-3">Это может быть как описание размера букета, типа цветов и цветового преобладания (например ярко красный)</div>
 						<div class="row align-items-center">
-							<div class="col-7"><input class="form-wrap__btn btn-block" type="submit" value="Добавить юр.лицо"/>
+							<div class="col-7"><input class="form-wrap__btn btn-block" type="submit" value="Добавить"/>
 							</div>
 						</div>
 					</div>
@@ -4695,7 +4703,6 @@
 			<!-- #modal-addAddr-->
 		</div>
 		<!-- modal-->
-		<!--a.link-modal(href="#modal-addEvent") modal-addEvent-->
 		<script src="js/lazy.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
 		<script src="libs/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
@@ -4708,6 +4715,7 @@
 		<!-- modal libs-->
 		<!-- slider libs-->
 		<script src="libs/swiper/js/swiper.min.js"></script>
+		<script src="libs/sticky-js/sticky-js.min.js"></script>
 		<!-- /slider libs-->
 		<!-- for svg libs-->
 		<script src="libs/svg4everybody/svg4everybody.min.js"></script>

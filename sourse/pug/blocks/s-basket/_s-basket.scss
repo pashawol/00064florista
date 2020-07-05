@@ -19,34 +19,97 @@
 		@include media-breakpoint-up(xl) {
 			padding: rem(24) rem(10) rem(20) rem(24);
 		}
-		overflow-x: auto;
+		// overflow-x: auto;
 	}
 
 	table {
-		min-width: 600px;
+		// min-width: 600px;
 		width: 100%;
+		tr {
+			@include media-breakpoint-down(md) {
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
 		td {
 			// vertical-align: middle;
 			// padding: rem(24);
+			@include media-breakpoint-down(md) {
+				// flex-shrink: 0;
+				flex: 0 0 30.5%;
+				margin-bottom: 10px;
+			}
+			@include media-breakpoint-down(sm) {
+				flex: 0 0 50%;
+			}
 			&:nth-child(1) {
 				width: 28%;
 				@include media-breakpoint-up(xl) {
 					width: 34.3%;
+				}
+				@include media-breakpoint-down(md) {
+					order: 1;
+					flex-grow: 1;
+					flex: 0 0 60%;
+				}
+				@include media-breakpoint-down(sm) {
+					flex: 0 0 85%;
 				}
 			}
 			&:nth-child(2) {
 				@include media-breakpoint-up(xl) {
 					width: 11%;
 				}
+				@include media-breakpoint-down(md) {
+					order: 2;
+					flex: 0 0 20%;
+				}
+				@include media-breakpoint-down(sm) {
+					display: flex;
+					align-items: flex-end;
+					padding-bottom: 5px;
+					order: 4;
+					// flex: 0 0 30%;
+				}
 			}
 			&:nth-child(3) {
 				@include media-breakpoint-up(xl) {
 					width: 22%;
 				}
+				@include media-breakpoint-down(md) {
+					order: 6;
+					flex: 0 0 25%;
+					display: flex;
+					align-items: center;
+				}
+				@include media-breakpoint-down(sm) {
+					order: 4;
+					flex: 0 0 50%;
+					justify-content: flex-end;
+				}
 			}
 			&:nth-child(4) {
 				@include media-breakpoint-up(xl) {
 					width: 14.1%;
+				}
+				@include media-breakpoint-down(md) {
+					order: 4;
+				}
+			}
+			&:nth-child(5) {
+				@include media-breakpoint-down(md) {
+					order: 5;
+				}
+			}
+			&:nth-child(6) {
+				@include media-breakpoint-down(md) {
+					order: 3;
+					flex: 0 0 20%;
+					display: flex;
+					justify-content: flex-end;
+				}
+				@include media-breakpoint-down(sm) {
+					flex: 0 0 10%;
 				}
 			}
 		}
@@ -62,8 +125,8 @@
 	}
 
 	&__product {
-		display: flex;
-		align-items: center;
+			display: flex;
+			align-items: center;
 
 		p {
 			margin-bottom: 2px;
@@ -74,7 +137,14 @@
 	}
 
 	&__imgWrap {
-		margin-right: rem(24);
+		flex-shrink: 0;
+		margin-right: 10px;
+		@include media-breakpoint-up(sm) {
+			margin-right: rem(24);
+		}
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 10px;
+		}
 		width: rem(64);
 		height: rem(64);
 		display: flex;
@@ -87,12 +157,16 @@
 	&__size {
 		white-space: nowrap;
 		padding: rem(11) rem(13);
-		margin-top: rem(-3);
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(-3);
+		}
+		border: solid 1px #5cbf1a;
+		margin-left: 3px;
+		margin-right: 3px;
 		letter-spacing: rem(-0.1);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: solid 1px #5cbf1a;
 
 		&:hover {
 			color: $green2;
@@ -101,7 +175,10 @@
 
 	&__quantity {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
+		@include media-breakpoint-up(md) {
+			justify-content: center;
+		}
 		padding-left: 3%;
 		padding-right: 3%;
 		@include media-breakpoint-up(xxl) {
@@ -179,6 +256,12 @@
 		font-family: $mono;
 		white-space: nowrap;
 	}
+
+	&__oldPrice {
+		opacity: 0.5;
+		text-decoration-line: line-through;
+	}
+	
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}

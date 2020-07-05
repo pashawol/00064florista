@@ -1,5 +1,6 @@
 .top-nav {
-	
+	position: relative;
+	z-index: 301;
 	border-bottom: 1px solid $light;
 
 	.row{

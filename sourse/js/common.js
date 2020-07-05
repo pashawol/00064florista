@@ -183,7 +183,7 @@ function eventHandler() {
 	JSCCommon.customRange();
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/checkoit.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="pixel-perfect" style="background-image: url(screen/LK.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -300,6 +300,47 @@ function eventHandler() {
 				},
 
 			}
+		});
+		const swiper8 = new Swiper('.sCatalog__sliderCheckut--js', {
+			// slidesPerView: 5,
+			...defaultSl,
+			spaceBetween: 30,
+			slidesPerView: 2,
+			navigation: {
+				nextEl: '.sCatalog .swiper-button-next',
+				prevEl: '.sCatalog .swiper-button-prev',
+			},
+			breakpoints: {
+				// when window width is >= 320px
+			
+				// when window width is >= 480px
+				576: {
+					slidesPerView: 4, 
+				},
+				// when window width is >= 640px
+				// 992: {
+				// 	slidesPerView: 4, 
+				// },
+				
+				1200: {
+					slidesPerView: 5, 
+					spaceBetween: 100
+
+				},
+	
+			}
+		});
+
+		const swiper9 = new Swiper('.sCheckout-slider-js', {
+			// slidesPerView: 5,
+			...defaultSl,
+			spaceBetween: 15,
+			slidesPerView: 1,
+			loop: false,
+			navigation: {
+				nextEl: '.orderButton__next',
+				prevEl: '.orderButton__back',
+			},
 		});
 
 	// })
@@ -511,7 +552,12 @@ function eventHandler() {
 		let defaultDay = event.target.classList.contains('default-day');
 		if (!defaultDay) return
 
-	}); 
+	});
+
+	//sticky-js
+	// var Sticky = require('sticky-js');
+	var sticky = new Sticky('.sCheckout__orderWrap');
+
 	//end luckyoneJs
 
 	$(".top-nav .menu-item-has-children").hover(function () {

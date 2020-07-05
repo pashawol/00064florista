@@ -1,0 +1,55 @@
+.orderStep {
+	display: flex;
+	margin-bottom: rem(42);
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(30);
+	}
+
+	&__numb {
+		@extend .h3;
+		margin-bottom: 0;
+		width: rem(49);
+		height: rem(49);
+		padding-top: 4px;
+		padding-left: 2px;
+		border-radius: 50%;
+		line-height: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: $mono;
+		position: relative;
+		z-index: 1;
+		border: solid 1px $primary;
+
+		&:not(:last-child) {
+			margin-right: rem(55);
+			&::before {
+				content: '';
+				position: absolute;
+				width: rem(55);
+				@include a-cent(y);
+				z-index: -1;
+				right: rem(-55);
+				height: 1px;
+				border-bottom: 1px dashed $primary;
+			}
+		}
+
+		&.passed {
+			border-color: rgba($color: $primary, $alpha: 0.2);
+			background-color: rgba($color: $primary, $alpha: 0.2);
+		}
+
+		&.active {
+			background-color: $primary;
+			color: #fff;
+		}
+
+		&.inctive {
+			background-color: #fff;
+			border: dashed 1px $primary;
+		}
+
+	}
+}

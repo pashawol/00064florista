@@ -12,7 +12,7 @@ html {
 	overflow: hidden;
 	width: 100%;
 	height: 100%;
-	background-position: center 0;
+	background-position: center 5px;
 	opacity: 0;
 	opacity: 0.7;
 }
@@ -355,6 +355,7 @@ input::-webkit-inner-spin-button {
 	background-image: none;
 	
 	 clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+	 -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 	 background-color: #ffffff;
 	 background-image: linear-gradient(104.35deg, #97BF0D 0%, #007242 33.69%, #8BB710 67.84%, #5CBF1A 98.79%);
 	 background-position: 0 center;

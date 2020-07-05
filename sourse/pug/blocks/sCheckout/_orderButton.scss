@@ -1,0 +1,26 @@
+.orderButton {
+	padding-top: rem(20);
+	&__back {
+		@include media-breakpoint-up(sm) {
+			width: rem(101px);
+		}
+		white-space: nowrap;
+		padding: rem(11) rem(15);
+		margin-top: rem(-3);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: solid 1px #5cbf1a;
+		font-weight: 600;
+
+		&:hover {
+			color: $green2;
+		}
+	}
+
+	&__next {
+		@include media-breakpoint-up(sm) {
+			width: rem(161);
+		}
+	}
+}

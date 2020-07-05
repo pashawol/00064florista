@@ -27,7 +27,7 @@ mixin modal()
 				 
 				.row.align-items-center
 					.col-7
-						+e.INPUT.btn.btn-block(type="submit" value="Добавить юр.лицо")
+						+e.INPUT.btn.btn-block(type="submit" value="Добавить")
 		// #modal-addData
 		
 		+form-wrap()(id="modal-addEvent" class="  modal-win modal-form" )
@@ -37,10 +37,10 @@ mixin modal()
 				.h4.fw-600.mb-2 6 июня
 				+input("",'text','Кому дарим букет')(required) 
 				+input("",'text','Опишите предпочтения в букете')(required) 
-				.smallest Это может быть как описание размера букета, типа цветов и цветового преобладания (например ярко красный)
+				.smallest.mb-3 Это может быть как описание размера букета, типа цветов и цветового преобладания (например ярко красный)
 				.row.align-items-center
 					.col-7
-						+e.INPUT.btn.btn-block(type="submit" value="Добавить юр.лицо") 
+						+e.INPUT.btn.btn-block(type="submit" value="Добавить") 
 		// #modal-addEvent
 
 		+form-wrap()(id="modal-addAddr" class="  modal-win modal-form" )
@@ -71,4 +71,4 @@ mixin modal()
 		// #modal-addAddr
 
 	// modal
-	//a.link-modal(href="#modal-addEvent") modal-addEvent
+	//-a.link-modal(href="#modal-addEvent") modal-addEvent
