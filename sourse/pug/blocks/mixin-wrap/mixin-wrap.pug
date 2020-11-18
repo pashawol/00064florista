@@ -288,3 +288,28 @@ mixin prod-item(i, t,p, st, sm,pr)
 					.col-auto
 						+e.btn--basket(type="button") 
 							+icon("basket")
+
+
+mixin prod-checkot(i, t,p, st, sm,pr)
+	+b.prod-checkot
+		+e.img-wrap(href="#")
+			img.res-i(src=`img/@2x/prod-${i}.jpg`, alt="")
+		+e.caption
+			+e.title
+				if t
+					a(href="#")= t
+				else
+					+e.checkout-text(href="#")= sm
+						span= pr
+			.row
+				if st
+					.col-auto
+						+e.strike= st
+				if p
+					+e.price.col= p
+					.col-auto
+						+e.btn(type="button") 
+							+icon("heart-outlined")
+					.col-auto
+						+e.btn--basket(type="button") 
+							+icon("basket")

@@ -590,3 +590,281 @@ mixin sCheckout-3()
 							+e.backToBascket.btn(href="#") Вернуться в корзину
 							+e.BUTTON.done.btn.btn-accent(type="button") Оформить заказ
 	// end sCheckout
+
+mixin sCheckout-new()
+	// start sCheckout
+	+b.sCheckout--new#sCheckout&attributes(attributes)
+		.container
+			mixin radio(t,n,sm,price,select,info)
+				+b.LABEL.custom-radio
+					input(type="radio" name= n)&attributes(attributes)
+					+e.SPAN.text
+						+e.SPAN.textWrap
+							+e.SPAN.radioTitle= t
+								if info
+									+e.infoBlock ?
+										+e.infoHidden Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, illum magni error debitis incidunt dolor ipsa consectetur. Necessitatibus labore libero molestiae minus ad, facere nisi sunt officia culpa, exercitationem vel!
+								if select
+									+e.selectBlock
+										+e.SELECT.input.form-control(id="time-clock")
+											mixin option(t)
+												option(value= t)= t
+											+option('00')
+											+option('01')
+											+option('02')
+											+option('03')
+											+option('04')
+											+option('05')
+											+option('06')
+											+option('07')
+											+option('08')
+											+option('09')
+											+option('10')
+											+option('11')
+											+option('12')
+											+option('13')
+											+option('14')
+											+option('15')
+											+option('16')
+											+option('17')
+											+option('18')
+											+option('19')
+											+option('20')
+											+option('21')
+											+option('22')
+											+option('23')
+										+e.SELECT.input.form-control(id="time-minutes")
+											mixin option(t)
+												option(value= t)= t
+											+option('00')
+											+option('05')
+											+option('10')
+											+option('15')
+											+option('20')
+											+option('25')
+											+option('30')
+											+option('35')
+											+option('40')
+											+option('45')
+											+option('50')
+											+option('55')
+							if sm
+								+e.SPAN.radioDescr= sm
+
+						if price
+							+e.SPAN.deliveryPrice= price
+			mixin in-c2(typ="checkbox", text, name= typ )
+				+b.LABEL.custom-input
+					+e.INPUT.input(type= typ , name= name)&attributes(attributes)
+					+e.SPAN.lab
+					+e.SPAN.text= text
+			mixin step(i, t)
+				+b.orderStep
+					+e.numb.active= i
+					+e.text= t
+					+e.iconWrap
+						img.res-i(src="img/svg/checkout-chevron-down.svg", alt="")
+			mixin orderButton
+				+b.orderButton&attributes(attributes)
+					+e.next.btn.btn-accent(href="#") Далее
+			.row
+				.col-lg-6.col-xl-7.pb-4
+					+e.waterData
+						+form-wrap()
+							+e.form
+								+step(1, 'Заказчик')
+								//- +e.formTitle Заказчик
+								.row
+									.col-sm-6
+										+input('','text','Имя')(required)
+									.col-sm-6
+										+input('','text','Фамилия')(required)
+									//- .col-12
+										//- +input('','text','Адрес')(required)
+									.col-sm-6
+										+input('','tel','Телефон')(required)
+									.col-sm-6
+										+input('','email','E-mail')(required)
+								+e.custom-input-wrap
+									+in-c2('checkbox','НЕ звонить для подтверждения')
+									+in-c2('checkbox','Получаю лично')
+								+orderButton
+							+e.form
+								+step(2, 'Получатель')
+								.row
+									.col-sm-6
+										+input('','text','Имя')(required)
+									.col-sm-6
+										+input('','text','Фамилия')(required)
+									.col-sm-6
+										+input('','tel','Телефон')(required)
+								+b.LABEL.custom-input-radio
+									+e.topLine
+										span.row.justify-content-between
+											span.col-sm-auto.d-flex
+												+e.INPUT.hidden(type="radio" name="size")
+												+e.SPAN.lab
+												+e.SPAN.text добавить бесплатную открытку
+											span.col-sm-auto
+												+e.SPAN.characters 70 символов
+								+input('','text')(maxlength="70")
+								+b.LABEL.custom-input-radio
+									+e.topLine
+										span.row.justify-content-between
+											span.col-sm-auto.d-flex
+												+e.INPUT.hidden(type="radio" name="size")
+												+e.SPAN.lab
+												+e.SPAN.text Добавить дизайнерскую открытку
+											span.col-sm-auto
+												+e.SPAN.characters 900 символов
+								+input('','textarea')(maxlength="900")
+								+sCatalog-checkout-new
+								+e.custom-input-wrap.row
+									.col-sm-4
+										+in-c2('checkbox','Вручить инкогнито')
+									.col-sm-4
+										+in-c2('checkbox','Фото с получателем')
+									.col-sm-4
+										+in-c2('checkbox','Сюрприз')
+									.col-sm-4
+										+in-c2('checkbox','Не звонить заранее')
+									.col-sm-4
+										+in-c2('checkbox','Не знаю телефон получателя')
+									.col-sm-4
+										+in-c2('checkbox','Уточнить адрес у получателя')
+								+orderButton
+							+e.form
+								+step(3, 'Способ и адрес доставки')
+								+b.tabs
+									+e.caption
+										+e.btn.btn.active Доставка по адресу
+										+e.btn.btn Самовывоз
+									+e.wrap
+										+e.content.active
+											.row.align-items-center
+												.col-sm-6.col-xl-4
+													+input('','text','Город')
+												.col-sm-6.col-xl-4
+													+input('','text','Улица')
+												.col-sm-6.col-xl-4
+													+input('','text','Дом')
+												.col-sm-6.col-xl-4
+													+input('','text','Корпус/строение')
+												.col-sm-6.col-xl-4
+													+input('','text','Кв/офис')
+												+e.homeCol.col-sm.align-self-end
+													+in-c2('checkbox','Частный дом')
+											//- <iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3A4822151dc4712f8b03c3babfa5d92f002b76010757a1275f7e9ece82dc99131c&amp;source=constructor" width="100%" height="395"></iframe>
+										+e.content
+											+b.tabsAddress.row
+												+e.caption.col-lg-5
+													+e.btn.btn.active Салон на Бауманской
+													+e.btn.btn Салон на Добрынинский
+												+e.wrap.col-lg
+													+e.content.active
+														p Ул. Ладожская д.10, вход со стороны ул. Ладожская Связь с салоном 
+															+e.tel(href="tel:+79854004534") +7(985) 400-45-34
+														p
+															strong При себе обязательно иметь документ, удостоверяющий личность
+														a(href="#") Схема проезда
+													+e.content
+														p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsam, aspernatur, quisquam reiciendis porro eos quam vitae maxime consequatur ipsa amet omnis repellat corrupti, odit quidem a? Laboriosam, facere similique?
+															+e.tel(href="tel:+79854004534") +7(985) 400-45-34
+														p
+															strong При себе обязательно иметь документ, удостоверяющий личность
+														a(href="#") Схема проезда
+											//- <iframe src="https://yandex.ua/map-widget/v1/?um=constructor%3A4822151dc4712f8b03c3babfa5d92f002b76010757a1275f7e9ece82dc99131c&amp;source=constructor" width="100%" height="395"></iframe>
+											//- .row
+											//- 	.col-sm-6
+											//- 		.h5 Тип доставки
+											//- 		+e.deliveryType
+											//- 			+radio('Салон на Бауманской','delivery-type')
+											//- 			+radio('Салон на Добрынинский','delivery-type')
+											//- 	.col
+											//- 		+e.deliveryTypeDescr
+											//- 			p Ул. Ладожская д.10, вход со стороны ул. Ладожская 
+											//- 			p Связь с салоном +7(985) 400-45-34
+											//- 			strong При себе обязательно иметь документ, удостоверяющий личность
+								+orderButton
+							+e.form
+								+step(4, 'Дата и время доставки')
+								+e.custom-input-wrap.row
+									.col-sm-6
+										+in-c2('checkbox','Узнать время доставки у получателя')
+									.col-sm-6
+										+in-c2('checkbox','Безконтактная доставка')
+									.col-sm-6
+										+e.smText Дата доставки
+										+input('','date')(placeholder=none)
+									.col-sm-6
+										+e.smText Промежуток времени
+										+b.catalog-sort
+											+e.SELECT.input.form-control.time-interval(id="time-interval")
+												mixin option(t)
+													option(value= t)= t
+												+option('7:00 - 10:00 ')
+												+option('10:00 - 13:00 ')
+												+option('13:00 - 16:00 ')
+												+option('16:00 - 19:00 ')
+												+option('19:00 - 22:00 ')
+									.col-sm-6.order-sm-last
+										p Заказ будет доставлен после согласования с&nbsp;флористом в&nbsp;один из&nbsp;выбранных интервалов.
+									.col-sm-6
+
+										+e.deliveryType
+											+radio('Стандартная доставка','delivery-type','','300р')
+											+e.freeShipping До бесплатной доставки осталось заказать еще на 300 р.
+											+radio('Ночная доставка','delivery-type','Доставка 22:00 до 6:00','800р','','info')
+											+radio('Экспресс-доставка','delivery-type','в течении 2-х часов','600р','','info')
+											+radio('Точное время','delivery-type','','1000р','select','info')
+											+radio('Аэропорт','delivery-type','Внуково, Домодедово, Шереметьево','1500р','','info')
+								+orderButton
+							+e.form
+								+step(5, 'Оплата')
+								+e.radioWrap
+									+radio('Банковская карта (он-лайн)','payment')(checked)
+									+radio('Наличными при получении','payment')
+									+radio('Картой при получении','payment')
+									+radio('PayPal','payment')
+									+radio('Оплата от юр лица','payment','/* Должно быть заполненны данные юр лица в личном кабинете */')
+					+b.orderButton--lastbuttons
+						.row
+							.col-sm-auto
+								+e.next.btn.btn-accent(type="submit") Оформить заказ
+							.col-sm-auto
+								+e.back.btn(href="#") Вернуться в корзину
+				//oreder col
+				+e.col.col(data-sticky-container)
+					+e.orderWrap(data-sticky data-margin-top="20")
+						+e.order
+							+e.title
+								.h3 Заказ
+								+e.totalPrice
+									//- +e.discount 
+										span.text-pink купон -5%
+										+e.oldPrice 75 800 р.
+									.h5 73 800 р.
+							+e.totalOrder
+								mixin orderItem
+									+e.orderItem
+										.row
+											.col-sm-8.d-flex
+												+e.imgWrap(href="#")
+													img.lazy.res-i(src="#" data-src="img/@2x/basket.jpg", alt="")
+												+e.name(href="#") КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА" #[span l 45 см, 2 ШТ]
+											.col
+												+e.itemPrice
+													.h5 24 600 р.
+													+e.BUTTON.remove.btn.link-pink(type="button") Убрать из заказа
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+								+orderItem()
+						+e.buttonBlock
+							+e.backToBascket.btn(href="#") Вернуться в корзину
+							+e.BUTTON.done.btn.btn-accent(type="button") Оформить заказ

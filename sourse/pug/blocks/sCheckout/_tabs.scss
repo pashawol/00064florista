@@ -1,4 +1,4 @@
-.tabs {
+.tabs, .tabsAddress {
 	
 	&__caption {
 		margin-bottom: rem(24);
@@ -143,5 +143,17 @@
 			max-width: rem(273);
 			margin-left: auto;
 		}
+	}
+}
+
+.tabsAddress {
+	&__btn {
+		display: block;
+		margin-bottom: rem(8);
+	}
+
+	&__tel {
+		font-weight: bold;
+		color: #000000;
 	}
 }

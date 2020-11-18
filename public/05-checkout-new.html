@@ -2501,10 +2501,10 @@
 				</div>
 			</div>
 			<!-- start sCheckout-->
-			<div class="sCheckout" id="sCheckout">
+			<div class="sCheckout sCheckout--new" id="sCheckout">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-6 col-xl-7 col-xxl-6 pb-4">
+						<div class="col-lg-6 col-xl-7 pb-4">
 							<div class="sCheckout__waterData">
 								<div class="form-wrap">
 									<form>
@@ -2518,13 +2518,11 @@
 												<div class="orderStep">
 													<div class="orderStep__numb active">1
 													</div>
-													<div class="orderStep__numb inctive">2
+													<div class="orderStep__text">Заказчик
 													</div>
-													<div class="orderStep__numb inctive">3
+													<div class="orderStep__iconWrap"><img class="res-i" src="img/svg/checkout-chevron-down.svg" alt=""/>
 													</div>
 												</div>
-											<div class="form-wrap__formTitle">Заказчик
-											</div>
 											<div class="row">
 												<div class="col-sm-6">
 													<div class="form-wrap__input-wrap form-group">
@@ -2536,13 +2534,6 @@
 												<div class="col-sm-6">
 													<div class="form-wrap__input-wrap form-group">
 														<label><span class="form-wrap__title">Фамилия</span><input class="form-wrap__input form-control" type="text" placeholder="" name="text" required="required"/>
-														</label>
-													</div>
-													<!-- +e.input-wrap-->
-												</div>
-												<div class="col-12">
-													<div class="form-wrap__input-wrap form-group">
-														<label><span class="form-wrap__title">Адрес</span><input class="form-wrap__input form-control" type="text" placeholder="" name="text" required="required"/>
 														</label>
 													</div>
 													<!-- +e.input-wrap-->
@@ -2568,23 +2559,374 @@
 													<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Получаю лично</span>
 													</label>
 											</div>
-												<div class="orderButton">
-													<div class="row justify-content-between">
-														<div class="col-auto">
-															<div class="orderButton__back btn">Назад
+												<div class="orderButton"><a class="orderButton__next btn btn-accent" href="#">Далее</a>
+												</div>
+										</div>
+										<div class="form-wrap__form">
+												<div class="orderStep">
+													<div class="orderStep__numb active">2
+													</div>
+													<div class="orderStep__text">Получатель
+													</div>
+													<div class="orderStep__iconWrap"><img class="res-i" src="img/svg/checkout-chevron-down.svg" alt=""/>
+													</div>
+												</div>
+											<div class="row">
+												<div class="col-sm-6">
+													<div class="form-wrap__input-wrap form-group">
+														<label><span class="form-wrap__title">Имя</span><input class="form-wrap__input form-control" type="text" placeholder="" name="text" required="required"/>
+														</label>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+												<div class="col-sm-6">
+													<div class="form-wrap__input-wrap form-group">
+														<label><span class="form-wrap__title">Фамилия</span><input class="form-wrap__input form-control" type="text" placeholder="" name="text" required="required"/>
+														</label>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+												<div class="col-sm-6">
+													<div class="form-wrap__input-wrap form-group">
+														<label><span class="form-wrap__title">Телефон</span><input class="form-wrap__input form-control" type="tel" placeholder="" name="tel" required="required"/>
+														</label>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+											</div>
+											<label class="custom-input-radio"><span class="custom-input-radio__topLine"><span class="row justify-content-between"><span class="col-sm-auto d-flex"><input class="custom-input-radio__hidden" type="radio" name="size"/><span class="custom-input-radio__lab"></span><span class="custom-input-radio__text">добавить бесплатную открытку</span></span><span class="col-sm-auto"><span class="custom-input-radio__characters">70 символов</span></span></span></span>
+											</label>
+											<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="text" placeholder="" name="text" maxlength="70"/>
+											</div>
+											<!-- +e.input-wrap-->
+											<label class="custom-input-radio"><span class="custom-input-radio__topLine"><span class="row justify-content-between"><span class="col-sm-auto d-flex"><input class="custom-input-radio__hidden" type="radio" name="size"/><span class="custom-input-radio__lab"></span><span class="custom-input-radio__text">Добавить дизайнерскую открытку</span></span><span class="col-sm-auto"><span class="custom-input-radio__characters">900 символов</span></span></span></span>
+											</label>
+											<div class="form-wrap__input-wrap form-group"><textarea class="form-wrap__input form-control" placeholder="" name="textarea" maxlength="900"></textarea>
+											</div>
+											<!-- +e.input-wrap-->
+											<!-- start sCatalog-->
+											<div class="sCatalog sCatalog--checkout-new" id="sCatalog">
+												<div class="sCatalog__sliderCheckut sCatalog__sliderCheckut--new-js swiper-container">
+													<div class="swiper-wrapper">
+															<div class="sCatalog__slide swiper-slide">
+																<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" typ="checkbox"/><span class="custom-input__lab"></span>
+																</label>
+																<div class="prod-item">
+																	<div class="prod-item__img-wrap"><img class="res-i" src="img/@2x/ckeckout.jpg" alt=""/>
+																	</div>
+																	<div class="h6">Самой красивой</div>
+																	<div class="h5">+300 р</div>
+																</div>
+															</div>
+															<div class="sCatalog__slide swiper-slide">
+																<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" typ="checkbox"/><span class="custom-input__lab"></span>
+																</label>
+																<div class="prod-item">
+																	<div class="prod-item__img-wrap"><img class="res-i" src="img/@2x/ckeckout.jpg" alt=""/>
+																	</div>
+																	<div class="h6">Самой красивой</div>
+																	<div class="h5">+300 р</div>
+																</div>
+															</div>
+															<div class="sCatalog__slide swiper-slide">
+																<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" typ="checkbox"/><span class="custom-input__lab"></span>
+																</label>
+																<div class="prod-item">
+																	<div class="prod-item__img-wrap"><img class="res-i" src="img/@2x/ckeckout.jpg" alt=""/>
+																	</div>
+																	<div class="h6">Самой красивой</div>
+																	<div class="h5">+300 р</div>
+																</div>
+															</div>
+															<div class="sCatalog__slide swiper-slide">
+																<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" typ="checkbox"/><span class="custom-input__lab"></span>
+																</label>
+																<div class="prod-item">
+																	<div class="prod-item__img-wrap"><img class="res-i" src="img/@2x/ckeckout.jpg" alt=""/>
+																	</div>
+																	<div class="h6">Самой красивой</div>
+																	<div class="h5">+300 р</div>
+																</div>
+															</div>
+															<div class="sCatalog__slide swiper-slide">
+																<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" typ="checkbox"/><span class="custom-input__lab"></span>
+																</label>
+																<div class="prod-item">
+																	<div class="prod-item__img-wrap"><img class="res-i" src="img/@2x/ckeckout.jpg" alt=""/>
+																	</div>
+																	<div class="h6">Самой красивой</div>
+																	<div class="h5">+300 р</div>
+																</div>
+															</div>
+													</div>
+												</div>
+												<div class="swiper-button-hand swiper-button-hand-prev swiper-button-prev"></div>
+												<div class="swiper-button-hand swiper-button-hand-next swiper-button-next"></div>
+											</div>
+											<div class="form-wrap__custom-input-wrap row">
+												<div class="col-sm-4">
+														<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Вручить инкогнито</span>
+														</label>
+												</div>
+												<div class="col-sm-4">
+														<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Фото с получателем</span>
+														</label>
+												</div>
+												<div class="col-sm-4">
+														<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Сюрприз</span>
+														</label>
+												</div>
+												<div class="col-sm-4">
+														<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Не звонить заранее</span>
+														</label>
+												</div>
+												<div class="col-sm-4">
+														<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Не знаю телефон получателя</span>
+														</label>
+												</div>
+												<div class="col-sm-4">
+														<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Уточнить адрес у получателя</span>
+														</label>
+												</div>
+											</div>
+												<div class="orderButton"><a class="orderButton__next btn btn-accent" href="#">Далее</a>
+												</div>
+										</div>
+										<div class="form-wrap__form">
+												<div class="orderStep">
+													<div class="orderStep__numb active">3
+													</div>
+													<div class="orderStep__text">Способ и адрес доставки
+													</div>
+													<div class="orderStep__iconWrap"><img class="res-i" src="img/svg/checkout-chevron-down.svg" alt=""/>
+													</div>
+												</div>
+											<div class="tabs">
+												<div class="tabs__caption">
+													<div class="tabs__btn btn active">Доставка по адресу
+													</div>
+													<div class="tabs__btn btn">Самовывоз
+													</div>
+												</div>
+												<div class="tabs__wrap">
+													<div class="tabs__content active">
+														<div class="row align-items-center">
+															<div class="col-sm-6 col-xl-4">
+																<div class="tabs__input-wrap form-group">
+																	<label><span class="tabs__title">Город</span><input class="tabs__input form-control" type="text" placeholder="" name="text"/>
+																	</label>
+																</div>
+																<!-- +e.input-wrap-->
+															</div>
+															<div class="col-sm-6 col-xl-4">
+																<div class="tabs__input-wrap form-group">
+																	<label><span class="tabs__title">Улица</span><input class="tabs__input form-control" type="text" placeholder="" name="text"/>
+																	</label>
+																</div>
+																<!-- +e.input-wrap-->
+															</div>
+															<div class="col-sm-6 col-xl-4">
+																<div class="tabs__input-wrap form-group">
+																	<label><span class="tabs__title">Дом</span><input class="tabs__input form-control" type="text" placeholder="" name="text"/>
+																	</label>
+																</div>
+																<!-- +e.input-wrap-->
+															</div>
+															<div class="col-sm-6 col-xl-4">
+																<div class="tabs__input-wrap form-group">
+																	<label><span class="tabs__title">Корпус/строение</span><input class="tabs__input form-control" type="text" placeholder="" name="text"/>
+																	</label>
+																</div>
+																<!-- +e.input-wrap-->
+															</div>
+															<div class="col-sm-6 col-xl-4">
+																<div class="tabs__input-wrap form-group">
+																	<label><span class="tabs__title">Кв/офис</span><input class="tabs__input form-control" type="text" placeholder="" name="text"/>
+																	</label>
+																</div>
+																<!-- +e.input-wrap-->
+															</div>
+															<div class="tabs__homeCol col-sm align-self-end">
+																	<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Частный дом</span>
+																	</label>
 															</div>
 														</div>
-														<div class="col-auto">
-															<div class="orderButton__next btn btn-accent">Далее
+													</div>
+													<div class="tabs__content">
+														<div class="tabsAddress row">
+															<div class="tabsAddress__caption col-lg-5">
+																<div class="tabsAddress__btn btn active">Салон на Бауманской
+																</div>
+																<div class="tabsAddress__btn btn">Салон на Добрынинский
+																</div>
+															</div>
+															<div class="tabsAddress__wrap col-lg">
+																<div class="tabsAddress__content active">
+																	<p>Ул. Ладожская д.10, вход со стороны ул. Ладожская Связь с салоном <a class="tabsAddress__tel" href="tel:+79854004534">+7(985) 400-45-34</a>
+																	</p>
+																	<p><strong>При себе обязательно иметь документ, удостоверяющий личность</strong></p><a href="#">Схема проезда</a>
+																</div>
+																<div class="tabsAddress__content">
+																	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ipsam, aspernatur, quisquam reiciendis porro eos quam vitae maxime consequatur ipsa amet omnis repellat corrupti, odit quidem a? Laboriosam, facere similique?<a class="tabsAddress__tel" href="tel:+79854004534">+7(985) 400-45-34</a>
+																	</p>
+																	<p><strong>При себе обязательно иметь документ, удостоверяющий личность</strong></p><a href="#">Схема проезда</a>
+																</div>
 															</div>
 														</div>
 													</div>
 												</div>
+											</div>
+												<div class="orderButton"><a class="orderButton__next btn btn-accent" href="#">Далее</a>
+												</div>
+										</div>
+										<div class="form-wrap__form">
+												<div class="orderStep">
+													<div class="orderStep__numb active">4
+													</div>
+													<div class="orderStep__text">Дата и время доставки
+													</div>
+													<div class="orderStep__iconWrap"><img class="res-i" src="img/svg/checkout-chevron-down.svg" alt=""/>
+													</div>
+												</div>
+											<div class="form-wrap__custom-input-wrap row">
+												<div class="col-sm-6">
+														<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Узнать время доставки у получателя</span>
+														</label>
+												</div>
+												<div class="col-sm-6">
+														<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox"/><span class="custom-input__lab"></span><span class="custom-input__text">Безконтактная доставка</span>
+														</label>
+												</div>
+												<div class="col-sm-6">
+													<div class="form-wrap__smText">Дата доставки
+													</div>
+													<div class="form-wrap__input-wrap form-group"><input class="form-wrap__input form-control" type="date" name="date"/>
+													</div>
+													<!-- +e.input-wrap-->
+												</div>
+												<div class="col-sm-6">
+													<div class="form-wrap__smText">Промежуток времени
+													</div>
+													<div class="catalog-sort">
+														<select class="catalog-sort__input form-control time-interval" id="time-interval">
+															<option value="7:00 - 10:00 ">7:00 - 10:00 </option>
+															<option value="10:00 - 13:00 ">10:00 - 13:00 </option>
+															<option value="13:00 - 16:00 ">13:00 - 16:00 </option>
+															<option value="16:00 - 19:00 ">16:00 - 19:00 </option>
+															<option value="19:00 - 22:00 ">19:00 - 22:00 </option>
+														</select>
+													</div>
+												</div>
+												<div class="col-sm-6 order-sm-last">
+													<p>Заказ будет доставлен после согласования с&nbsp;флористом в&nbsp;один из&nbsp;выбранных интервалов.</p>
+												</div>
+												<div class="col-sm-6">
+													<div class="form-wrap__deliveryType">
+															<label class="custom-radio">
+																<input type="radio" name="delivery-type"/><span class="custom-radio__text"><span class="custom-radio__textWrap"><span class="custom-radio__radioTitle">Стандартная доставка</span></span><span class="custom-radio__deliveryPrice">300р</span></span>
+															</label>
+														<div class="form-wrap__freeShipping">До бесплатной доставки осталось заказать еще на 300 р.
+														</div>
+															<label class="custom-radio">
+																<input type="radio" name="delivery-type"/><span class="custom-radio__text"><span class="custom-radio__textWrap"><span class="custom-radio__radioTitle">Ночная доставка<span class="custom-radio__infoBlock">?<span class="custom-radio__infoHidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, illum magni error debitis incidunt dolor ipsa consectetur. Necessitatibus labore libero molestiae minus ad, facere nisi sunt officia culpa, exercitationem vel!</span></span></span><span class="custom-radio__radioDescr">Доставка 22:00 до 6:00</span></span><span class="custom-radio__deliveryPrice">800р</span></span>
+															</label>
+															<label class="custom-radio">
+																<input type="radio" name="delivery-type"/><span class="custom-radio__text"><span class="custom-radio__textWrap"><span class="custom-radio__radioTitle">Экспресс-доставка<span class="custom-radio__infoBlock">?<span class="custom-radio__infoHidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, illum magni error debitis incidunt dolor ipsa consectetur. Necessitatibus labore libero molestiae minus ad, facere nisi sunt officia culpa, exercitationem vel!</span></span></span><span class="custom-radio__radioDescr">в течении 2-х часов</span></span><span class="custom-radio__deliveryPrice">600р</span></span>
+															</label>
+															<label class="custom-radio">
+																<input type="radio" name="delivery-type"/><span class="custom-radio__text"><span class="custom-radio__textWrap"><span class="custom-radio__radioTitle">Точное время<span class="custom-radio__infoBlock">?<span class="custom-radio__infoHidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, illum magni error debitis incidunt dolor ipsa consectetur. Necessitatibus labore libero molestiae minus ad, facere nisi sunt officia culpa, exercitationem vel!</span></span><span class="custom-radio__selectBlock">
+																<select class="custom-radio__input form-control" id="time-clock">
+																	<option value="00">00</option>
+																	<option value="01">01</option>
+																	<option value="02">02</option>
+																	<option value="03">03</option>
+																	<option value="04">04</option>
+																	<option value="05">05</option>
+																	<option value="06">06</option>
+																	<option value="07">07</option>
+																	<option value="08">08</option>
+																	<option value="09">09</option>
+																	<option value="10">10</option>
+																	<option value="11">11</option>
+																	<option value="12">12</option>
+																	<option value="13">13</option>
+																	<option value="14">14</option>
+																	<option value="15">15</option>
+																	<option value="16">16</option>
+																	<option value="17">17</option>
+																	<option value="18">18</option>
+																	<option value="19">19</option>
+																	<option value="20">20</option>
+																	<option value="21">21</option>
+																	<option value="22">22</option>
+																	<option value="23">23</option>
+																</select>
+																<select class="custom-radio__input form-control" id="time-minutes">
+																	<option value="00">00</option>
+																	<option value="05">05</option>
+																	<option value="10">10</option>
+																	<option value="15">15</option>
+																	<option value="20">20</option>
+																	<option value="25">25</option>
+																	<option value="30">30</option>
+																	<option value="35">35</option>
+																	<option value="40">40</option>
+																	<option value="45">45</option>
+																	<option value="50">50</option>
+																	<option value="55">55</option>
+																</select></span></span></span><span class="custom-radio__deliveryPrice">1000р</span></span>
+															</label>
+															<label class="custom-radio">
+																<input type="radio" name="delivery-type"/><span class="custom-radio__text"><span class="custom-radio__textWrap"><span class="custom-radio__radioTitle">Аэропорт<span class="custom-radio__infoBlock">?<span class="custom-radio__infoHidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, illum magni error debitis incidunt dolor ipsa consectetur. Necessitatibus labore libero molestiae minus ad, facere nisi sunt officia culpa, exercitationem vel!</span></span></span><span class="custom-radio__radioDescr">Внуково, Домодедово, Шереметьево</span></span><span class="custom-radio__deliveryPrice">1500р</span></span>
+															</label>
+													</div>
+												</div>
+											</div>
+												<div class="orderButton"><a class="orderButton__next btn btn-accent" href="#">Далее</a>
+												</div>
+										</div>
+										<div class="form-wrap__form">
+												<div class="orderStep">
+													<div class="orderStep__numb active">5
+													</div>
+													<div class="orderStep__text">Оплата
+													</div>
+													<div class="orderStep__iconWrap"><img class="res-i" src="img/svg/checkout-chevron-down.svg" alt=""/>
+													</div>
+												</div>
+											<div class="form-wrap__radioWrap">
+													<label class="custom-radio">
+														<input type="radio" name="payment" checked="checked"/><span class="custom-radio__text"><span class="custom-radio__textWrap"><span class="custom-radio__radioTitle">Банковская карта (он-лайн)</span></span></span>
+													</label>
+													<label class="custom-radio">
+														<input type="radio" name="payment"/><span class="custom-radio__text"><span class="custom-radio__textWrap"><span class="custom-radio__radioTitle">Наличными при получении</span></span></span>
+													</label>
+													<label class="custom-radio">
+														<input type="radio" name="payment"/><span class="custom-radio__text"><span class="custom-radio__textWrap"><span class="custom-radio__radioTitle">Картой при получении</span></span></span>
+													</label>
+													<label class="custom-radio">
+														<input type="radio" name="payment"/><span class="custom-radio__text"><span class="custom-radio__textWrap"><span class="custom-radio__radioTitle">PayPal</span></span></span>
+													</label>
+													<label class="custom-radio">
+														<input type="radio" name="payment"/><span class="custom-radio__text"><span class="custom-radio__textWrap"><span class="custom-radio__radioTitle">Оплата от юр лица</span><span class="custom-radio__radioDescr">/* Должно быть заполненны данные юр лица в личном кабинете */</span></span></span>
+													</label>
+											</div>
 										</div>
 									</form>
 								</div>
 							</div>
+							<div class="orderButton orderButton--lastbuttons">
+								<div class="row">
+									<div class="col-sm-auto">
+										<button class="orderButton__next btn btn-accent" type="submit">Оформить заказ
+										</button>
+									</div>
+									<div class="col-sm-auto"><a class="orderButton__back btn" href="#">Вернуться в корзину</a>
+									</div>
+								</div>
+							</div>
 						</div>
+						<!--oreder col-->
 						<div class="sCheckout__col col" data-sticky-container="data-sticky-container">
 							<div class="sCheckout__orderWrap" data-sticky="data-sticky" data-margin-top="20">
 								<div class="sCheckout__order">

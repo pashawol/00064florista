@@ -131,7 +131,7 @@
 	@include media-breakpoint-down(sm) {}
 	@include media-breakpoint-down(xs) {} 
 
-	&--checkout {
+	&--checkout, &--checkout-new {
 		@include media-breakpoint-up(sm) {
 			padding-left: 20px;
 			padding-right: 20px;
@@ -183,6 +183,28 @@
 		}
 		.prod-item:before {
 			content: none;
+		}
+
+		.h5 {
+			font-weight: 600;
+		}
+
+		.custom-input {
+			position: absolute;
+			z-index: 10;
+			left: rem(10);
+			top: rem(10);
+		}
+	}
+
+	&--checkout-new {
+		margin-bottom: 30px;
+		@include media-breakpoint-up(sm) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+		.prod-item__img-wrap::before {
+			display: none;
 		}
 	}
 } // end.sCatalog

@@ -88,4 +88,46 @@ mixin sCatalog-checkout()
 				+e.slide.swiper-slide
 					+prod-item("4",'','','','Залипуха','1 800 руб.')
 		+arrow
+
+mixin sCatalog-checkout-modal()
+	// start sCatalog
+	+b.sCatalog--checkout#sCatalog&attributes(attributes)
+		+e.sliderCheckut--modal-js.swiper-container
+			.swiper-wrapper
+				+e.slide.swiper-slide
+					+prod-item("1",'','','','Мишка','1 800 руб.')
+				+e.slide.swiper-slide
+					+prod-item("2",'','','','Макаронсы 10 шт.','1 800 руб.')
+				+e.slide.swiper-slide
+					+prod-item("3",'','','','Подарок','1 800 руб.')
+				+e.slide.swiper-slide
+					+prod-item("4",'','','','Залипуха','1 800 руб.')
+		+arrow
 	// end sCatalog
+
+
+mixin sCatalog-checkout-new()
+	// start sCatalog
+	+b.sCatalog--checkout-new#sCatalog&attributes(attributes)
+		mixin in-c2-new(typ="checkbox", text, name= typ )
+			+b.LABEL.custom-input
+				+e.INPUT.input(type= typ , name= name)&attributes(attributes)
+				+e.SPAN.lab
+				//- +e.SPAN.text= text
+		+e.sliderCheckut--new-js.swiper-container
+			.swiper-wrapper
+				mixin slide
+					+e.slide.swiper-slide
+						+in-c2-new(typ="checkbox")
+						+b.prod-item
+							+e.img-wrap
+								img.res-i(src=`img/@2x/ckeckout.jpg`, alt="")
+							.h6 Самой красивой
+							.h5 +300 р
+				+slide
+				+slide
+				+slide
+				+slide
+				+slide
+
+		+arrow

@@ -176,6 +176,7 @@ function eventHandler() {
 	svg4everybody({});
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
+	JSCCommon.tabscostume('tabsAddress');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	JSCCommon.customRange(); // JSCCommon.CustomInputFile();
@@ -290,6 +291,58 @@ function eventHandler() {
 			1200: {
 				slidesPerView: 5,
 				spaceBetween: 100
+			}
+		}
+	}));
+	var swiper10 = new Swiper('.sCatalog__sliderCheckut--modal-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		spaceBetween: 30,
+		slidesPerView: 2,
+		navigation: {
+			nextEl: '.sCatalog--checkout .swiper-button-next',
+			prevEl: '.sCatalog--checkout .swiper-button-prev'
+		},
+		breakpoints: {
+			// when window width is >= 320px
+			// when window width is >= 480px
+			576: {
+				slidesPerView: 3
+			},
+			// when window width is >= 640px
+			// 992: {
+			// 	slidesPerView: 4, 
+			// },
+			1200: {
+				slidesPerView: 4,
+				spaceBetween: 90
+			}
+		}
+	}));
+	$('.modalBasket-js').click(function () {
+		var modalWinSlider = document.querySelector('.modal-win .sCatalog__sliderCheckut--modal-js');
+		window.setTimeout(function () {
+			modalWinSlider.swiper.update();
+		}, 10);
+	});
+	var swiper11 = new Swiper('.sCatalog__sliderCheckut--new-js', _objectSpread(_objectSpread({}, defaultSl), {}, {
+		spaceBetween: 15,
+		slidesPerView: 2,
+		navigation: {
+			nextEl: '.sCatalog__sliderCheckut--new-js .swiper-button-next',
+			prevEl: '.sCatalog__sliderCheckut--new-js .swiper-button-prev'
+		},
+		breakpoints: {
+			// when window width is >= 320px
+			// when window width is >= 480px
+			576: {
+				slidesPerView: 4
+			},
+			// when window width is >= 640px
+			// 992: {
+			// 	slidesPerView: 4, 
+			// },
+			1200: {
+				slidesPerView: 5,
+				spaceBetween: 35
 			}
 		}
 	}));

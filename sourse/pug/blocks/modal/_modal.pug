@@ -70,5 +70,42 @@ mixin modal()
 						+e.INPUT.btn.btn-block(type="submit" value="Добавить") 
 		// #modal-addAddr
 
+
+		+form-wrap()(id="modal-basket" class=" modal-win modal-form modal-basket" )
+			+b.s-basket
+				+e.title.h3 Товар добавлен в корзину
+				+e.row.row
+					.col-lg-9
+						+e.item
+							.table-wrap
+								table
+									tr
+										td
+											+e.product(href="#")
+												+e.imgWrap
+													img.res-i.lazy(src="#" data-src="img/@1x/basket.jpg", alt="")
+												+e.textWrap
+													p КРЕМОВЫЙ БУКЕТ "ШОКОЛАДНЫЙ МИШКА"
+													+e.size L (45 см)
+										td
+											+e.quantityWrap
+												span Кол-во
+												+e.quantity
+													+e.BUTTON.minus(type="button")
+													input(type="numb" value="2")
+													+e.BUTTON.plus(type="button")
+											+e.price
+												span Цена
+												.h5 12 300 р.
+											+e.price--total
+												span Сумма
+												.h5 24 600 р.
+					.col
+						+e.buttonsWrap
+							+e.next.btn.btn-accent(href="#") Оформить заказ
+							+e.back.btn.fancybox-close-small.fancybox-button(data-fancybox-close type="button") Продолжить покупки
+			+sCatalog-checkout-modal()
+
+
 	// modal
 	//-a.link-modal(href="#modal-addEvent") modal-addEvent
