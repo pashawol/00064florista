@@ -305,7 +305,8 @@ function eventHandler() {
 			// when window width is >= 320px
 			// when window width is >= 480px
 			576: {
-				slidesPerView: 3
+				slidesPerView: 3,
+				spaceBetween: 40
 			},
 			// when window width is >= 640px
 			// 992: {
