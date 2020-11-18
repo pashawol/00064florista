@@ -189,12 +189,6 @@
 			font-weight: 600;
 		}
 
-		.custom-input {
-			position: absolute;
-			z-index: 10;
-			left: rem(10);
-			top: rem(10);
-		}
 	}
 
 	&--checkout-new {
@@ -205,6 +199,28 @@
 		}
 		.prod-item__img-wrap::before {
 			display: none;
+		}
+
+		.sCatalog__sliderCheckut {
+			@include media-breakpoint-up(xl) {
+				max-width: 695px;
+			}
+		}
+
+		.custom-input {
+			position: absolute;
+			z-index: 10;
+			left: rem(0);
+			top: rem(0);
+			width: 100% !important;
+			height: 100%;
+			display: block !important;
+			margin: 0 !important;
+
+			&__lab {
+				left: 8px !important;
+				top: 8px !important;
+			}
 		}
 	}
 } // end.sCatalog

@@ -327,8 +327,8 @@ function eventHandler() {
 		spaceBetween: 15,
 		slidesPerView: 2,
 		navigation: {
-			nextEl: '.sCatalog__sliderCheckut--new-js .swiper-button-next',
-			prevEl: '.sCatalog__sliderCheckut--new-js .swiper-button-prev'
+			nextEl: '.sCatalog--checkout-new .swiper-button-next',
+			prevEl: '.sCatalog--checkout-new .swiper-button-prev'
 		},
 		breakpoints: {
 			// when window width is >= 320px

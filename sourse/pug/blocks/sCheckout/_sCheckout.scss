@@ -427,8 +427,9 @@
 	.tabs {
 		&__homeCol {
 			.custom-input {
-				@include media-breakpoint-up(xl) {
-					margin-bottom: 0;
+				margin-bottom: 0 !important;
+				@include media-breakpoint-down(md) {
+					margin-top: rem(10);
 				}
 			}
 		}
@@ -445,6 +446,10 @@
 			left: 0;
 			bottom: 100%;
 			width: 300px;
+			padding: 5px;
+			@include media-breakpoint-up(lg) {
+				padding: 10px;
+			}
 			transform: scale(0);
 			transform-origin: left bottom;
 			background-color: #fff;
@@ -474,7 +479,7 @@
 			border-radius: 50%;
 			flex-shrink: 0;
 
-			&:hover {
+			&:hover, &:focus, &:active {
 				.custom-radio__infoHidden {
 					transform: scale(1);
 				}
@@ -564,6 +569,12 @@
 				width: auto;
 				margin-right: rem(15);
 
+			}
+		}
+
+		&__contentIner {
+			@include media-breakpoint-up(xl) {
+				max-width: 784px;
 			}
 		}
 	}//form-wrap
